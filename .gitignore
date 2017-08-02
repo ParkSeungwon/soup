@@ -1,5 +1,6 @@
 *.x
 *~
+*.html
 *.swp
 *.swo
 test

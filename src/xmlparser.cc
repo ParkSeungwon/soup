@@ -3,11 +3,13 @@
 #include"xmlparser.h"
 using namespace std;
 
-static string get_bracket(istream& is)
+string Parser::get_bracket(istream& is)
 {//return < ~ > or text_between brackets
 	string s;
 	char c;
-	if(is >> skipws >> c) {//if not eof
+	if(Graph::root == nullptr) is >> skipws;
+	else is >> noskipws;
+	if(is >> c) {//if not eof
 		if(c == '<') {
 			while(c != '>') {
 				s += c;
@@ -34,7 +36,7 @@ u_map Parser::parse_bracket(std::istream& is)
 	if(s[0] == '<') {
 		if(s[1] == '/') return t;//return empty on close
 		regex tag_e{R"li(<(\S+)[>\s])li"};
-		regex opt_e{R"li((\S+)=[\'\"](.*)[\"\'])li"};
+		regex opt_e{R"li((\S+)=['"]([^'"]*)["'])li"};
 		smatch m;
 		regex_search(s, m, tag_e);
 		t[(s[s.length() -2] == '/' || m[1] == "br") ? "Mono" : "HeadTail"] = m[1];
