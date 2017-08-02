@@ -20,13 +20,18 @@ string Parser::get_bracket(istream& is)
 		} else {
 			while(c != '<') {
 				s += c;
-				is >> noskipws >> c;
+				if(is >> noskipws >> c);
+				else break;//repair eof bug 
 			}
 			is.seekg(-1, is.cur);
 		}
 	}
 	return s;
 }
+
+const char* void_element[] = {
+	"area", "base", "br", "col", "command", "embed", "hr", "img", "input",
+	"keygen", "link", "meta", "param", "source", "track", "wbr"};
 
 u_map Parser::parse_bracket(std::istream& is)
 {//parse <tag></tag>, <tag />, Text
@@ -39,7 +44,10 @@ u_map Parser::parse_bracket(std::istream& is)
 		regex opt_e{R"li((\S+)=['"]([^'"]*)["'])li"};
 		smatch m;
 		regex_search(s, m, tag_e);
-		t[(s[s.length() -2] == '/' || m[1] == "br") ? "Mono" : "HeadTail"] = m[1];
+		bool mono = false;
+		for(auto a : void_element) if(a == m[1]) mono = true;
+		if(s[s.length() -2] == '/') mono = true;
+		t[mono ? "Mono" : "HeadTail"] = m[1];
 
 		while(regex_search(s, m, opt_e)) {
 			t[m[1]] = m[2];
