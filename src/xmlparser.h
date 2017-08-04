@@ -3,22 +3,23 @@
 #include<memory>
 #include<tgraph.h>
 
-typedef std::map<std::string, std::string> u_map;
-class Parser : public Graph<std::shared_ptr<u_map>>
+typedef std::shared_ptr<std::map<std::string, std::string>> sh_map;
+class Parser : public Graph<sh_map>
 {//html -> graph structure
 public:
 	std::string to_html() const;
 	void read_html(std::istream& is);
-	std::vector<std::shared_ptr<u_map>> find_all(std::string a, std::string b) const;
-	Vertex<std::shared_ptr<u_map>>* find_parent(Vertex<std::shared_ptr<u_map>>* child) const;
-	Vertex<std::shared_ptr<u_map>>* find(std::shared_ptr<u_map> sp, Vertex<std::shared_ptr<u_map>>* v = nullptr) const;
-	std::string to_str(Vertex<std::shared_ptr<u_map>>* v) const;
-	Vertex<std::shared_ptr<u_map>>* find(std::string a, std::string b, Vertex<std::shared_ptr<u_map>>* parent = nullptr) const;
+	std::vector<sh_map> find_all(std::string a, std::string b, bool like=false) const;
+	sh_map find_parent(sh_map child) const;
+	sh_map find(sh_map sp, sh_map parent = nullptr) const;
+	std::string to_str(sh_map v) const;
+	sh_map find(std::string a, std::string b, sh_map parent = nullptr) const;
 
 private:
-	void insert_edge(std::shared_ptr<u_map> shp, std::istream& is);
-	u_map parse_bracket(std::istream& is);
+	void insert_edge(sh_map shp, std::istream& is);
+	std::map<std::string, std::string> parse_bracket(std::istream& is);
 	std::string get_bracket(std::istream& is);
+	bool is_script = false;
 };
 
 

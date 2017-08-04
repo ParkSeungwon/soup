@@ -3,17 +3,35 @@
 #include"xmlparser.h"
 using namespace std;
 
+string parse_script(istream& is) 
+{
+	string s;
+	char c;
+	while(s.find("</script>") == string::npos) {
+		is >> noskipws >> c;
+		s += c;
+	}
+	for(int i=0; i<9; i++) s.pop_back();
+	return s;
+}
+
 string Parser::get_bracket(istream& is)
 {//return < ~ > or text_between brackets
 	string s;
 	char c;
 	if(Graph::root == nullptr) is >> skipws;//until insert html
 	else is >> noskipws;
-	if(is >> c) {//if not eof
+	if(is_script) {
+		s = parse_script(is);
+		is_script = false;
+	} else if(is >> c) {//if not eof
 		if(c == '<') {
-			while(c != '>') {
+			int open = 1;
+			while(open) {
 				s += c;
 				is >> noskipws >> c;
+				if(c == '<') open++;
+				else if(c == '>') open--;
 			}
 			s += '>';
 			if(s[1] == '!') return get_bracket(is);//pass comment
@@ -35,10 +53,10 @@ static const char* void_element[] = {
 	"keygen", "link", "meta", "param", "source", "track", "wbr"
 };
 
-u_map Parser::parse_bracket(std::istream& is)
+map<string, string> Parser::parse_bracket(std::istream& is)
 {//parse <tag></tag>, <tag />, Text
 	string s = get_bracket(is);
-	u_map t;
+	map<string, string> t;
 	if(s == "") return t;//eof
 	if(s[0] == '<') {
 		if(s[1] == '/') return t;//return empty on close
@@ -59,14 +77,17 @@ u_map Parser::parse_bracket(std::istream& is)
 	return t;
 }
 
-void Parser::insert_edge(shared_ptr<u_map> shp, std::istream& is)
+void Parser::insert_edge(sh_map shp, std::istream& is)
 {
-	u_map t = parse_bracket(is);
+	map<string, string> t = parse_bracket(is);
 	if(t.empty()) return;
-	auto sh = make_shared<u_map>(t);
+	auto sh = make_shared<map<string, string>>(t);
 	insert_vertex(sh);
 	if(shp) Graph::insert_edge(shp, sh);
-	if(t.begin()->first == "HeadTail") insert_edge(sh, is);
+	if(t.begin()->first == "HeadTail") {
+		is_script = t.begin()->second == "script";
+		insert_edge(sh, is);
+	}
 	insert_edge(shp, is);
 }
 
@@ -75,22 +96,23 @@ void Parser::read_html(istream& is)
 	insert_edge(nullptr, is);
 }
 	
-string Parser::to_str(Vertex<shared_ptr<u_map>>* v) const
+string Parser::to_str(sh_map shp) const
 {
+	auto* v = Graph::find(Graph::root, shp);
 	if(!v) return "";
-	auto it = v->data->begin();
+	auto it = v->data->cbegin();
 	string type = it->first, text = it->second;
 	string s;
 	if(type == "Text") return text;
 	else {
 		s = '<' + it->second;
-		for(it++; it != v->data->end(); it++)//options
+		for(it++; it != v->data->cend(); it++)//options
 			s += ' ' + it->first + "=\"" + it->second + "\"";
 		if(type == "Mono") s += " /";
 		s += '>';
 	}
 	//add inner brackets recursively
-	for(Edge<shared_ptr<u_map>>* e = v->edge; e; e = e->edge) s += to_str(e->vertex);
+	for(Edge<sh_map>* e = v->edge; e; e = e->edge) s += to_str(e->vertex->data);
 	if(type == "HeadTail") s += "</" + text + '>';//closing after inner
 	return s;
 }
@@ -98,41 +120,48 @@ string Parser::to_str(Vertex<shared_ptr<u_map>>* v) const
 string Parser::to_html() const
 {
 	//"Content-type:text/html\r\n\r\n" 
-	return to_str(Graph::root);
+	return to_str(Graph::root->data);
 }
 
-vector<shared_ptr<u_map>> Parser::find_all(std::string a, std::string b) const
+vector<sh_map> Parser::find_all(std::string a, std::string b, bool like) const
 {
-	vector<shared_ptr<u_map>> vec;
-	for(Vertex<shared_ptr<u_map>>* v = Graph::root; v; v = v->vertex) 
-		for(const auto& sNs : *v->data) 
-			if(sNs.first == a && sNs.second == b) vec.push_back(v->data);
+	vector<sh_map> vec;
+	for(Vertex<sh_map>* v = Graph::root; v; v = v->vertex) {
+		for(const auto& sNs : *v->data) {
+			if(!like && sNs.first == a && sNs.second == b) vec.push_back(v->data);
+			if(like && sNs.first == a && sNs.second.find(b) != string::npos) 
+				vec.push_back(v->data);
+		}
+	}	
 	return vec;
 }
 
-Vertex<shared_ptr<u_map>>* Parser::find(shared_ptr<u_map> sp, Vertex<shared_ptr<u_map>>* parent) const
+sh_map Parser::find(sh_map sp, sh_map pr) const
 {//find among child nodes
+	auto* parent = Graph::find(Graph::root, pr);
 	if(!parent) parent = Graph::root;
-	static Vertex<shared_ptr<u_map>>* r = nullptr;//recursive -> static
-	for(Edge<shared_ptr<u_map>>* e = parent->edge; e; e = e->edge) {
+	static Vertex<sh_map>* r = nullptr;//recursive -> static
+	for(Edge<sh_map>* e = parent->edge; e; e = e->edge) {
 		if(e->vertex->data == sp) r = e->vertex;
-		else find(sp, e->vertex);
+		else find(sp, e->vertex->data);
 	}
-	return r;
+	return r ? r->data : nullptr;
 }
 
-Vertex<shared_ptr<u_map>>* Parser::find_parent(Vertex<shared_ptr<u_map>>* child) const
+sh_map Parser::find_parent(sh_map child) const
 {//return parent node vertex address
-	for(Vertex<shared_ptr<u_map>>* v = Graph::root; v; v = v->vertex) 
-		for(Edge<shared_ptr<u_map>>* e = v->edge; e; e = e->edge) 
-			if(e->vertex == child) return v;
+	for(Vertex<sh_map>* v = Graph::root; v; v = v->vertex) 
+		for(Edge<sh_map>* e = v->edge; e; e = e->edge) 
+			if(e->vertex->data == child) return v->data;
 	return nullptr;
 }
 
-Vertex<shared_ptr<u_map>>* Parser::find(string a, string b, Vertex<shared_ptr<u_map>>* parent) const
+sh_map Parser::find(string a, string b, sh_map pr) const
 {
+	auto* parent = Graph::find(Graph::root, pr);
 	if(!parent) parent = Graph::root;
 	auto v = find_all(a, b);
-	for(auto& sh : v) if(auto* r = find(sh, parent)) return r;
+	for(auto& sh : v) if(auto r = find(sh, parent->data)) return r;
 	return nullptr;
 }
+
