@@ -23,12 +23,11 @@ int main(int ac, char** av)
 		Parser p;
 		p.read_html(ss);
 //		cout << p.to_html() << endl;
-		for(auto& a : p.find_all("Text", "2017-08", true)) {
+		for(auto& a : p.find_all("Text", "2017-08", nullptr, true)) {
 			auto sh1 = p.find_parent(p.find_parent(a));
-			auto sh2 = p.find("HeadTail", "a", sh1);
-			if(sh2) {
-				(*sh2)["href"].insert(0, "https://www.dongguk.edu/mbs/kr/jsp/board/");
-				cout << p.to_str(sh2) << endl;
+			for(auto& k : p.find_all("HeadTail", "a", sh1)) {
+//				k["href"].insert(0, "https://www.dongguk.edu/mbs/kr/jsp/board/");
+				cout << p.to_str(k) << endl;
 			}
 		}
 	}

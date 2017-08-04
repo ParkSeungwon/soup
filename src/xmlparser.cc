@@ -122,10 +122,11 @@ string Parser::to_html() const
 	return to_str(Graph::root->data);
 }
 
-vector<sh_map> Parser::find_all(std::string a, std::string b, bool like) const
+vector<sh_map> Parser::find_all(std::string a, std::string b, sh_map parent, bool like) const
 {
 	vector<sh_map> vec;
-	for(Vertex<sh_map>* v = Graph::root; v; v = v->vertex) {
+	auto* p = Graph::find(Graph::root, parent);
+	for(Vertex<sh_map>* v = p ? p : Graph::root; v; v = v->vertex) {
 		for(const auto& sNs : *v->data) {
 			if(!like && sNs.first == a && sNs.second == b) vec.push_back(v->data);
 			if(like && sNs.first == a && sNs.second.find(b) != string::npos) 
@@ -141,41 +142,5 @@ sh_map Parser::find_parent(sh_map child) const
 		for(Edge<sh_map>* e = v->edge; e; e = e->edge) 
 			if(e->vertex->data == child) return v->data;
 	return nullptr;
-}
-
-static sh_map r = nullptr;//recursive -> static
-
-void Parser::rfind(sh_map sp, sh_map pr) const
-{//find among child nodes
-	r = nullptr;
-	auto* parent = Graph::find(Graph::root, pr);
-	if(!parent) parent = Graph::root;
-	for(Edge<sh_map>* e = parent->edge; e; e = e->edge) {
-		if(e->vertex->data == sp) r = e->vertex->data;
-		else rfind(sp, e->vertex->data);
-	}
-}
-
-void Parser::rfind(string a, string b, sh_map pr) const
-{
-	r = nullptr;
-	auto* parent = Graph::find(Graph::root, pr);
-	if(!parent) parent = Graph::root;
-	for(Edge<sh_map>* e = parent->edge; e; e = e->edge) {
-		if((*e->vertex->data)[a] == b) r = e->vertex->data;
-		else rfind(a, b, e->vertex->data);
-	}
-}
-
-sh_map Parser::find(string a, string b, sh_map pr) const
-{
-	rfind(a, b, pr);
-	return r;
-}
-
-sh_map Parser::find(sh_map sp, sh_map pr) const
-{
-	rfind(sp, pr);
-	return r;
 }
 
