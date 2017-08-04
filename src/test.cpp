@@ -5,9 +5,9 @@ using namespace std;
 
 const char* links[] = {//' is needed, be careful : & -> run background
 	"'https://www.dongguk.edu/mbs/kr/jsp/board/list.jsp?boardId=3638&id=kr_010801000000'",//학사공지
-//	"'https://www.dongguk.edu/mbs/kr/jsp/board/list.jsp?boardId=3646&id=kr_010802000000'",
-//	"'https://www.dongguk.edu/mbs/kr/jsp/board/list.jsp?boardId=9457435&id=kr_010807000000'",
-//	"'http://lincplus.dongguk.edu/index.php?menu_code1=2&menu_code2=274&menu_code3=275'"
+	"'https://www.dongguk.edu/mbs/kr/jsp/board/list.jsp?boardId=3646&id=kr_010802000000'",//일반공지
+//	"'https://www.dongguk.edu/mbs/kr/jsp/board/list.jsp?boardId=9457435&id=kr_010807000000'",//국제공지
+//	"'http://lincplus.dongguk.edu/index.php?menu_code1=2&menu_code2=274&menu_code3=275'"//Linc 공지
 };
 
 string psstm(string command);
@@ -22,12 +22,14 @@ int main(int ac, char** av)
 		ss << get_url(link);
 		Parser p;
 		p.read_html(ss);
-		cout << p.to_html() << endl;
+//		cout << p.to_html() << endl;
 		for(auto& a : p.find_all("Text", "2017-08", true)) {
 			auto sh1 = p.find_parent(p.find_parent(a));
 			auto sh2 = p.find("HeadTail", "a", sh1);
-//			if(sh2) (*sh2)["href"].insert(0, "https://www.dongguk.edu/mbs/kr/jsp/board/");
-			cout << p.to_str(sh2) << endl;
+			if(sh2) {
+				(*sh2)["href"].insert(0, "https://www.dongguk.edu/mbs/kr/jsp/board/");
+				cout << p.to_str(sh2) << endl;
+			}
 		}
 	}
 }

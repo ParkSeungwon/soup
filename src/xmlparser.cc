@@ -4,7 +4,7 @@
 using namespace std;
 
 string parse_script(istream& is) 
-{
+{//parse jscript
 	string s;
 	char c;
 	while(s.find("</script>") == string::npos) {
@@ -48,7 +48,7 @@ string Parser::get_bracket(istream& is)
 	return s;
 }
 
-static const char* void_element[] = {
+static const char* void_element[] = {//elements that are always Mono
 	"area", "base", "br", "col", "command", "embed", "hr", "img", "input",
 	"keygen", "link", "meta", "param", "source", "track", "wbr"
 };
@@ -118,8 +118,7 @@ string Parser::to_str(sh_map shp) const
 }
 
 string Parser::to_html() const
-{
-	//"Content-type:text/html\r\n\r\n" 
+{ //"Content-type:text/html\r\n\r\n" 
 	return to_str(Graph::root->data);
 }
 
@@ -136,18 +135,6 @@ vector<sh_map> Parser::find_all(std::string a, std::string b, bool like) const
 	return vec;
 }
 
-sh_map Parser::find(sh_map sp, sh_map pr) const
-{//find among child nodes
-	auto* parent = Graph::find(Graph::root, pr);
-	if(!parent) parent = Graph::root;
-	static Vertex<sh_map>* r = nullptr;//recursive -> static
-	for(Edge<sh_map>* e = parent->edge; e; e = e->edge) {
-		if(e->vertex->data == sp) r = e->vertex;
-		else find(sp, e->vertex->data);
-	}
-	return r ? r->data : nullptr;
-}
-
 sh_map Parser::find_parent(sh_map child) const
 {//return parent node vertex address
 	for(Vertex<sh_map>* v = Graph::root; v; v = v->vertex) 
@@ -156,20 +143,39 @@ sh_map Parser::find_parent(sh_map child) const
 	return nullptr;
 }
 
-sh_map Parser::find(string a, string b, sh_map pr) const
-{
+static sh_map r = nullptr;//recursive -> static
+
+void Parser::rfind(sh_map sp, sh_map pr) const
+{//find among child nodes
+	r = nullptr;
 	auto* parent = Graph::find(Graph::root, pr);
 	if(!parent) parent = Graph::root;
-	static Vertex<sh_map>* r = nullptr;//recursive -> static
 	for(Edge<sh_map>* e = parent->edge; e; e = e->edge) {
-		if((*e->vertex->data)[a] == b) r = e->vertex;
-		else find(a, b, e->vertex->data);
+		if(e->vertex->data == sp) r = e->vertex->data;
+		else rfind(sp, e->vertex->data);
 	}
-	return r ? r->data : nullptr;
-//	auto* parent = Graph::find(Graph::root, pr);
-//	if(!parent) parent = Graph::root;
-//	auto v = find_all(a, b);
-//	for(auto& sh : v) if(auto r = find(sh, parent->data)) return r;
-//	return nullptr;
+}
+
+void Parser::rfind(string a, string b, sh_map pr) const
+{
+	r = nullptr;
+	auto* parent = Graph::find(Graph::root, pr);
+	if(!parent) parent = Graph::root;
+	for(Edge<sh_map>* e = parent->edge; e; e = e->edge) {
+		if((*e->vertex->data)[a] == b) r = e->vertex->data;
+		else rfind(a, b, e->vertex->data);
+	}
+}
+
+sh_map Parser::find(string a, string b, sh_map pr) const
+{
+	rfind(a, b, pr);
+	return r;
+}
+
+sh_map Parser::find(sh_map sp, sh_map pr) const
+{
+	rfind(sp, pr);
+	return r;
 }
 
