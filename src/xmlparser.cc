@@ -75,7 +75,7 @@ void Parser::read_html(istream& is)
 	insert_edge(nullptr, is);
 }
 	
-string Parser::to_str(Vertex<shared_ptr<u_map>>* v)
+string Parser::to_str(Vertex<shared_ptr<u_map>>* v) const
 {
 	if(!v) return "";
 	auto it = v->data->begin();
@@ -95,13 +95,13 @@ string Parser::to_str(Vertex<shared_ptr<u_map>>* v)
 	return s;
 }
 
-string Parser::to_html()
+string Parser::to_html() const
 {
 	//"Content-type:text/html\r\n\r\n" 
 	return to_str(Graph::root);
 }
 
-vector<shared_ptr<u_map>> Parser::find_all(std::string a, std::string b) 
+vector<shared_ptr<u_map>> Parser::find_all(std::string a, std::string b) const
 {
 	vector<shared_ptr<u_map>> vec;
 	for(Vertex<shared_ptr<u_map>>* v = Graph::root; v; v = v->vertex) 
@@ -110,17 +110,18 @@ vector<shared_ptr<u_map>> Parser::find_all(std::string a, std::string b)
 	return vec;
 }
 
-Vertex<shared_ptr<u_map>>* Parser::find(shared_ptr<u_map> sp, Vertex<shared_ptr<u_map>>* parent)
+Vertex<shared_ptr<u_map>>* Parser::find(shared_ptr<u_map> sp, Vertex<shared_ptr<u_map>>* parent) const
 {//find among child nodes
 	if(!parent) parent = Graph::root;
+	static Vertex<shared_ptr<u_map>>* r = nullptr;//recursive -> static
 	for(Edge<shared_ptr<u_map>>* e = parent->edge; e; e = e->edge) {
-		if(e->vertex->data == sp) return parent;
-		else return find(sp, e->vertex);
+		if(e->vertex->data == sp) r = e->vertex;
+		else find(sp, e->vertex);
 	}
-	return nullptr;
+	return r;
 }
 
-Vertex<shared_ptr<u_map>>* Parser::find_parent(Vertex<shared_ptr<u_map>>* child)
+Vertex<shared_ptr<u_map>>* Parser::find_parent(Vertex<shared_ptr<u_map>>* child) const
 {//return parent node vertex address
 	for(Vertex<shared_ptr<u_map>>* v = Graph::root; v; v = v->vertex) 
 		for(Edge<shared_ptr<u_map>>* e = v->edge; e; e = e->edge) 
@@ -128,13 +129,10 @@ Vertex<shared_ptr<u_map>>* Parser::find_parent(Vertex<shared_ptr<u_map>>* child)
 	return nullptr;
 }
 
-Vertex<shared_ptr<u_map>>* Parser::find(string a, string b, Vertex<shared_ptr<u_map>>* parent)
+Vertex<shared_ptr<u_map>>* Parser::find(string a, string b, Vertex<shared_ptr<u_map>>* parent) const
 {
 	if(!parent) parent = Graph::root;
 	auto v = find_all(a, b);
-	for(auto& sh : v) {
-		auto* r = find(sh, parent);
-		if(r) return r;
-	}
+	for(auto& sh : v) if(auto* r = find(sh, parent)) return r;
 	return nullptr;
 }

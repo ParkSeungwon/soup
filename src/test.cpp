@@ -22,11 +22,9 @@ int main(int ac, char** av)
 		ss << get_url(link);
 		Parser p;
 		p.read_html(ss);
-		cout << p.to_html() << endl;
-		auto* ptr = p.find("Mono", "meta");
-		cout << p.to_str(ptr) << endl;
+		for(auto& a : p.find_all("Text", "2017-08-03")) cout << p.to_str(p.find(a)) << endl;
 		for(auto& a : p.find_all("Text", "2017-08-03")) {
-			auto* v = p.find_parent(p.find_parent(p.find(a)));
+			auto* v = p.find_parent(p.find_parent(p.find_parent(p.find(a))));
 			auto* l = p.find("HeadTail", "a", v);
 			cout << (*l->data)["href"] << endl;
 			cout << (*l->edge->vertex->data)["Text"] << endl;

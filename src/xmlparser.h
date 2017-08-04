@@ -7,13 +7,13 @@ typedef std::map<std::string, std::string> u_map;
 class Parser : public Graph<std::shared_ptr<u_map>>
 {//html -> graph structure
 public:
-	std::string to_html();
+	std::string to_html() const;
 	void read_html(std::istream& is);
-	std::vector<std::shared_ptr<u_map>> find_all(std::string a, std::string b);
-	Vertex<std::shared_ptr<u_map>>* find_parent(Vertex<std::shared_ptr<u_map>>* child);
-	Vertex<std::shared_ptr<u_map>>* find(std::shared_ptr<u_map> sp, Vertex<std::shared_ptr<u_map>>* v = nullptr);
-	std::string to_str(Vertex<std::shared_ptr<u_map>>* v);
-	Vertex<std::shared_ptr<u_map>>* find(std::string a, std::string b, Vertex<std::shared_ptr<u_map>>* parent = nullptr);
+	std::vector<std::shared_ptr<u_map>> find_all(std::string a, std::string b) const;
+	Vertex<std::shared_ptr<u_map>>* find_parent(Vertex<std::shared_ptr<u_map>>* child) const;
+	Vertex<std::shared_ptr<u_map>>* find(std::shared_ptr<u_map> sp, Vertex<std::shared_ptr<u_map>>* v = nullptr) const;
+	std::string to_str(Vertex<std::shared_ptr<u_map>>* v) const;
+	Vertex<std::shared_ptr<u_map>>* find(std::string a, std::string b, Vertex<std::shared_ptr<u_map>>* parent = nullptr) const;
 
 private:
 	void insert_edge(std::shared_ptr<u_map> shp, std::istream& is);
