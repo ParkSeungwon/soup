@@ -122,18 +122,23 @@ string Parser::to_html() const
 	return to_str(Graph::root->data);
 }
 
-vector<sh_map> Parser::find_all(std::string a, std::string b, sh_map parent, bool like) const
+void Parser::find_all(string a, string b, sh_map parent, bool like)
 {
-	vector<sh_map> vec;
 	auto* p = Graph::find(Graph::root, parent);
 	if(!p) p = Graph::root;
 	for(Edge<sh_map>* e = p->edge; e; e = e->edge) {
-		for(const auto& sNs : *e->vertex->data) {
+		for(const auto& sNs : *e->vertex->data)
 			if((!like && sNs.first == a && sNs.second == b) ||
-				(like && sNs.first == a && sNs.second.find(b) != string::npos))
+				(like && sNs.first == a && sNs.second.find(b) != string::npos)) 
 				vec.push_back(e->vertex->data);
-		}
-	}	
+		find_all(a, b, e->vertex->data, like);
+	}
+}
+
+vector<sh_map> Parser::find(string a, string b, sh_map parent, bool like)
+{
+	vec.clear();
+	find_all(a, b, parent, like);
 	return vec;
 }
 

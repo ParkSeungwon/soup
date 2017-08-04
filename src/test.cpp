@@ -23,9 +23,9 @@ int main(int ac, char** av)
 		Parser p;
 		p.read_html(ss);
 //		cout << p.to_html() << endl;
-		for(auto& a : p.find_all("Text", "2017-08-03", nullptr, true)) {
+		for(auto& a : p.find("Text", "2017-08-03", nullptr, true)) {
 			auto sh1 = p.find_parent(p.find_parent(a));
-			for(auto& k : p.find_all("HeadTail", "a", sh1)) {
+			for(auto& k : p.find("HeadTail", "a", sh1)) {
 //				if(k->find("href") != k->end()) {
 //					(*k)["href"].insert(0, "https://www.dongguk.edu/mbs/kr/jsp/board/");
 					cout << p.to_str(k) << endl;
