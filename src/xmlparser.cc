@@ -126,11 +126,12 @@ vector<sh_map> Parser::find_all(std::string a, std::string b, sh_map parent, boo
 {
 	vector<sh_map> vec;
 	auto* p = Graph::find(Graph::root, parent);
-	for(Vertex<sh_map>* v = p ? p : Graph::root; v; v = v->vertex) {
-		for(const auto& sNs : *v->data) {
-			if(!like && sNs.first == a && sNs.second == b) vec.push_back(v->data);
-			if(like && sNs.first == a && sNs.second.find(b) != string::npos) 
-				vec.push_back(v->data);
+	if(!p) p = Graph::root;
+	for(Edge<sh_map>* e = p->edge; e; e = e->edge) {
+		for(const auto& sNs : *e->vertex->data) {
+			if((!like && sNs.first == a && sNs.second == b) ||
+				(like && sNs.first == a && sNs.second.find(b) != string::npos))
+				vec.push_back(e->vertex->data);
 		}
 	}	
 	return vec;
