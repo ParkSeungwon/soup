@@ -160,8 +160,16 @@ sh_map Parser::find(string a, string b, sh_map pr) const
 {
 	auto* parent = Graph::find(Graph::root, pr);
 	if(!parent) parent = Graph::root;
-	auto v = find_all(a, b);
-	for(auto& sh : v) if(auto r = find(sh, parent->data)) return r;
-	return nullptr;
+	static Vertex<sh_map>* r = nullptr;//recursive -> static
+	for(Edge<sh_map>* e = parent->edge; e; e = e->edge) {
+		if((*e->vertex->data)[a] == b) r = e->vertex;
+		else find(a, b, e->vertex->data);
+	}
+	return r ? r->data : nullptr;
+//	auto* parent = Graph::find(Graph::root, pr);
+//	if(!parent) parent = Graph::root;
+//	auto v = find_all(a, b);
+//	for(auto& sh : v) if(auto r = find(sh, parent->data)) return r;
+//	return nullptr;
 }
 
