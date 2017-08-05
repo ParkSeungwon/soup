@@ -4,11 +4,11 @@
 using namespace std;
 
 string parse_script(istream& is) 
-{//parse jscript
+{//cannot apply bracket count, cause jscript have '<' or '>' in contents 
 	string s;
 	char c;
 	while(s.find("</script>") == string::npos) {
-		is >> noskipws >> c;
+		if(!(is >> noskipws >> c)) throw "reached EOF without closing script";
 		s += c;
 	}
 	for(int i=0; i<9; i++) s.pop_back();
@@ -16,7 +16,7 @@ string parse_script(istream& is)
 }
 
 string Parser::get_bracket(istream& is)
-{//return < ~ > or text_between brackets
+{//cut < ~ > or text_between brackets
 	string s;
 	char c;
 	if(Graph::root == nullptr) is >> skipws;//until insert html
@@ -29,7 +29,7 @@ string Parser::get_bracket(istream& is)
 			int open = 1;
 			while(open) {
 				s += c;
-				is >> noskipws >> c;
+				if(!(is >> noskipws >> c)) throw "reached EOF without closing bracket";
 				if(c == '<') open++;
 				else if(c == '>') open--;
 			}
@@ -38,8 +38,7 @@ string Parser::get_bracket(istream& is)
 		} else {
 			while(c != '<') {
 				s += c;
-				if(is >> noskipws >> c);
-				else break;//repair eof bug, deal with ending text
+				if(!(is >> noskipws >> c)) break;//deal with ending text
 			}
 			is.seekg(-1, is.cur);
 			if(Graph::root == nullptr) return get_bracket(is);//for text before html
@@ -55,7 +54,10 @@ static const char* void_element[] = {//elements that are always Mono
 
 map<string, string> Parser::parse_bracket(std::istream& is)
 {//parse <tag></tag>, <tag />, Text
-	string s = get_bracket(is);
+	string s;
+	try {
+		s = get_bracket(is);
+	} catch(const char* e) { cout << e;}
 	map<string, string> t;
 	if(s == "") return t;//eof
 	if(s[0] == '<') {
@@ -97,7 +99,8 @@ void Parser::read_html(istream& is)
 }
 	
 string Parser::to_str(sh_map shp) const
-{
+{//parse from root if null 
+	if(!shp) shp = Graph::root->data;
 	auto* v = Graph::find(Graph::root, shp);
 	if(!v) return "";
 	auto it = v->data->cbegin();
@@ -117,11 +120,6 @@ string Parser::to_str(sh_map shp) const
 	return s;
 }
 
-string Parser::to_html() const
-{ //"Content-type:text/html\r\n\r\n" 
-	return to_str(Graph::root->data);
-}
-
 void Parser::find_all(string a, string b, sh_map parent, bool like)
 {
 	auto* p = Graph::find(Graph::root, parent);
@@ -136,14 +134,14 @@ void Parser::find_all(string a, string b, sh_map parent, bool like)
 }
 
 vector<sh_map> Parser::find(string a, string b, sh_map parent, bool like)
-{
+{//find from parent, like true -> map[a] contains b, like false -> map[a] == b
 	vec.clear();
 	find_all(a, b, parent, like);
 	return vec;
 }
 
 sh_map Parser::find_parent(sh_map child) const
-{//return parent node vertex address
+{//return parent node
 	for(Vertex<sh_map>* v = Graph::root; v; v = v->vertex) 
 		for(Edge<sh_map>* e = v->edge; e; e = e->edge) 
 			if(e->vertex->data == child) return v->data;
