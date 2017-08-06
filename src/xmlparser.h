@@ -24,7 +24,6 @@ private:
 	void insert_edge(sh_map shp, std::istream& is);
 	std::map<std::string, std::string> parse_bracket(std::istream& is);
 	std::string get_bracket(std::istream& is);
-	void rfind(std::string a, std::string b, sh_map parent = nullptr) const;
 };
 
 

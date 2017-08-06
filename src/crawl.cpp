@@ -23,21 +23,20 @@ string psstm(string command);
 string get_url(string url) {//' is needed, be careful : & -> run background
 	return psstm(string("python get_url.py '") + url + "'");
 }
-string get_yesterday();
-string get_today();
+string get_date(unsigned n);
 
 int main()
 {//crawl today&yesterday's new post
 	cout << "Content-type:text/html\r\n\r\n";//for browser recognition
 	cout << "<html><head><meta charset='utf-8' />";
-	cout << "<title>" << get_yesterday() << "</title></head><body>";
+	cout << "<title>New Post from " << get_date(1) << "</title></head><body>";
 	for(auto& link : links) {
 		stringstream ss;
 		ss << get_url(string(link[0]) + link[1]);
 		Parser p;
 		p.read_html(ss);
-		for(string date : {get_yesterday(), get_today()}) {
-			for(auto& a : p.find("Text", date, nullptr, true)) {
+		for(int i=0; i<2; i++) {//0=today, 1yesterday
+			for(auto& a : p.find("Text", get_date(i), nullptr, true)) {
 				auto sh1 = p.find_parent(p.find_parent(a));
 				for(auto& k : p.find("HeadTail", "a", sh1)) {
 					if(k->find("href") != k->end()) {

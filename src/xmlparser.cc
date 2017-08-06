@@ -1,5 +1,6 @@
 #include<iostream>
 #include<regex>
+#include<cassert>
 #include"xmlparser.h"
 using namespace std;
 
@@ -126,7 +127,7 @@ void Parser::find_all(string a, string b, sh_map parent, bool like)
 	if(!p) p = Graph::root;
 	for(Edge<sh_map>* e = p->edge; e; e = e->edge) {
 		for(const auto& sNs : *e->vertex->data)
-			if((!like && sNs.first == a && sNs.second == b) ||
+			if((!like && sNs.first == a && sNs.second == b) ||//if same, if contain
 				(like && sNs.first == a && sNs.second.find(b) != string::npos)) 
 				vec.push_back(e->vertex->data);
 		find_all(a, b, e->vertex->data, like);
@@ -135,9 +136,9 @@ void Parser::find_all(string a, string b, sh_map parent, bool like)
 
 vector<sh_map> Parser::find(string a, string b, sh_map parent, bool like)
 {//find from parent, like true -> map[a] contains b, like false -> map[a] == b
-	vec.clear();
+	assert(vec.empty());
 	find_all(a, b, parent, like);
-	return vec;
+	return move(vec);
 }
 
 sh_map Parser::find_parent(sh_map child) const
