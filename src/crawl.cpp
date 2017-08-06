@@ -1,6 +1,7 @@
 #include<iostream>
 #include<sstream>
 #include"xmlparser.h"
+#include"HTTPDownLoader.hpp"
 using namespace std;
 
 const char* links[][2] = {
@@ -21,7 +22,8 @@ const char* links[][2] = {
 
 string psstm(string command);
 string get_url(string url) {//' is needed, be careful : & -> run background
-	return psstm(string("python get_url.py '") + url + "'");
+	HTTPDownloader downloader;
+    return downloader.download(url);
 }
 string get_date(unsigned n);
 
@@ -35,7 +37,7 @@ int main()
 		ss << get_url(string(link[0]) + link[1]);
 		Parser p;
 		p.read_html(ss);
-		for(int i=0; i<2; i++) {//0=today, 1yesterday
+		for(int i=0; i<4; i++) {//0=today, 1yesterday
 			for(auto& a : p.find("Text", get_date(i), nullptr, true)) {
 				auto sh1 = p.find_parent(p.find_parent(a));
 				for(auto& k : p.find("HeadTail", "a", sh1)) {
