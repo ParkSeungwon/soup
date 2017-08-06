@@ -37,7 +37,7 @@ int main()
 		ss << get_url(string(link[0]) + link[1]);
 		Parser p;
 		p.read_html(ss);
-		for(int i=0; i<4; i++) {//0=today, 1yesterday
+		for(int i=0; i<2; i++) {//0=today, 1yesterday
 			for(auto& a : p.find("Text", get_date(i), nullptr, true)) {
 				auto sh1 = p.find_parent(p.find_parent(a));
 				for(auto& k : p.find("HeadTail", "a", sh1)) {
