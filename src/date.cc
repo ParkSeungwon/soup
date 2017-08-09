@@ -13,8 +13,8 @@ string get_date(unsigned n)
 	int month = 1 + ltm->tm_mon;
 	int day = ltm->tm_mday;
 	stringstream date; 
-	date << year << '-' << setw(2) << setfill('0') << month;
-	date << '-' << setw(2) << setfill('0') << day;
+	date << "\\s*" << year << '.' << setw(2) << setfill('0') << month;
+	date << '.' << setw(2) << setfill('0') << day << "\\s*";
 	return date.str();
 }
 	

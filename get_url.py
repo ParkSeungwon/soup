@@ -1,5 +1,6 @@
 import urllib as url
-import sys 
+import sys, ssl
 
-f = url.urlopen(sys.argv[1])
+context = ssl._create_unverified_context()
+f = url.urlopen(sys.argv[1], context=context)
 print f.read()
