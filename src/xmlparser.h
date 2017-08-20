@@ -4,7 +4,8 @@
 #include<regex>
 #include"tgraph.h"
 
-typedef std::shared_ptr<std::map<std::string, std::string>> sh_map;
+//typedef std::shared_ptr<std::map<std::string, std::string>> sh_map;
+using sh_map = std::shared_ptr<std::map<std::string, std::string>>;
 //<meta href="http://~~" name="" />
 //{{"Mono":"meta"}, {"href":"http://~~"}, {"name":""}}
 //first can be Mono, Text, HeadTail

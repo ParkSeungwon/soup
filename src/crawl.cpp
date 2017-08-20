@@ -22,7 +22,13 @@ const char* links[][2] = {
 
 string psstm(string command);
 string get_url(string url) {//' is needed, be careful : & -> run background
-	return psstm("python get_url.py '" + url + "'");
+	string command = R"(
+import urllib, sys, ssl
+context = ssl._create_unverified_context()
+f = urllib.urlopen(sys.argv[1], context=context)
+print f.read()
+)";
+	return psstm("python -c '" + command + "' '" + url + "'");
 }
 string get_date(unsigned n);
 
