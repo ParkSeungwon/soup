@@ -1,12 +1,20 @@
+#pragma once
+#include<string>
+#include<map>
+#include<vector>
+
 struct Sub
 {
 	std::string site, title, contents;
-	map<string, int> keyword;
+	std::map<std::string, int> keyword;
 };
 
 class Scrap
 {
 public:
 	Scrap(std::string site);
-	map<string, string> titleNcon
+	std::vector<Sub> v;
+
+private:
+	std::map<std::string, int> keyword(std::string txt);
 };

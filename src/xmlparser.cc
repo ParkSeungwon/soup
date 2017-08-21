@@ -98,7 +98,14 @@ void Parser::read_html(istream& is)
 {
 	insert_edge(nullptr, is);
 }
-	
+
+void Parser::read_html(string s)
+{
+	stringstream ss;
+	ss << s;
+	read_html(ss);
+}
+
 string Parser::to_str(sh_map shp) const
 {//parse from root if null 
 	if(!shp) shp = Graph::root->data;
@@ -138,6 +145,7 @@ void Parser::find_all(regex a, regex b, sh_map parent)
 {
 	auto* p = Graph::find(Graph::root, parent);
 	if(!p) p = Graph::root;
+	if(!p->edge) return;
 	for(Edge<sh_map>* e = p->edge; e; e = e->edge) {
 		for(const auto& sNs : *e->vertex->data)
 			if(regex_match(sNs.first, a) && regex_match(sNs.second, b))

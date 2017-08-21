@@ -15,6 +15,7 @@ class Parser : public Graph<sh_map>
 public:
 	std::string to_str(sh_map sh = nullptr) const;//translate child nodes to string
 	void read_html(std::istream& is);//construct graph by reading html stream
+	void read_html(std::string s);
 	sh_map find_parent(sh_map child) const;
 	std::vector<sh_map> find(std::string a, std::string b, sh_map parent = nullptr, bool like = false);
 	std::vector<sh_map> regex_find(std::string a, std::string b, sh_map parent = nullptr);
