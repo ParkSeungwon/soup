@@ -17,7 +17,7 @@ public:
 	void read_html(std::istream& is);//construct graph by reading html stream
 	sh_map find_parent(sh_map child) const;
 	std::vector<sh_map> find(std::string a, std::string b, sh_map parent = nullptr, bool like = false);
-	std::vector<sh_map> regex_find(std::regex a, std::regex b, sh_map parent = nullptr);
+	std::vector<sh_map> regex_find(std::string a, std::string b, sh_map parent = nullptr);
 
 private:
 	std::vector<sh_map> vec;

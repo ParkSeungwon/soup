@@ -20,20 +20,12 @@ const char* links[][2] = {
 	"/index.php?menu_code1=5&menu_code2=251"//linc공지
 };
 
-string psstm(string command);
-string get_url(string url) {//' is needed, be careful : & -> run background
-	string command = R"(
-import urllib, sys, ssl
-context = ssl._create_unverified_context()
-f = urllib.urlopen(sys.argv[1], context=context)
-print f.read()
-)";
-	return psstm("python -c '" + command + "' '" + url + "'");
-}
+string get_url(string url);
 string get_date(unsigned n);
 
-int main()
+int main(int ac, char** av)
 {//crawl today&yesterday's new post
+	int how_far_back = ac < 2 ? 1 : atoi(av[1]);
 	cout << "Content-type:text/html\r\n\r\n";//for browser recognition
 	cout << "<html><head><meta charset='utf-8' />";
 	cout << "<title>New Post from " << get_date(1) << "</title></head><body>";
@@ -42,8 +34,8 @@ int main()
 		ss << get_url(string(link[0]) + link[1]);
 		Parser p;
 		p.read_html(ss);
-		for(int i=0; i<2; i++) {//0=today, 1yesterday
-			for(auto& a : p.regex_find(regex{"Text"}, regex{get_date(i)})) {
+		for(int i=0; i<how_far_back; i++) {//0=today, 1yesterday
+			for(auto& a : p.regex_find("Text", get_date(i))) {
 				auto sh1 = p.find_parent(p.find_parent(a));
 				for(auto& k : p.find("HeadTail", "a", sh1)) {
 					if(k->find("href") != k->end()) {
