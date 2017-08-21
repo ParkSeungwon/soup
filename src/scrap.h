@@ -16,5 +16,5 @@ public:
 	std::vector<Sub> v;
 
 private:
-	std::map<std::string, int> keyword(std::string txt);
+	std::map<std::string, int> keyword(std::string title, std::string text);
 };

@@ -6,6 +6,7 @@
 #include<fcntl.h>//O_CRATE
 #include<unistd.h>//ftruccate
 #include<sys/mman.h>
+#include<iostream>
 #include<sys/shm.h>
 using namespace std;
 using namespace std::chrono;
@@ -26,10 +27,12 @@ string get_date(unsigned n)
 string psstm(string command);
 	
 string get_url(string url) {//' is needed, be careful : & -> run background
+	cout << "loading url : " << url << endl;
 	string command = R"(
 import urllib, sys, ssl
 context = ssl._create_unverified_context()
-f = urllib.urlopen(sys.argv[1], context=context)
+url = urllib.unquote(sys.argv[1])
+f = urllib.urlopen(url, context=context)
 print f.read()
 )";
 	return psstm("python -c '" + command + "' '" + url + "'");
