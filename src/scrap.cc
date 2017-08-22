@@ -31,7 +31,7 @@ vector<Sub> scrap(string site)
 	for(auto plink : p.regex_find("href", "http.+")) {
 		string title;
 		string link = (*plink)["href"];
-		for(auto ptxt : p.regex_find("Text", "\\S+", plink))
+		for(auto ptxt : p.regex_find("Text", ".*\\S.*", plink))
 			title += (*ptxt)["Text"] + ' ';
 		if(title != "") {
 			string txt = get_url(link);
