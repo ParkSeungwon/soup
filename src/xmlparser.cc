@@ -130,14 +130,17 @@ string Parser::to_str(sh_map shp) const
 }
 
 void Parser::find_all(regex a, regex b, sh_map parent)
-{
+{//warn : stack smashing, ulimit -s unlimited
 	auto* p = Graph::find(Graph::root, parent);
 	if(!p) p = Graph::root;
-	if(!p || !p->edge) return;
+	if(!p) return;
 	for(Edge<sh_map>* e = p->edge; e; e = e->edge) {
-		for(const auto& sNs : *e->vertex->data)
-			if(regex_match(sNs.first, a) && regex_match(sNs.second, b))
+		for(const auto& sNs : *e->vertex->data) {
+			if(regex_match(sNs.first, a) && regex_match(sNs.second, b)) {
 				vec.push_back(e->vertex->data);
+				break;
+			}
+		}
 		find_all(a, b, e->vertex->data);
 	}
 }	
@@ -145,8 +148,7 @@ void Parser::find_all(regex a, regex b, sh_map parent)
 vector<sh_map> Parser::regex_find(string a, string b, sh_map parent)
 {//find from parent, like true -> map[a] contains b, like false -> map[a] == b
 	assert(vec.empty());
-	regex e1{a}, e2{b};
-	find_all(e1, e2, parent);
+	find_all(regex{a}, regex{b}, parent);
 	return move(vec);
 }
 
