@@ -19,7 +19,7 @@ Scrap::Scrap(string site)
 			title += (*ptxt)["Text"] + ' ';
 		string txt = get_url(link);
 		v.push_back({link, title, txt, keyword(title, txt)});
-		if(n++ == 20) break;
+		if(++n == 20) break;
 	}
 }
 

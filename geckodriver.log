@@ -1,0 +1,48 @@
+1503365446673	geckodriver	INFO	Listening on 127.0.0.1:47589
+1503365447824	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1503365448558	Marionette	INFO	Enabled via --marionette
+1503365450435	Marionette	INFO	Listening on port 44226
+JavaScript error: chrome://marionette/content/server.js, line 337: NS_ERROR_SOCKET_ADDRESS_IN_USE: Component returned failure code: 0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE) [nsIServerSocket.initSpecialConnection]
+1503365450585	Marionette	WARN	TLS certificate errors will be ignored for this session
+1503365450640	Marionette	DEBUG	loaded listener.js
+1503365450664	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1503365450742	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1503365450742	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1503365451047	Marionette	DEBUG	Received DOM event "pageshow" for "https://www.daum.net/"
+1503365451262	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://www.daum.net/"
+JavaScript warning: https://s1.daumcdn.net/svc/original/U03/cssjs/jquery/jquery-1.10.2.min.js, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+1503365451600	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://logins.daum.net/accounts/toploginform.do"
+1503365451715	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://display.ad.daum.net/imp?output=html&slotid=DAN-soppcwfqiuzn&surl=https%3A%2F%2Fwww.daum.net%2F&eid=daumdn_DAN-soppcwfqiuzn_6784&containerid=daumdn_DAN-soppcwfqiuzn_6784"
+1503365451753	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://display.ad.daum.net/imp?output=html&slotid=DAN-1k1zi6towzodw&surl=https%3A%2F%2Fwww.daum.net%2F&eid=daumdn_DAN-1k1zi6towzodw_3777&containerid=daumdn_DAN-1k1zi6towzodw_3777"
+1503365451821	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://lithium.daum.net/provide/v3/shopbox"
+1503365451830	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://shop-redapi.daum.net/red-apigate/daumtop/v3/planmall"
+1503365451891	Marionette	DEBUG	Received DOM event "pageshow" for "https://logins.daum.net/accounts/toploginform.do"
+1503365451960	Marionette	DEBUG	Received DOM event "pageshow" for "https://display.ad.daum.net/imp?output=html&slotid=DAN-1k1zi6towzodw&surl=https%3A%2F%2Fwww.daum.net%2F&eid=daumdn_DAN-1k1zi6towzodw_3777&containerid=daumdn_DAN-1k1zi6towzodw_3777"
+1503365451961	Marionette	DEBUG	Received DOM event "pageshow" for "https://display.ad.daum.net/imp?output=html&slotid=DAN-soppcwfqiuzn&surl=https%3A%2F%2Fwww.daum.net%2F&eid=daumdn_DAN-soppcwfqiuzn_6784&containerid=daumdn_DAN-soppcwfqiuzn_6784"
+1503365452032	Marionette	DEBUG	Received DOM event "pageshow" for "https://shop-redapi.daum.net/red-apigate/daumtop/v3/planmall"
+1503365452064	Marionette	DEBUG	Received DOM event "pageshow" for "https://lithium.daum.net/provide/v3/shopbox"
+1503365452069	Marionette	DEBUG	Received DOM event "pageshow" for "https://www.daum.net/"
+1503366040630	geckodriver	INFO	Listening on 127.0.0.1:58466
+1503366041785	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox with args ["-marionette"]
+1503366042492	Marionette	INFO	Enabled via --marionette
+1503366044268	Marionette	INFO	Listening on port 43163
+1503366044404	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: chrome://marionette/content/server.js, line 337: NS_ERROR_SOCKET_ADDRESS_IN_USE: Component returned failure code: 0x804b0036 (NS_ERROR_SOCKET_ADDRESS_IN_USE) [nsIServerSocket.initSpecialConnection]
+1503366044456	Marionette	DEBUG	loaded listener.js
+1503366044486	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1503366044569	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1503366044570	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1503366044844	Marionette	DEBUG	Received DOM event "pageshow" for "https://www.daum.net/"
+1503366045103	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://www.daum.net/"
+JavaScript warning: https://s1.daumcdn.net/svc/original/U03/cssjs/jquery/jquery-1.10.2.min.js, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+1503366045465	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://logins.daum.net/accounts/toploginform.do"
+1503366045537	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://display.ad.daum.net/imp?output=html&slotid=DAN-1k1zi6towzodw&surl=https%3A%2F%2Fwww.daum.net%2F&eid=daumdn_DAN-1k1zi6towzodw_4176&containerid=daumdn_DAN-1k1zi6towzodw_4176"
+1503366045563	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://lithium.daum.net/provide/v3/shopbox"
+1503366045727	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://shop-redapi.daum.net/red-apigate/daumtop/v3/planmall"
+1503366045784	Marionette	DEBUG	Received DOM event "pageshow" for "https://logins.daum.net/accounts/toploginform.do"
+1503366045878	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://display.ad.daum.net/imp?output=html&slotid=DAN-soppcwfqiuzn&surl=https%3A%2F%2Fwww.daum.net%2F&eid=daumdn_DAN-soppcwfqiuzn_2657&containerid=daumdn_DAN-soppcwfqiuzn_2657"
+1503366045937	Marionette	DEBUG	Received DOM event "pageshow" for "https://display.ad.daum.net/imp?output=html&slotid=DAN-1k1zi6towzodw&surl=https%3A%2F%2Fwww.daum.net%2F&eid=daumdn_DAN-1k1zi6towzodw_4176&containerid=daumdn_DAN-1k1zi6towzodw_4176"
+1503366045941	Marionette	DEBUG	Received DOM event "pageshow" for "https://display.ad.daum.net/imp?output=html&slotid=DAN-soppcwfqiuzn&surl=https%3A%2F%2Fwww.daum.net%2F&eid=daumdn_DAN-soppcwfqiuzn_2657&containerid=daumdn_DAN-soppcwfqiuzn_2657"
+1503366046022	Marionette	DEBUG	Received DOM event "pageshow" for "https://lithium.daum.net/provide/v3/shopbox"
+1503366046024	Marionette	DEBUG	Received DOM event "pageshow" for "https://shop-redapi.daum.net/red-apigate/daumtop/v3/planmall"
+1503366046029	Marionette	DEBUG	Received DOM event "pageshow" for "https://www.daum.net/"

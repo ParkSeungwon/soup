@@ -28,14 +28,16 @@ string psstm(string command);
 	
 string get_url(string url) {//' is needed, be careful : & -> run background
 	cout << "loading url : " << url << endl;
-	string command = R"(
-import urllib, sys, ssl
-context = ssl._create_unverified_context()
-url = urllib.unquote(sys.argv[1])
-f = urllib.urlopen(url, context=context)
-print f.read()
-)";
-	return psstm("python -c '" + command + "' '" + url + "'");
+	string command = R"(python -c "
+import sys, time
+from selenium import webdriver
+url = sys.argv[1]
+drv = webdriver.PhantomJS()
+drv.get(url)
+time.sleep(3)
+print drv.page_source
+" ')";
+	return psstm(command + url + "'");
 }
 
 string analyse_document(string doc)
