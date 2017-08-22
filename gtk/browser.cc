@@ -20,7 +20,7 @@ WinMain::WinMain(vector<Sub>&& vsub)
 	sub = std::move(vsub);
 	for(auto& a : sub) for(auto& b : a.keyword) a.score += b.second * like[b.first];
 	auto it = remove_if(sub.begin(), sub.end(), 
-			[](const Sub& s) { return s.score <= 0;});
+			[](const Sub& s) { return s.score < 0;});
 	sub.erase(it, sub.end());
 
 	set_default_size(500, 1080);
@@ -32,7 +32,8 @@ WinMain::WinMain(vector<Sub>&& vsub)
 		vb.pack_start(bts[n], Gtk::PACK_SHRINK);
 		bts[n].set_label(a.title + ' ' + to_string(a.score));
 		bts[n].signal_clicked().connect(
-				bind(&WinMain::on_click, this, a.contents, a.site, n++));
+				bind(&WinMain::on_click, this, a.contents, a.site, n));
+		n++;
 	}
 	show_all_children();
 }
@@ -41,9 +42,8 @@ WinMain::~WinMain()
 {
 	delete [] bts;
 	for(int i=0; i<sub.size(); i++) {
-		if(choice.find(i) != choice.end())
-			for(auto& a : sub[i].keyword) like[a.first] += a.second;
-		else for(auto& a : sub[i].keyword) like[a.first] -= a.second;
+		int k = choice.find(i) == choice.end() ? -1 : 2;//if it is a chosen one
+		for(auto& a : sub[i].keyword) like[a.first] += a.second * k;
 	}
 	ofstream f("like.txt");
 	for(auto& a : like) f << a.first << ' ' << a.second << endl;

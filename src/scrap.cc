@@ -26,7 +26,7 @@ vector<Sub> scrap(string site)
 	Parser p;
 	p.read_html(get_url(site));
 
-	int n = 0;
+//	int n = 0;
 	vector<Sub> v;
 	for(auto plink : p.regex_find("href", "http.+")) {
 		string title;
@@ -35,7 +35,7 @@ vector<Sub> scrap(string site)
 			title += (*ptxt)["Text"] + ' ';
 		string txt = get_url(link);
 		v.push_back({link, title, txt, keyword(title, txt)});
-		if(n++ == 10) break;
+//		if(n++ == 30) break;
 	}
 	return v;
 }

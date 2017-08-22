@@ -1,6 +1,7 @@
 #include<iostream>
 #include<regex>
 #include<cassert>
+#include<exception>
 #include"xmlparser.h"
 using namespace std;
 
@@ -145,7 +146,7 @@ void Parser::find_all(regex a, regex b, sh_map parent)
 {
 	auto* p = Graph::find(Graph::root, parent);
 	if(!p) p = Graph::root;
-	if(!p->edge) return;
+	if(!p || !p->edge) return;
 	for(Edge<sh_map>* e = p->edge; e; e = e->edge) {
 		for(const auto& sNs : *e->vertex->data)
 			if(regex_match(sNs.first, a) && regex_match(sNs.second, b))
