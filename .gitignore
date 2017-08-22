@@ -1,4 +1,5 @@
 like.txt
+*.log
 *.x
 *~
 *.html
