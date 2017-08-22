@@ -37,7 +37,7 @@ int main(int ac, char** av)
 		for(int i=0; i<how_far_back; i++) {//0=today, 1yesterday
 			for(auto& a : p.regex_find("Text", get_date(i))) {
 				auto sh1 = p.find_parent(p.find_parent(a));
-				for(auto& k : p.find("HeadTail", "a", sh1)) {
+				for(auto& k : p.regex_find("HeadTail", "a", sh1)) {
 					if(k->find("href") != k->end()) {
 						while((*k)["href"].front() == '.')// ../bbs 
 							(*k)["href"] = (*k)["href"].substr(1);

@@ -129,19 +129,6 @@ string Parser::to_str(sh_map shp) const
 	return s;
 }
 
-void Parser::find_all(string a, string b, sh_map parent, bool like)
-{
-	auto* p = Graph::find(Graph::root, parent);
-	if(!p) p = Graph::root;
-	for(Edge<sh_map>* e = p->edge; e; e = e->edge) {
-		for(const auto& sNs : *e->vertex->data)
-			if((!like && sNs.first == a && sNs.second == b) ||//if same, if contain
-				(like && sNs.first == a && sNs.second.find(b) != string::npos)) 
-				vec.push_back(e->vertex->data);
-		find_all(a, b, e->vertex->data, like);
-	}
-}
-
 void Parser::find_all(regex a, regex b, sh_map parent)
 {
 	auto* p = Graph::find(Graph::root, parent);
@@ -154,13 +141,6 @@ void Parser::find_all(regex a, regex b, sh_map parent)
 		find_all(a, b, e->vertex->data);
 	}
 }	
-
-vector<sh_map> Parser::find(string a, string b, sh_map parent, bool like)
-{//find from parent, like true -> map[a] contains b, like false -> map[a] == b
-	assert(vec.empty());
-	find_all(a, b, parent, like);
-	return move(vec);
-}
 
 vector<sh_map> Parser::regex_find(string a, string b, sh_map parent)
 {//find from parent, like true -> map[a] contains b, like false -> map[a] == b
