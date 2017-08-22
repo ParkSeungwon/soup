@@ -31,8 +31,7 @@ string get_url(string url) {//' is needed, be careful : & -> run background
 	string command = R"(
 import urllib, sys, ssl
 context = ssl._create_unverified_context()
-url = urllib.unquote(sys.argv[1])
-f = urllib.urlopen(url, context=context)
+f = urllib.urlopen(sys.argv[1], context=context)
 print f.read()
 )";
 	return psstm("python -c '" + command + "' '" + url + "'");

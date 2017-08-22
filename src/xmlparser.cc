@@ -58,7 +58,7 @@ map<string, string> Parser::parse_bracket(std::istream& is)
 	string s;
 	try {
 		s = get_bracket(is);
-	} catch(const char* e) { cout << e;}
+	} catch(const char* e) { cerr << e;}
 	map<string, string> t;
 	if(s == "") return t;//eof
 	if(s[0] == '<') {

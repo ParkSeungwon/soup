@@ -1,6 +1,7 @@
 #pragma once
 #include<gtkmm.h>
 #include<webkit2/webkit2.h>
+#include<set>
 #include<memory>
 #include"scrap.h"
 
@@ -17,12 +18,19 @@ protected:
 class WinMain : public Gtk::Window
 {
 public:
-	WinMain(const std::vector<Sub>& v);
+	WinMain(std::vector<Sub>&& v);
 	virtual ~WinMain();
 
 protected:
+	Gtk::ScrolledWindow sc;
 	Gtk::VBox vb;
 	Gtk::Button* bts;
+	void on_click(std::string contents, std::string site, int n);
+
+private:
 	std::vector<std::shared_ptr<WinWeb>> shv;
-	void on_click(std::string contents, std::string site);
+	std::map<std::string, int> like;
+	std::vector<Sub> sub;
+	std::set<int> choice;
+	void read_like();
 };
