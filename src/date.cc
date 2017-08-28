@@ -29,12 +29,13 @@ string psstm(string command);
 string get_url(string url) {//' is needed, be careful : & -> run background
 	cout << "loading url : " << url << endl;
 	string command = R"(python -c "
-import sys
+import sys, signal
 from selenium import webdriver
 drv = webdriver.PhantomJS()
 drv.get(sys.argv[1])
-print drv.page_source
-drv.close()
+print (drv.page_source).encode('utf-8')
+drv.service.process.send_signal(signal.SIGTERM)
+drv.quit()
 " ')";
 	return psstm(command + url + "'");
 }
