@@ -1,16 +1,26 @@
 #pragma once
 #include<gtkmm.h>
 
-class ComTxt : public Gtk::ComboBoxText
+class TagCombo : public Gtk::ComboBoxText
 {
 public:
-	ComTxt();
+	TagCombo(Gtk::Label& label);
 
 protected:
 	virtual void on_changed();
-	static std::vector<std::string> tags_, attrs_, desc_;
+	static std::map<std::string, std::string> tagNdesc_;
+	
+private:
+	Gtk::Label& ref_label_;//a label to describe tag
 };
 
+class AttrCombo : public Gtk::ComboBoxText
+{
+public:
+	AttrCombo();
+
+protected:
+};
 class Cascade : public Gtk::Expander
 {
 public:
@@ -22,7 +32,7 @@ protected:
 	Gtk::VBox vbox_;
 	Gtk::Frame frame_;
 	Gtk::Label label_;
-	ComTxt firstcombo_;
+	TagCombo firstcombo_;
 };
 
 
