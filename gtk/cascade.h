@@ -8,6 +8,7 @@ public:
 
 protected:
 	virtual void on_changed();
+	static std::vector<std::string> tags_, attrs_, desc_;
 };
 
 class Cascade : public Gtk::Expander
@@ -20,6 +21,7 @@ protected:
 	Gtk::HBox hbox_;
 	Gtk::VBox vbox_;
 	Gtk::Frame frame_;
+	Gtk::Label label_;
 	ComTxt firstcombo_;
 };
 
