@@ -9,7 +9,7 @@ int main()
 {
 	Parser p;
 	stringstream ss;
-	ss << get_url("https://www.w3schools.com/TAGs/ref_attributes.asp");
+	ss << get_url("https://www.w3schools.com/bootstrap/bootstrap_ref_all_classes.asp");
 //	ss << get_url("https://www.w3schools.com/TAGs/default.asp");
 	p.read_html(ss);
 	vector<string> vs;
@@ -22,5 +22,5 @@ int main()
 			for(int i=0; i<n; i++) vs.push_back((*v[i])["Text"]);
 		}
 	}
-	serialize(vs, "attr_tag.ser");
+	serialize(vs, "boot.ser");
 }

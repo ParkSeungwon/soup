@@ -34,6 +34,9 @@ void TagCombo::on_changed()
 	ref_label_.set_text(tagNdesc_[get_active_text()]);
 }
 
+AttrCombo::AttrCombo(string tag, Gtk::Label& label) : TagCombo{label}
+{
+}
 Cascade::Cascade() : firstcombo_{label_}
 {
 	Gtk::Expander::add(frame_);

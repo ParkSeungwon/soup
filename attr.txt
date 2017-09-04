@@ -1,0 +1,346 @@
+accept input 
+Specifies the types of files that the server accepts (only for type="file")
+accept-charset form
+
+accesskey Global Attributes 
+Specifies a shortcut key to activate/focus an element
+action form 
+Specifies where to send the form-data when a form is submitted
+align Not supported in HTML 5. 
+Specifies the alignment according to surrounding elements. Use CSS instead
+alt area    img    input 
+Specifies an alternate text when the original element fails to display
+async script
+
+autocomplete form    input
+
+autofocus button    input    keygen    select    textarea
+
+autoplay audio    video 
+Specifies that the audio/video will start playing as soon as it is ready
+bgcolor Not supported in HTML 5. 
+Specifies the background color of an element. Use CSS instead
+border Not supported in HTML 5. 
+Specifies the width of the border of an element. Use CSS instead
+challenge keygen
+
+charset meta    script 
+Specifies the character encoding
+checked input
+
+cite blockquote   del    ins   q 
+Specifies a URL which explains the quote/deleted/inserted text
+class Global Attributes
+
+color Not supported in HTML 5. 
+Specifies the text color of an element. Use CSS instead
+cols textarea 
+Specifies the visible width of a text area
+colspan td    th 
+Specifies the number of columns a table cell should span
+content meta 
+Gives the value associated with the http-equiv or name attribute
+contenteditable Global Attributes 
+Specifies whether the content of an element is editable or not
+contextmenu Global Attributes
+
+controls audio    video
+
+coords area 
+Specifies the coordinates of the area
+data object 
+Specifies the URL of the resource to be used by the object
+data-* Global Attributes 
+Used to store custom data private to the page or application
+datetime del    ins    time 
+Specifies the date and time
+default track
+
+defer script
+
+dir Global Attributes 
+Specifies the text direction for the content in an element
+dirname input    textarea 
+Specifies that the text direction will be submitted
+disabled button    fieldset    input    keygen   optgroup   option    select textarea 
+Specifies that the specified element/group of elements should be disabled
+download a    area
+
+draggable Global Attributes 
+Specifies whether an element is draggable or not
+dropzone Global Attributes 
+Specifies whether the dragged data is copied  moved  or linked  when dropped
+enctype form
+
+for label   output 
+Specifies which form element(s) a label/calculation is bound to
+form button    fieldset    input    keygen   label   meter    object output    select    textarea 
+Specifies the name of the form the element belongs to
+formaction button    input
+
+headers td    th 
+Specifies one or more headers cells a cell is related to
+height canvas   embed    iframe    img    input    object    video 
+Specifies the height of the element
+hidden Global Attributes 
+Specifies that an element is not yet  or is no longer  relevant
+high meter 
+Specifies the range that is considered to be a high value
+href a    area    base    link 
+Specifies the URL of the page the link goes to
+hreflang a    area    link 
+Specifies the language of the linked document
+http-equiv meta 
+Provides an HTTP header for the information/value of the content attribute
+id Global Attributes 
+Specifies a unique id for an element
+ismap img 
+Specifies an image as a server-side image-map
+keytype keygen 
+Specifies the security algorithm of the key
+kind track 
+Specifies the kind of text track
+label track    option    optgroup 
+Specifies the title of the text track
+lang Global Attributes 
+Specifies the language of the element's content
+list input
+
+loop audio    video
+
+low meter 
+Specifies the range that is considered to be a low value
+max input    meter    progress 
+Specifies the maximum value
+maxlength input    textarea 
+Specifies the maximum number of characters allowed in an element
+media a    area    link    source    style 
+Specifies what media/device the linked document is optimized for
+method form 
+Specifies the HTTP method to use when sending form-data
+min input    meter 
+Specifies a minimum value
+multiple input    select 
+Specifies that a user can enter more than one value
+muted video    audio 
+Specifies that the audio output of the video should be muted
+name button    fieldset    form    iframe    input    keygen    map    meta object    output    param    select    textarea 
+Specifies the name of the element
+novalidate form 
+Specifies that the form should not be validated when submitted
+onabort audio    embed    img    object    video 
+Script to be run on abort
+onafterprint body 
+Script to be run after the document is printed
+onbeforeprint body 
+Script to be run before the document is printed
+onbeforeunload body 
+Script to be run when the document is about to be unloaded
+onblur All visible elements. 
+Script to be run when the element loses focus
+oncanplay audio    embed    object    video
+
+oncanplaythrough audio    video
+
+onchange All visible elements. 
+Script to be run when the value of the element is changed
+onclick All visible elements. 
+Script to be run when the element is being clicked
+oncontextmenu All visible elements. 
+Script to be run when a context menu is triggered
+oncopy All visible elements. 
+Script to be run when the content of the element is being copied
+oncuechange track
+Script to be run when the cue changes in a  track element
+oncut All visible elements. 
+Script to be run when the content of the element is being cut
+ondblclick All visible elements. 
+Script to be run when the element is being double-clicked
+ondrag All visible elements. 
+Script to be run when the element is being dragged
+ondragend All visible elements. 
+Script to be run at the end of a drag operation
+ondragenter All visible elements. 
+Script to be run when an element has been dragged to a valid drop target
+ondragleave All visible elements. 
+Script to be run when an element leaves a valid drop target
+ondragover All visible elements. 
+Script to be run when an element is being dragged over a valid drop target
+ondragstart All visible elements. 
+Script to be run at the start of a drag operation
+ondrop All visible elements. 
+Script to be run when dragged element is being dropped
+ondurationchange audio    video 
+Script to be run when the length of the media changes
+onemptied audio    video
+
+onended audio    video
+
+onerror audio    body    embed    img    object    script    style    video 
+Script to be run when an error occurs
+onfocus All visible elements. 
+Script to be run when the element gets focus
+onhashchange body 
+Script to be run when there has been changes to the anchor part of the a URL
+oninput All visible elements. 
+Script to be run when the element gets user input
+oninvalid All visible elements. 
+Script to be run when the element is invalid
+onkeydown All visible elements. 
+Script to be run when a user is pressing a key
+onkeypress All visible elements. 
+Script to be run when a user presses a key
+onkeyup All visible elements. 
+Script to be run when a user releases a key
+onload body    iframe    img    input    link    script    style 
+Script to be run when the element is finished loading
+onloadeddata audio    video 
+Script to be run when media data is loaded
+onloadedmetadata audio    video 
+Script to be run when meta data (like dimensions and duration) are loaded
+onloadstart audio    video
+
+onmousedown All visible elements. 
+Script to be run when a mouse button is pressed down on an element
+onmousemove All visible elements. 
+Script to be run as long as the&nbsp; mouse pointer is moving over an element
+onmouseout All visible elements. 
+Script to be run when a mouse pointer moves out of an element
+onmouseover All visible elements. 
+Script to be run when a mouse pointer moves over an element
+onmouseup All visible elements. 
+Script to be run when a mouse button is released over an element
+onmousewheel All visible elements. 
+Script to be run when a mouse wheel is being scrolled over an element
+onoffline body 
+Script to be run when the browser starts to work offline
+ononline body 
+Script to be run when the browser starts to work online
+onpagehide body 
+Script to be run when a user navigates away from a page
+onpageshow body 
+Script to be run when a user navigates to a page
+onpaste All visible elements. 
+Script to be run when the user pastes some content in an element
+onpause audio    video
+
+onplay audio    video 
+Script to be run when the media is ready to start playing
+onplaying audio    video 
+Script to be run when the media actually has started playing.
+onpopstate body 
+Script to be run when the window's history changes.
+onprogress audio    video
+
+onratechange audio    video
+
+onreset form 
+Script to be run when a reset button in a form is clicked.
+onresize body 
+Script to be run when the browser window is being resized.
+onscroll All visible elements. 
+Script to be run when an element's scrollbar is being scrolled
+onsearch input
+
+onseeked audio    video
+
+onseeking audio    video
+
+onselect All visible elements. 
+Script to be run when the element gets selected
+onshow menu 
+Script to be run when a menu element is shown as a context menu
+onstalled audio    video
+
+onstorage body 
+Script to be run when a Web Storage area is updated
+onsubmit form 
+Script to be run when a form is submitted
+onsuspend audio    video
+
+ontimeupdate audio    video
+
+ontoggle details 
+Script to be run when the user opens or closes the details element
+onunload body
+
+onvolumechange audio    video 
+Script to be run each time the volume of a video/audio has been changed
+onwaiting audio    video
+
+onwheel All visible elements. 
+Script to be run when the mouse wheel rolls up or down over an element
+open details 
+Specifies that the details should be visible (open) to the user
+optimum meter 
+Specifies what value is the optimal value for the gauge
+pattern input
+
+placeholder input    textarea 
+Specifies a short hint that describes the expected value of the element
+poster video
+
+preload audio    video
+
+readonly input    textarea 
+Specifies that the element is read-only
+rel a    area    link
+
+required input    select    textarea 
+Specifies that the element must be filled out before submitting the form
+reversed ol 
+Specifies that the list order should be descending (9 8 7...)
+rows textarea 
+Specifies the visible number of lines in a text area
+rowspan td    th 
+Specifies the number of rows a table cell should span
+sandbox iframe 
+Enables an extra set of restrictions for the content in an iframe
+scope th
+
+scoped style
+
+selected option 
+Specifies that an option should be pre-selected when the page loads
+shape area 
+Specifies the shape of the area
+size input    select
+
+sizes img    link source 
+Specifies the size of the linked resource
+span col    colgroup 
+Specifies the number of columns to span
+spellcheck Global Attributes
+
+src audio    embed    iframe    img    input    script    source    track video 
+Specifies the URL of the media file
+srcdoc iframe 
+Specifies the HTML content of the page to show in the iframe
+srclang track 
+Specifies the language of the track text data (required if kind="subtitles")
+srcset img    source 
+Specifies the URL of the image to use in different situations
+start ol 
+Specifies the start value of an ordered list
+step input 
+Specifies the legal number intervals for an input field
+style Global Attributes 
+Specifies an inline CSS style for an element
+tabindex Global Attributes 
+Specifies the tabbing order of an element
+target a    area    base    form
+
+title Global Attributes 
+Specifies extra information about an element
+translate Global Attributes 
+Specifies whether the content of an element should be translated or not
+type button    embed    input    link    menu    object    script source    style 
+Specifies the type of element
+usemap img    object 
+Specifies an image as a client-side image-map
+value button    input    li    option meter    progress    param 
+Specifies the value of the element
+width canvas   embed    iframe    img    input    object    video 
+Specifies the width of the element
+wrap textarea
+
