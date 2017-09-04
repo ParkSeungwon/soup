@@ -22,6 +22,8 @@ public:
 private:
 	static std::map<std::string, std::vector<std::string>> tagNattrs_;
 	static std::map<std::string, std::string> attrNdesc_;
+	static std::map<std::string, std::string> bootNdesc_;
+	static std::map<std::string, std::string> tagNboot_;
 };
 
 class Cascade : public Gtk::Expander

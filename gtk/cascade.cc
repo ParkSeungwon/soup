@@ -5,7 +5,6 @@
 #include"util.h"
 using namespace std;
 
-static vector<string> t, d, a;
 static map<string, string> m, m1;
 static map<string, vector<string>> m2;
 static int init() 
