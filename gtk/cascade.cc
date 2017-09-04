@@ -6,24 +6,33 @@
 using namespace std;
 
 static vector<string> t, d, a;
-static map<string, string> m;
+static map<string, string> m, m1;
+static map<string, vector<string>> m2;
 static int init() 
 {//modulized initialization
-	auto v = deserialize("tags.ser");
-	for(int i=0; i<v.size(); i+=2) m[v[i]] = v[i+1];
-	ifstream f("count.txt");
-	int n;
-	vector<int> vi;
-	while(f >> n) vi.push_back(n);
-	auto v2 = deserialize("attr_tag.ser");
+	string s1, s2;
+	ifstream f1("tags.txt");
+	while(getline(f1, s1)) {
+		getline(f1, s2);
+		m[s1] = s2;
+	}
+	ifstream f2("attr.txt");
+	while(getline(f2, s1)) {
+		getline(f2, s2);
+		stringstream ss;
+		ss << s1;
+		ss >> s1;
+		m1[s1] = s2;
+		while(ss >> s2) m2[s1].push_back(s2);
+	}
 
 	return 0;
 }
 static int k = init();
 
 map<string, string> TagCombo::tagNdesc_ = move(m);
-//vector<string> TagCombo::attrs_;// = deserialize("attr_tag.ser");
-
+map<string, string> AttrCombo::attrNdesc_ = move(m1);
+map<string, vector<string>> AttrCombo::tagNattrs_ = move(m2);
 
 TagCombo::TagCombo(Gtk::Label& label) : Gtk::ComboBoxText(true), ref_label_(label)
 {
