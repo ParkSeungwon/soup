@@ -1,0 +1,479 @@
+{
+	"a" : 
+	{
+		"div" : 
+		{
+			"div" : 13,
+			"h3" : 74,
+			"img" : 74,
+			"span" : 109,
+			"strong" : 33
+		},
+		"dl" : 
+		{
+			"dd" : 2,
+			"dt" : 2
+		},
+		"em" : 
+		{
+			"span" : 2
+		},
+		"h3" : 
+		{
+			"span" : 9
+		},
+		"p" : 
+		{
+			"img" : 7,
+			"span" : 1
+		},
+		"span" : 
+		{
+			"br" : 2,
+			"em" : 5,
+			"img" : 127,
+			"span" : 60
+		},
+		"ul" : 
+		{
+			"li" : 19
+		}
+	},
+	"article" : 
+	{
+		"div" : 
+		{
+			"div" : 4
+		}
+	},
+	"body" : 
+	{
+		"div" : 
+		{
+			"a" : 11,
+			"div" : 1,
+			"header" : 1,
+			"hr" : 1,
+			"main" : 1,
+			"script" : 2
+		},
+		"script" : 
+		{
+			"script" : 1
+		}
+	},
+	"button" : 
+	{
+		"span" : 
+		{
+			"span" : 1
+		}
+	},
+	"div" : 
+	{
+		"a" : 
+		{
+			"div" : 20,
+			"dl" : 2,
+			"em" : 2,
+			"h3" : 2,
+			"img" : 12,
+			"p" : 15,
+			"span" : 42,
+			"strong" : 4,
+			"ul" : 1
+		},
+		"article" : 
+		{
+			"div" : 1
+		},
+		"button" : 
+		{
+			"img" : 9,
+			"span" : 29
+		},
+		"div" : 
+		{
+			"a" : 47,
+			"button" : 103,
+			"div" : 280,
+			"dl" : 6,
+			"em" : 20,
+			"footer" : 1,
+			"form" : 4,
+			"h1" : 1,
+			"h2" : 17,
+			"h3" : 24,
+			"h4" : 9,
+			"iframe" : 3,
+			"img" : 6,
+			"input" : 2,
+			"ins" : 2,
+			"label" : 2,
+			"main" : 1,
+			"ol" : 4,
+			"p" : 23,
+			"script" : 7,
+			"section" : 10,
+			"span" : 147,
+			"strong" : 9,
+			"textarea" : 1,
+			"ul" : 79
+		},
+		"dl" : 
+		{
+			"dd" : 30,
+			"dt" : 7
+		},
+		"em" : 
+		{
+			"span" : 20
+		},
+		"footer" : 
+		{
+			"a" : 1,
+			"ul" : 2
+		},
+		"form" : 
+		{
+			"div" : 7,
+			"fieldset" : 2,
+			"input" : 14,
+			"p" : 1
+		},
+		"h1" : 
+		{
+			"a" : 1
+		},
+		"h2" : 
+		{
+			"a" : 2,
+			"span" : 1
+		},
+		"h3" : 
+		{
+			"a" : 27
+		},
+		"header" : 
+		{
+			"div" : 4,
+			"h1" : 1,
+			"ul" : 1
+		},
+		"ins" : 
+		{
+			"iframe" : 2
+		},
+		"main" : 
+		{
+			"div" : 3,
+			"footer" : 1,
+			"hr" : 1
+		},
+		"ol" : 
+		{
+			"li" : 35
+		},
+		"p" : 
+		{
+			"a" : 1
+		},
+		"script" : 
+		{
+			"div" : 2,
+			"script" : 1
+		},
+		"section" : 
+		{
+			"a" : 7,
+			"button" : 2,
+			"div" : 10,
+			"h2" : 2,
+			"p" : 1,
+			"ul" : 2
+		},
+		"small" : 
+		{
+			"a" : 1
+		},
+		"span" : 
+		{
+			"a" : 61,
+			"img" : 12,
+			"p" : 6,
+			"span" : 68,
+			"strong" : 4
+		},
+		"strong" : 
+		{
+			"a" : 1,
+			"span" : 1
+		},
+		"ul" : 
+		{
+			"li" : 457
+		}
+	},
+	"dl" : 
+	{
+		"dd" : 
+		{
+			"a" : 30
+		},
+		"dt" : 
+		{
+			"span" : 4
+		}
+	},
+	"em" : 
+	{
+		"span" : 
+		{
+			"span" : 16
+		}
+	},
+	"fieldset" : 
+	{
+		"div" : 
+		{
+			"button" : 1,
+			"div" : 1,
+			"input" : 1
+		}
+	},
+	"footer" : 
+	{
+		"a" : 
+		{
+			"span" : 2
+		},
+		"div" : 
+		{
+			"a" : 2,
+			"div" : 3,
+			"h2" : 1,
+			"small" : 1
+		},
+		"ul" : 
+		{
+			"li" : 9
+		}
+	},
+	"form" : 
+	{
+		"div" : 
+		{
+			"button" : 3,
+			"div" : 1,
+			"input" : 5,
+			"label" : 2,
+			"script" : 1
+		},
+		"fieldset" : 
+		{
+			"div" : 2,
+			"legend" : 2
+		}
+	},
+	"h1" : 
+	{
+		"a" : 
+		{
+			"img" : 1
+		}
+	},
+	"h3" : 
+	{
+		"a" : 
+		{
+			"span" : 26
+		}
+	},
+	"head" : 
+	{
+		"body" : 
+		{
+			"div" : 2
+		},
+		"script" : 
+		{
+			"meta" : 1,
+			"script" : 1
+		}
+	},
+	"header" : 
+	{
+		"div" : 
+		{
+			"div" : 4
+		},
+		"h1" : 
+		{
+			"a" : 2
+		},
+		"ul" : 
+		{
+			"div" : 1,
+			"li" : 1
+		}
+	},
+	"html" : 
+	{
+		"head" : 
+		{
+			"link" : 1,
+			"meta" : 11,
+			"script" : 3,
+			"style" : 1,
+			"title" : 1
+		}
+	},
+	"li" : 
+	{
+		"a" : 
+		{
+			"div" : 111,
+			"h3" : 89,
+			"img" : 171,
+			"span" : 299
+		},
+		"div" : 
+		{
+			"a" : 8,
+			"div" : 52,
+			"h3" : 5,
+			"ul" : 12
+		},
+		"h2" : 
+		{
+			"a" : 9
+		},
+		"li" : 
+		{
+			"a" : 1,
+			"div" : 4,
+			"ul" : 2
+		},
+		"section" : 
+		{
+			"form" : 1
+		},
+		"select" : 
+		{
+			"option" : 53
+		},
+		"span" : 
+		{
+			"a" : 2,
+			"img" : 30,
+			"span" : 19
+		},
+		"ul" : 
+		{
+			"li" : 4
+		}
+	},
+	"main" : 
+	{
+		"div" : 
+		{
+			"article" : 1,
+			"div" : 10,
+			"script" : 1
+		},
+		"footer" : 
+		{
+			"div" : 1
+		}
+	},
+	"ol" : 
+	{
+		"li" : 
+		{
+			"a" : 5,
+			"div" : 30
+		}
+	},
+	"script" : 
+	{
+		"body" : 
+		{
+			"script" : 1
+		},
+		"div" : 
+		{
+			"a" : 5,
+			"div" : 2,
+			"header" : 1,
+			"ul" : 1
+		},
+		"script" : 
+		{
+			"div" : 1,
+			"link" : 8,
+			"meta" : 12,
+			"noscript" : 1,
+			"script" : 14,
+			"style" : 1,
+			"title" : 1
+		}
+	},
+	"section" : 
+	{
+		"a" : 
+		{
+			"h3" : 3
+		},
+		"div" : 
+		{
+			"a" : 2,
+			"button" : 11,
+			"div" : 3,
+			"h3" : 2,
+			"img" : 4,
+			"p" : 6,
+			"section" : 2,
+			"ul" : 5
+		},
+		"form" : 
+		{
+			"button" : 1,
+			"div" : 1
+		},
+		"ul" : 
+		{
+			"li" : 6
+		}
+	},
+	"span" : 
+	{
+		"a" : 
+		{
+			"span" : 10
+		},
+		"span" : 
+		{
+			"span" : 2
+		}
+	},
+	"ul" : 
+	{
+		"li" : 
+		{
+			"a" : 404,
+			"button" : 1,
+			"div" : 11,
+			"em" : 19,
+			"h2" : 10,
+			"iframe" : 1,
+			"label" : 1,
+			"li" : 6,
+			"p" : 8,
+			"script" : 1,
+			"section" : 1,
+			"select" : 1,
+			"span" : 108,
+			"strong" : 19
+		}
+	}
+}

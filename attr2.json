@@ -1,0 +1,394 @@
+{
+	"a" : 
+	{
+		"alt" : 1,
+		"aria-expanded" : 1,
+		"aria-haspopup" : 1,
+		"aria-label" : 91,
+		"class" : 301,
+		"data-aop" : 1,
+		"data-degreetype" : 1,
+		"data-home" : 1,
+		"data-id" : 75,
+		"data-loc" : 1,
+		"data-m" : 75,
+		"data-media" : 8,
+		"data-pg" : 2,
+		"data-pid" : 2,
+		"data-piitxt" : 9,
+		"data-tiaramapper" : 3,
+		"href" : 630,
+		"id" : 7,
+		"piiurl" : 9,
+		"rel" : 10,
+		"role" : 3,
+		"tabindex" : 23,
+		"target" : 67,
+		"title" : 7
+	},
+	"article" : 
+	{
+		"class" : 1,
+		"id" : 1
+	},
+	"body" : 
+	{
+		"class" : 1,
+		"style" : 1
+	},
+	"button" : 
+	{
+		"aria-label" : 11,
+		"class" : 108,
+		"data-aop" : 4,
+		"data-id" : 107,
+		"data-m" : 107,
+		"data-stripe-id" : 11,
+		"data-tab-id" : 7,
+		"disabled" : 1,
+		"id" : 17,
+		"name" : 3,
+		"role" : 43,
+		"tabindex" : 23,
+		"title" : 34,
+		"type" : 25,
+		"value" : 2
+	},
+	"dd" : 
+	{
+		"class" : 2,
+		"id" : 2
+	},
+	"div" : 
+	{
+		"aria-hidden" : 23,
+		"aria-label" : 10,
+		"aria-labelledby" : 4,
+		"aria-live" : 3,
+		"class" : 467,
+		"data-ad" : 3,
+		"data-adjs" : 3,
+		"data-aop" : 67,
+		"data-bind" : 4,
+		"data-cache-duration" : 2,
+		"data-deferred" : 1,
+		"data-emptygif" : 1,
+		"data-id" : 87,
+		"data-index" : 1,
+		"data-m" : 87,
+		"data-me-url" : 1,
+		"data-message" : 1,
+		"data-module-deferred" : 2,
+		"data-module-id" : 40,
+		"data-more" : 1,
+		"data-pdp-dependent" : 1,
+		"data-region" : 6,
+		"data-region-param" : 1,
+		"data-section-id" : 17,
+		"data-sign-in-url" : 1,
+		"data-sign-out-url" : 1,
+		"data-signedout-image-url" : 4,
+		"data-sso-dependent" : 2,
+		"data-tab" : 3,
+		"data-tabbed-infopane" : 1,
+		"data-tiaramapper" : 13,
+		"id" : 60,
+		"role" : 25,
+		"style" : 8,
+		"tabindex" : 6
+	},
+	"dl" : 
+	{
+		"class" : 8
+	},
+	"dt" : 
+	{
+		"class" : 1
+	},
+	"em" : 
+	{
+		"class" : 46
+	},
+	"footer" : 
+	{
+		"class" : 1,
+		"data-id" : 1,
+		"data-m" : 1,
+		"data-region" : 1,
+		"id" : 1,
+		"role" : 1
+	},
+	"form" : 
+	{
+		"accept-charset" : 2,
+		"action" : 5,
+		"class" : 2,
+		"data-action" : 1,
+		"data-bing-action-uri" : 1,
+		"data-form-code" : 1,
+		"data-id" : 2,
+		"data-m" : 2,
+		"id" : 3,
+		"method" : 5,
+		"name" : 1,
+		"role" : 2,
+		"target" : 1
+	},
+	"h1" : 
+	{
+		"class" : 2
+	},
+	"h2" : 
+	{
+		"class" : 16,
+		"id" : 9,
+		"tabindex" : 5
+	},
+	"h3" : 
+	{
+		"class" : 25,
+		"id" : 22
+	},
+	"h4" : 
+	{
+		"class" : 9
+	},
+	"head" : 
+	{
+		"data-client-settings" : 1,
+		"data-info" : 1,
+		"data-js" : 1,
+		"data-xd-id" : 1
+	},
+	"header" : 
+	{
+		"class" : 2,
+		"data-id" : 1,
+		"data-m" : 1,
+		"data-region" : 1,
+		"id" : 2,
+		"role" : 1
+	},
+	"hr" : 
+	{
+		"class" : 2
+	},
+	"iframe" : 
+	{
+		"allowtransparency" : 3,
+		"border" : 2,
+		"frameborder" : 6,
+		"height" : 5,
+		"hspace" : 2,
+		"id" : 5,
+		"marginheight" : 5,
+		"marginwidth" : 5,
+		"name" : 4,
+		"scrolling" : 6,
+		"src" : 6,
+		"style" : 4,
+		"tabindex" : 1,
+		"title" : 3,
+		"vspace" : 2,
+		"width" : 5
+	},
+	"img" : 
+	{
+		"alt" : 453,
+		"class" : 173,
+		"data-icon" : 1,
+		"data-src" : 440,
+		"height" : 111,
+		"id" : 1,
+		"src" : 453,
+		"title" : 96,
+		"width" : 81
+	},
+	"input" : 
+	{
+		"accesskey" : 2,
+		"aria-autocomplete" : 2,
+		"aria-expanded" : 1,
+		"aria-label" : 2,
+		"aria-owns" : 1,
+		"autocapitalize" : 2,
+		"autocomplete" : 5,
+		"autocorrect" : 3,
+		"class" : 3,
+		"data-auto-suggest-settings" : 1,
+		"data-autosuggestdelay" : 1,
+		"data-bind" : 1,
+		"data-id" : 3,
+		"data-m" : 3,
+		"data-seemoretext" : 1,
+		"id" : 10,
+		"maxlength" : 2,
+		"name" : 21,
+		"placeholder" : 2,
+		"role" : 1,
+		"size" : 1,
+		"spellcheck" : 2,
+		"tabindex" : 1,
+		"title" : 3,
+		"type" : 22,
+		"value" : 11
+	},
+	"ins" : 
+	{
+		"class" : 2,
+		"data-ad-frame-id" : 2,
+		"data-ad-frame-name" : 2,
+		"data-ad-height" : 2,
+		"data-ad-init" : 2,
+		"data-ad-status" : 2,
+		"data-ad-type" : 2,
+		"data-ad-unit" : 2,
+		"data-ad-width" : 2,
+		"id" : 2,
+		"style" : 2
+	},
+	"label" : 
+	{
+		"for" : 3,
+		"form" : 2
+	},
+	"legend" : 
+	{
+		"class" : 2
+	},
+	"li" : 
+	{
+		"aria-checked" : 5,
+		"aria-hidden" : 30,
+		"aria-label" : 5,
+		"class" : 312,
+		"data-abchenabled" : 1,
+		"data-aop" : 21,
+		"data-cp" : 30,
+		"data-date" : 30,
+		"data-id" : 313,
+		"data-m" : 279,
+		"data-module-id" : 1,
+		"data-tiaramapper" : 4,
+		"id" : 4,
+		"role" : 22,
+		"tabindex" : 10
+	},
+	"link" : 
+	{
+		"href" : 9,
+		"media" : 1,
+		"rel" : 9,
+		"title" : 1,
+		"type" : 2
+	},
+	"main" : 
+	{
+		"data-id" : 1,
+		"data-m" : 1,
+		"data-region" : 1,
+		"id" : 2,
+		"role" : 1
+	},
+	"meta" : 
+	{
+		"charset" : 2,
+		"content" : 22,
+		"name" : 11,
+		"property" : 11
+	},
+	"ol" : 
+	{
+		"class" : 4
+	},
+	"option" : 
+	{
+		"data-mkt" : 53,
+		"data-mkt-url" : 53,
+		"selected" : 1
+	},
+	"p" : 
+	{
+		"class" : 44,
+		"id" : 1,
+		"title" : 6
+	},
+	"script" : 
+	{
+		"async" : 3,
+		"charset" : 2,
+		"class" : 3,
+		"crossorigin" : 2,
+		"src" : 9,
+		"type" : 6
+	},
+	"section" : 
+	{
+		"data-aop" : 2,
+		"data-id" : 1,
+		"data-m" : 1,
+		"id" : 2,
+		"role" : 1
+	},
+	"select" : 
+	{
+		"aria-label" : 1,
+		"data-id" : 1,
+		"data-m" : 1,
+		"id" : 1,
+		"rel" : 1,
+		"role" : 1
+	},
+	"small" : 
+	{
+		"class" : 1
+	},
+	"span" : 
+	{
+		"aria-hidden" : 43,
+		"aria-live" : 1,
+		"class" : 837,
+		"data-bind" : 1,
+		"id" : 2,
+		"role" : 1,
+		"title" : 2
+	},
+	"strong" : 
+	{
+		"aria-hidden" : 1,
+		"class" : 68,
+		"id" : 3
+	},
+	"style" : 
+	{
+		"type" : 1
+	},
+	"textarea" : 
+	{
+		"aria-live" : 1,
+		"id" : 1,
+		"maxlength" : 1,
+		"placeholder" : 1
+	},
+	"ul" : 
+	{
+		"aria-label" : 1,
+		"class" : 72,
+		"data-aop" : 36,
+		"data-dhp_cookie_days" : 1,
+		"data-facebook-button-width" : 1,
+		"data-facebook-like-url" : 1,
+		"data-id" : 37,
+		"data-m" : 37,
+		"data-module-id" : 2,
+		"data-selected" : 1,
+		"data-sso-dependent" : 1,
+		"data-tiaramapper" : 4,
+		"data-twitter-button-width" : 1,
+		"data-twitter-follow-screen-name" : 1,
+		"data-twitter-show-screen-name" : 1,
+		"id" : 3,
+		"role" : 3,
+		"style" : 2
+	}
+}
