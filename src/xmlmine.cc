@@ -1,6 +1,7 @@
 #include<exception>
 #include<json/json.h>
 #include"xmlmine.h"
+#include"util.h"
 using namespace std;
 
 XMLMine::XMLMine() 
@@ -16,12 +17,10 @@ XMLMine::XMLMine()
 			attr2_[a][b] = v[a][b].asInt();
 		f2 >> v;
 		for(auto& a : v.getMemberNames()) for(auto& b : v[a].getMemberNames()) 
-			for(auto& c : v[a][b].getMemberNames()) 
-				tag3_[a][b][c] = v[a][b][c].asInt();
+			for(auto& c : v[a][b].getMemberNames()) tag3_[a][b][c] = v[a][b][c].asInt();
 		f4 >> v;
 		for(auto& a : v.getMemberNames()) for(auto& b : v[a].getMemberNames()) 
-			for(auto& c : v[a][b].getMemberNames()) 
-				attr3_[a][b][c] = v[a][b][c].asInt();
+			for(auto& c : v[a][b].getMemberNames()) attr3_[a][b][c] = v[a][b][c].asInt();
 	} catch(ifstream::failure& e) { 
 		cerr << e.what() << endl; 
 	} catch(exception& e) {
@@ -31,7 +30,6 @@ XMLMine::XMLMine()
 
 XMLMine::~XMLMine()
 {
-	ofstream f1{"tag2.json"}, f2{"tag3.json"}, f3{"attr2.json"}, f4{"attr3.json"};
 	Json::Value tag2, attr2, tag3, attr3;
 	for(auto& a : tag2_) for(auto& b : a.second) tag2[a.first][b.first] = b.second;
 	for(auto& a : attr2_) for(auto& b : a.second) attr2[a.first][b.first] = b.second;
@@ -39,12 +37,26 @@ XMLMine::~XMLMine()
 		tag3[a.first][b.first][c.first] = c.second;
 	for(auto& a : attr3_) for(auto& b : a.second) for(auto& c : b.second) 
 		attr3[a.first][b.first][c.first] = c.second;
+	ofstream f1{"tag2.json"}, f2{"tag3.json"}, f3{"attr2.json"}, f4{"attr3.json"};
 	f1 << tag2; f2 << tag3; f3 << attr2; f4 << attr3;
 }
 
 void XMLMine::read_html(istream& is)
 {
+	Graph::gfree(Graph::root); Graph::root = nullptr;
 	Parser::read_html(is);
+	mine();
+}
+
+void XMLMine::read_html(string s)
+{
+	Graph::gfree(Graph::root); Graph::root = nullptr;
+	Parser::read_html(s);
+	mine();
+}
+
+void XMLMine::mine() 
+{
 	for(auto* v = Graph::root->vertex; v != nullptr; v = v->vertex) {
 		if(v->data->begin()->first == "Text") continue;
 		string tag = v->data->begin()->second;
@@ -54,8 +66,18 @@ void XMLMine::read_html(istream& is)
 			attr2_[tag][it->first]++;
 			attr3_[tag][it->first][it->second]++;
 		}
+		for(char& c : tag) c = tolower(c);
 		if(tag == "body" || tag == "head") continue;
 		tag3_[find_parent(parent)->begin()->second][parent->begin()->second][tag]++;
 	}
 }
+
+void XMLMine::mine(string site, int depth)
+{
+	if(!depth) return;
+	read_html(get_url(site));
+	for(auto& a : regex_find("HeadTail", "a")) mine((*a)["href"], depth-1);
+}
+
+
 

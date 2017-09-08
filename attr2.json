@@ -1,35 +1,59 @@
 {
+	"" : 
+	{
+		"HeadTail" : 1,
+		"class" : 1,
+		"data-cart" : 1,
+		"href" : 1,
+		"type" : 1
+	},
 	"a" : 
 	{
 		"alt" : 1,
 		"aria-expanded" : 1,
 		"aria-haspopup" : 1,
 		"aria-label" : 91,
-		"class" : 301,
+		"class" : 417,
 		"data-aop" : 1,
+		"data-content" : 33,
 		"data-degreetype" : 1,
+		"data-dismiss" : 1,
 		"data-home" : 1,
+		"data-html" : 33,
 		"data-id" : 75,
+		"data-initialized" : 33,
 		"data-loc" : 1,
 		"data-m" : 75,
 		"data-media" : 8,
+		"data-original-title" : 63,
 		"data-pg" : 2,
 		"data-pid" : 2,
 		"data-piitxt" : 9,
+		"data-placement" : 33,
+		"data-template" : 33,
 		"data-tiaramapper" : 3,
-		"href" : 630,
-		"id" : 7,
+		"data-toggle" : 4,
+		"data-username" : 33,
+		"href" : 805,
+		"id" : 10,
+		"itemprop" : 8,
+		"onclick" : 2,
 		"piiurl" : 9,
-		"rel" : 10,
-		"role" : 3,
+		"rel" : 77,
+		"role" : 4,
 		"tabindex" : 23,
-		"target" : 67,
-		"title" : 7
+		"target" : 114,
+		"title" : 80,
+		"type" : 1
 	},
 	"article" : 
 	{
 		"class" : 1,
 		"id" : 1
+	},
+	"b" : 
+	{
+		"class" : 45
 	},
 	"body" : 
 	{
@@ -38,20 +62,24 @@
 	},
 	"button" : 
 	{
-		"aria-label" : 11,
-		"class" : 108,
+		"aria-hidden" : 1,
+		"aria-label" : 13,
+		"class" : 113,
 		"data-aop" : 4,
+		"data-dismiss" : 3,
 		"data-id" : 107,
 		"data-m" : 107,
 		"data-stripe-id" : 11,
 		"data-tab-id" : 7,
+		"data-target" : 1,
+		"data-toggle" : 1,
 		"disabled" : 1,
 		"id" : 17,
-		"name" : 3,
+		"name" : 4,
 		"role" : 43,
 		"tabindex" : 23,
 		"title" : 34,
-		"type" : 25,
+		"type" : 30,
 		"value" : 2
 	},
 	"dd" : 
@@ -61,16 +89,17 @@
 	},
 	"div" : 
 	{
-		"aria-hidden" : 23,
+		"aria-hidden" : 25,
 		"aria-label" : 10,
 		"aria-labelledby" : 4,
 		"aria-live" : 3,
-		"class" : 467,
+		"class" : 814,
 		"data-ad" : 3,
 		"data-adjs" : 3,
 		"data-aop" : 67,
 		"data-bind" : 4,
 		"data-cache-duration" : 2,
+		"data-collaborators" : 15,
 		"data-deferred" : 1,
 		"data-emptygif" : 1,
 		"data-id" : 87,
@@ -81,6 +110,8 @@
 		"data-module-deferred" : 2,
 		"data-module-id" : 40,
 		"data-more" : 1,
+		"data-my-order" : 15,
+		"data-no-turbolink" : 20,
 		"data-pdp-dependent" : 1,
 		"data-region" : 6,
 		"data-region-param" : 1,
@@ -92,10 +123,13 @@
 		"data-tab" : 3,
 		"data-tabbed-infopane" : 1,
 		"data-tiaramapper" : 13,
-		"id" : 60,
-		"role" : 25,
-		"style" : 8,
-		"tabindex" : 6
+		"id" : 72,
+		"itemscope" : 2,
+		"itemtype" : 2,
+		"notice-type" : 1,
+		"role" : 29,
+		"style" : 13,
+		"tabindex" : 8
 	},
 	"dl" : 
 	{
@@ -120,45 +154,52 @@
 	},
 	"form" : 
 	{
-		"accept-charset" : 2,
-		"action" : 5,
-		"class" : 2,
+		"accept-charset" : 6,
+		"action" : 9,
+		"class" : 4,
 		"data-action" : 1,
 		"data-bing-action-uri" : 1,
 		"data-form-code" : 1,
 		"data-id" : 2,
 		"data-m" : 2,
+		"data-remote" : 3,
+		"html" : 3,
 		"id" : 3,
-		"method" : 5,
+		"itemprop" : 1,
+		"itemscope" : 1,
+		"itemtype" : 1,
+		"method" : 9,
 		"name" : 1,
 		"role" : 2,
 		"target" : 1
 	},
 	"h1" : 
 	{
-		"class" : 2
+		"class" : 4
 	},
 	"h2" : 
 	{
-		"class" : 16,
+		"class" : 26,
 		"id" : 9,
 		"tabindex" : 5
 	},
 	"h3" : 
 	{
-		"class" : 25,
+		"class" : 29,
 		"id" : 22
 	},
 	"h4" : 
 	{
-		"class" : 9
+		"class" : 13
 	},
 	"head" : 
 	{
 		"data-client-settings" : 1,
 		"data-info" : 1,
 		"data-js" : 1,
-		"data-xd-id" : 1
+		"data-xd-id" : 1,
+		"itemscope" : 1,
+		"itemtype" : 1
 	},
 	"header" : 
 	{
@@ -171,38 +212,53 @@
 	},
 	"hr" : 
 	{
-		"class" : 2
+		"class" : 6
+	},
+	"i" : 
+	{
+		"alt" : 1,
+		"aria-label" : 1,
+		"class" : 84,
+		"data-dismiss" : 1
 	},
 	"iframe" : 
 	{
-		"allowtransparency" : 3,
+		"allowfullscreen" : 3,
+		"allowtransparency" : 6,
+		"aria-hidden" : 1,
 		"border" : 2,
-		"frameborder" : 6,
+		"class" : 1,
+		"data-widget-id" : 1,
+		"frameborder" : 9,
 		"height" : 5,
 		"hspace" : 2,
-		"id" : 5,
+		"id" : 9,
 		"marginheight" : 5,
 		"marginwidth" : 5,
-		"name" : 4,
-		"scrolling" : 6,
-		"src" : 6,
-		"style" : 4,
-		"tabindex" : 1,
-		"title" : 3,
+		"name" : 6,
+		"scrolling" : 9,
+		"src" : 8,
+		"style" : 8,
+		"tabindex" : 2,
+		"title" : 7,
 		"vspace" : 2,
 		"width" : 5
 	},
 	"img" : 
 	{
-		"alt" : 453,
-		"class" : 173,
+		"alt" : 473,
+		"border" : 1,
+		"class" : 207,
 		"data-icon" : 1,
+		"data-retina" : 15,
 		"data-src" : 440,
-		"height" : 111,
+		"height" : 113,
 		"id" : 1,
-		"src" : 453,
+		"itemprop" : 1,
+		"src" : 519,
+		"style" : 1,
 		"title" : 96,
-		"width" : 81
+		"width" : 83
 	},
 	"input" : 
 	{
@@ -214,24 +270,27 @@
 		"autocapitalize" : 2,
 		"autocomplete" : 5,
 		"autocorrect" : 3,
-		"class" : 3,
+		"checked" : 1,
+		"class" : 14,
 		"data-auto-suggest-settings" : 1,
 		"data-autosuggestdelay" : 1,
 		"data-bind" : 1,
 		"data-id" : 3,
 		"data-m" : 3,
 		"data-seemoretext" : 1,
-		"id" : 10,
+		"data-toggle" : 1,
+		"id" : 21,
+		"itemprop" : 1,
 		"maxlength" : 2,
-		"name" : 21,
-		"placeholder" : 2,
+		"name" : 40,
+		"placeholder" : 9,
 		"role" : 1,
 		"size" : 1,
 		"spellcheck" : 2,
 		"tabindex" : 1,
 		"title" : 3,
-		"type" : 22,
-		"value" : 11
+		"type" : 41,
+		"value" : 23
 	},
 	"ins" : 
 	{
@@ -249,6 +308,7 @@
 	},
 	"label" : 
 	{
+		"class" : 1,
 		"for" : 3,
 		"form" : 2
 	},
@@ -261,7 +321,7 @@
 		"aria-checked" : 5,
 		"aria-hidden" : 30,
 		"aria-label" : 5,
-		"class" : 312,
+		"class" : 324,
 		"data-abchenabled" : 1,
 		"data-aop" : 21,
 		"data-cp" : 30,
@@ -269,18 +329,25 @@
 		"data-id" : 313,
 		"data-m" : 279,
 		"data-module-id" : 1,
+		"data-no-turbolink" : 3,
 		"data-tiaramapper" : 4,
 		"id" : 4,
+		"itemprop" : 1,
+		"itemscope" : 1,
+		"itemtype" : 1,
 		"role" : 22,
 		"tabindex" : 10
 	},
 	"link" : 
 	{
-		"href" : 9,
-		"media" : 1,
-		"rel" : 9,
-		"title" : 1,
-		"type" : 2
+		"data-turbolinks-track" : 2,
+		"href" : 18,
+		"itemprop" : 1,
+		"media" : 2,
+		"rel" : 18,
+		"sizes" : 1,
+		"title" : 2,
+		"type" : 4
 	},
 	"main" : 
 	{
@@ -292,14 +359,22 @@
 	},
 	"meta" : 
 	{
-		"charset" : 2,
-		"content" : 22,
-		"name" : 11,
-		"property" : 11
+		"charset" : 4,
+		"content" : 50,
+		"http-equiv" : 1,
+		"itemprop" : 3,
+		"name" : 31,
+		"property" : 15
+	},
+	"nav" : 
+	{
+		"class" : 1
 	},
 	"ol" : 
 	{
-		"class" : 4
+		"class" : 5,
+		"itemscope" : 1,
+		"itemtype" : 1
 	},
 	"option" : 
 	{
@@ -309,18 +384,21 @@
 	},
 	"p" : 
 	{
-		"class" : 44,
+		"class" : 55,
 		"id" : 1,
 		"title" : 6
 	},
 	"script" : 
 	{
-		"async" : 3,
-		"charset" : 2,
+		"async" : 13,
+		"charset" : 3,
 		"class" : 3,
 		"crossorigin" : 2,
-		"src" : 9,
-		"type" : 6
+		"data-site-id" : 1,
+		"data-turbolinks-track" : 1,
+		"id" : 3,
+		"src" : 28,
+		"type" : 18
 	},
 	"section" : 
 	{
@@ -345,11 +423,12 @@
 	},
 	"span" : 
 	{
-		"aria-hidden" : 43,
+		"aria-hidden" : 45,
 		"aria-live" : 1,
-		"class" : 837,
+		"class" : 861,
 		"data-bind" : 1,
 		"id" : 2,
+		"itemprop" : 2,
 		"role" : 1,
 		"title" : 2
 	},
@@ -361,7 +440,7 @@
 	},
 	"style" : 
 	{
-		"type" : 1
+		"type" : 3
 	},
 	"textarea" : 
 	{
@@ -370,10 +449,14 @@
 		"maxlength" : 1,
 		"placeholder" : 1
 	},
+	"title" : 
+	{
+		"itemprop" : 1
+	},
 	"ul" : 
 	{
 		"aria-label" : 1,
-		"class" : 72,
+		"class" : 82,
 		"data-aop" : 36,
 		"data-dhp_cookie_days" : 1,
 		"data-facebook-button-width" : 1,
@@ -381,6 +464,7 @@
 		"data-id" : 37,
 		"data-m" : 37,
 		"data-module-id" : 2,
+		"data-no-turbolink" : 1,
 		"data-selected" : 1,
 		"data-sso-dependent" : 1,
 		"data-tiaramapper" : 4,
