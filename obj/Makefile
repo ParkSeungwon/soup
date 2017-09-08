@@ -7,4 +7,4 @@ WEBLIB = $(shell pkg-config webkit2gtk-3.0 --libs)
 all : $(EXE)
 
 ../%.x : %.x $(OBJ)
-	$(CC) -o $@ $< $(OBJ) -lzezeon -lrt -lpthread $(GTKLIB) $(WEBLIB)
+	$(CC) -o $@ $< $(OBJ) -lzezeon -lrt -lpthread $(GTKLIB) $(WEBLIB) -ljsoncpp
