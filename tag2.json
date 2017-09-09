@@ -1,249 +1,355 @@
 {
 	"a" : 
 	{
-		"div" : 182,
-		"dl" : 2,
-		"em" : 2,
-		"h3" : 109,
-		"i" : 44,
-		"img" : 186,
-		"p" : 45,
-		"span" : 400,
-		"strong" : 4,
-		"ul" : 1
+		"b" : 39,
+		"code" : 1,
+		"div" : 211,
+		"h3" : 45,
+		"h4" : 28,
+		"i" : 271,
+		"img" : 242,
+		"meta" : 3,
+		"p" : 88,
+		"s" : 25,
+		"small" : 6,
+		"span" : 780,
+		"strong" : 3,
+		"svg" : 167,
+		"time" : 137,
+		"tt" : 1
 	},
 	"article" : 
 	{
-		"div" : 1
+		"br" : 1,
+		"div" : 81,
+		"h2" : 11,
+		"h3" : 3,
+		"header" : 81,
+		"hr" : 81,
+		"ol" : 1,
+		"p" : 23,
+		"pre" : 1,
+		"ul" : 6
+	},
+	"aside" : 
+	{
+		"div" : 18,
+		"form" : 9,
+		"h3" : 9,
+		"style" : 9,
+		"ul" : 9
 	},
 	"b" : 
 	{
-		"a" : 30,
-		"br" : 2,
-		"i" : 30
+		"a" : 101,
+		"br" : 6,
+		"i" : 90,
+		"span" : 2
 	},
 	"body" : 
 	{
-		"div" : 6,
-		"nav" : 1,
-		"script" : 1
+		"a" : 5,
+		"div" : 59,
+		"footer" : 3,
+		"header" : 3,
+		"main" : 3,
+		"nav" : 4,
+		"script" : 44
 	},
 	"button" : 
 	{
-		"i" : 1,
-		"img" : 9,
-		"span" : 34
+		"div" : 372,
+		"i" : 7,
+		"span" : 465,
+		"svg" : 6
 	},
-	"dd" : 
+	"code" : 
 	{
-		"a" : 30
+		"span" : 128
 	},
 	"div" : 
 	{
-		"" : 1,
-		"a" : 180,
+		"" : 3,
+		"a" : 962,
 		"article" : 1,
-		"b" : 49,
-		"br" : 3,
-		"button" : 123,
-		"div" : 647,
-		"dl" : 6,
-		"em" : 20,
-		"footer" : 1,
-		"form" : 8,
-		"h1" : 5,
-		"h2" : 28,
-		"h3" : 108,
-		"h4" : 18,
-		"header" : 2,
-		"hr" : 6,
-		"i" : 9,
-		"iframe" : 5,
-		"img" : 138,
-		"input" : 11,
-		"ins" : 2,
-		"label" : 4,
+		"aside" : 36,
+		"b" : 161,
+		"br" : 31,
+		"button" : 514,
+		"div" : 3939,
+		"em" : 1,
+		"fieldset" : 3,
+		"figure" : 9,
+		"footer" : 12,
+		"form" : 49,
+		"h1" : 32,
+		"h2" : 56,
+		"h3" : 184,
+		"h4" : 45,
+		"h5" : 35,
+		"header" : 3,
+		"hr" : 66,
+		"i" : 54,
+		"iframe" : 38,
+		"img" : 231,
+		"include-fragment" : 2,
+		"input" : 76,
+		"label" : 36,
+		"li" : 30,
 		"main" : 2,
-		"meta" : 2,
-		"ol" : 6,
-		"p" : 45,
-		"script" : 16,
-		"section" : 12,
-		"small" : 1,
-		"span" : 263,
-		"strong" : 42,
-		"textarea" : 1,
-		"ul" : 105
-	},
-	"dl" : 
-	{
-		"dd" : 32,
-		"dt" : 9
-	},
-	"dt" : 
-	{
-		"span" : 4
-	},
-	"em" : 
-	{
-		"span" : 22
+		"meta" : 8,
+		"nav" : 24,
+		"noscript" : 1,
+		"object" : 1,
+		"ol" : 16,
+		"p" : 577,
+		"poll-include-fragment" : 30,
+		"pre" : 1,
+		"relative-time" : 30,
+		"script" : 20,
+		"section" : 7,
+		"small" : 63,
+		"span" : 1706,
+		"strong" : 1,
+		"style" : 16,
+		"svg" : 18,
+		"table" : 4,
+		"textarea" : 6,
+		"ul" : 170
 	},
 	"fieldset" : 
 	{
-		"div" : 2,
-		"legend" : 2
+		"div" : 3,
+		"legend" : 3
+	},
+	"figure" : 
+	{
+		"pre" : 9
 	},
 	"footer" : 
 	{
 		"a" : 1,
-		"div" : 1,
-		"ul" : 2
+		"div" : 22,
+		"p" : 2,
+		"ul" : 5
 	},
 	"form" : 
 	{
-		"button" : 1,
-		"div" : 11,
-		"fieldset" : 2,
-		"input" : 29,
-		"label" : 1,
-		"p" : 1
+		"button" : 4,
+		"div" : 74,
+		"input" : 143,
+		"label" : 9,
+		"script" : 6,
+		"span" : 3
 	},
 	"h1" : 
 	{
-		"a" : 4
+		"a" : 91,
+		"span" : 2,
+		"strong" : 1,
+		"svg" : 1
 	},
 	"h2" : 
 	{
-		"a" : 21,
-		"span" : 1
+		"a" : 34,
+		"span" : 3
 	},
 	"h3" : 
 	{
-		"a" : 27,
-		"b" : 4,
-		"div" : 15,
-		"span" : 9
+		"a" : 44,
+		"b" : 14,
+		"br" : 10,
+		"div" : 45,
+		"small" : 10,
+		"span" : 30,
+		"strong" : 4,
+		"svg" : 1
+	},
+	"h4" : 
+	{
+		"a" : 7
+	},
+	"h5" : 
+	{
+		"span" : 11,
+		"strong" : 8
 	},
 	"head" : 
 	{
-		"body" : 1,
-		"link" : 5,
-		"meta" : 18,
-		"script" : 15,
+		"body" : 6,
+		"link" : 141,
+		"meta" : 236,
+		"noscript" : 3,
+		"script" : 99,
 		"style" : 2,
-		"title" : 2
+		"title" : 21
 	},
 	"header" : 
 	{
-		"div" : 4,
-		"h1" : 1,
+		"a" : 2,
+		"div" : 86,
+		"h1" : 88,
+		"nav" : 1,
 		"ul" : 1
 	},
 	"html" : 
 	{
-		"body" : 1,
-		"head" : 4
+		"body" : 32,
+		"head" : 57
 	},
-	"ins" : 
+	"i" : 
 	{
-		"iframe" : 2
+		"u" : 1
 	},
 	"label" : 
 	{
-		"input" : 1,
-		"span" : 1
+		"a" : 2,
+		"b" : 6,
+		"input" : 26,
+		"p" : 3,
+		"span" : 10,
+		"textarea" : 3
 	},
 	"li" : 
 	{
-		"a" : 463,
-		"b" : 1,
-		"button" : 1,
-		"div" : 45,
-		"em" : 19,
-		"h2" : 10,
-		"h3" : 2,
-		"iframe" : 1,
-		"label" : 1,
-		"li" : 6,
-		"meta" : 1,
-		"p" : 8,
-		"script" : 1,
-		"section" : 1,
-		"select" : 1,
-		"span" : 109,
-		"strong" : 19,
-		"ul" : 4
+		"a" : 825,
+		"b" : 3,
+		"button" : 124,
+		"code" : 26,
+		"div" : 240,
+		"h2" : 3,
+		"h3" : 8,
+		"iframe" : 10,
+		"meta" : 3,
+		"p" : 15,
+		"span" : 15,
+		"strong" : 11,
+		"svg" : 1,
+		"ul" : 25
 	},
 	"main" : 
 	{
-		"div" : 3,
+		"article" : 81,
+		"div" : 6,
 		"footer" : 1,
-		"hr" : 1
+		"header" : 7,
+		"nav" : 6,
+		"script" : 2
 	},
 	"nav" : 
 	{
-		"div" : 1
+		"a" : 3,
+		"div" : 24,
+		"h1" : 6,
+		"span" : 3,
+		"ul" : 13
+	},
+	"object" : 
+	{
+		"embed" : 1,
+		"param" : 9
 	},
 	"ol" : 
 	{
-		"li" : 39
+		"li" : 83
 	},
 	"p" : 
 	{
-		"a" : 5,
-		"b" : 1,
-		"br" : 5,
-		"img" : 17,
-		"span" : 2
+		"a" : 357,
+		"b" : 6,
+		"br" : 30,
+		"button" : 12,
+		"code" : 54,
+		"em" : 2,
+		"iframe" : 3,
+		"img" : 36,
+		"small" : 2,
+		"span" : 12,
+		"strong" : 15
+	},
+	"pre" : 
+	{
+		"code" : 10
 	},
 	"script" : 
 	{
-		"body" : 2,
-		"div" : 10,
-		"iframe" : 2,
-		"link" : 13,
-		"meta" : 33,
-		"noscript" : 2,
-		"script" : 28,
-		"style" : 3,
-		"title" : 2
+		"a" : 3,
+		"body" : 18,
+		"div" : 121,
+		"iframe" : 18,
+		"input" : 9,
+		"link" : 296,
+		"meta" : 175,
+		"noscript" : 4,
+		"script" : 246,
+		"style" : 43,
+		"title" : 9
 	},
 	"section" : 
 	{
-		"a" : 7,
-		"button" : 2,
-		"div" : 10,
-		"form" : 1,
-		"h2" : 2,
-		"p" : 1,
-		"ul" : 2
-	},
-	"select" : 
-	{
-		"option" : 53
+		"main" : 7
 	},
 	"small" : 
 	{
-		"a" : 1
+		"a" : 62
 	},
 	"span" : 
 	{
-		"a" : 68,
-		"br" : 2,
-		"em" : 5,
-		"img" : 169,
-		"p" : 6,
-		"span" : 171,
-		"strong" : 4
+		"a" : 597,
+		"b" : 148,
+		"button" : 40,
+		"div" : 32,
+		"i" : 324,
+		"img" : 14,
+		"relative-time" : 1,
+		"s" : 13,
+		"span" : 1244,
+		"strong" : 73,
+		"svg" : 3,
+		"time-ago" : 38
 	},
 	"strong" : 
 	{
-		"a" : 1,
-		"span" : 1
+		"a" : 2
+	},
+	"svg" : 
+	{
+		"path" : 238,
+		"title" : 4
+	},
+	"table" : 
+	{
+		"tbody" : 4,
+		"tfoot" : 3,
+		"thead" : 3
+	},
+	"tbody" : 
+	{
+		"tr" : 69
+	},
+	"td" : 
+	{
+		"a" : 3,
+		"img" : 38,
+		"span" : 114,
+		"svg" : 39
+	},
+	"tfoot" : 
+	{
+		"tr" : 3
+	},
+	"thead" : 
+	{
+		"tr" : 3
+	},
+	"tr" : 
+	{
+		"td" : 244,
+		"th" : 9
 	},
 	"ul" : 
 	{
-		"div" : 2,
-		"li" : 551
+		"div" : 3,
+		"li" : 1020
 	}
 }

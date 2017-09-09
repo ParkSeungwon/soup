@@ -1,478 +1,736 @@
 {
 	"" : 
 	{
-		"HeadTail" : 1,
-		"class" : 1,
-		"data-cart" : 1,
-		"href" : 1,
-		"type" : 1
+		"HeadTail" : 3,
+		"class" : 3,
+		"data-cart" : 3,
+		"href" : 3,
+		"type" : 3
 	},
 	"a" : 
 	{
-		"alt" : 1,
+		"aria-describedby" : 3,
 		"aria-expanded" : 1,
-		"aria-haspopup" : 1,
-		"aria-label" : 91,
-		"class" : 417,
-		"data-aop" : 1,
-		"data-content" : 33,
-		"data-degreetype" : 1,
-		"data-dismiss" : 1,
-		"data-home" : 1,
-		"data-html" : 33,
-		"data-id" : 75,
-		"data-initialized" : 33,
-		"data-loc" : 1,
-		"data-m" : 75,
-		"data-media" : 8,
-		"data-original-title" : 63,
-		"data-pg" : 2,
-		"data-pid" : 2,
-		"data-piitxt" : 9,
-		"data-placement" : 33,
-		"data-template" : 33,
-		"data-tiaramapper" : 3,
-		"data-toggle" : 4,
-		"data-username" : 33,
-		"href" : 805,
-		"id" : 10,
-		"itemprop" : 8,
-		"onclick" : 2,
-		"piiurl" : 9,
-		"rel" : 77,
-		"role" : 4,
-		"tabindex" : 23,
-		"target" : 114,
-		"title" : 80,
-		"type" : 1
+		"aria-haspopup" : 7,
+		"aria-hidden" : 27,
+		"aria-label" : 14,
+		"class" : 1588,
+		"data-aria-label-part" : 3,
+		"data-cart" : 2,
+		"data-chrome" : 1,
+		"data-component" : 9,
+		"data-component-context" : 6,
+		"data-content" : 99,
+		"data-conversation-id" : 75,
+		"data-dismiss" : 3,
+		"data-ds" : 18,
+		"data-element" : 9,
+		"data-error-text" : 10,
+		"data-expanded-url" : 50,
+		"data-filter-placeholder" : 2,
+		"data-ga-click" : 92,
+		"data-hotkey" : 5,
+		"data-html" : 99,
+		"data-id" : 10,
+		"data-initialized" : 99,
+		"data-jsx" : 57,
+		"data-lang-code" : 126,
+		"data-mentioned-user-id" : 18,
+		"data-name" : 79,
+		"data-nav" : 29,
+		"data-octo-click" : 47,
+		"data-octo-dimensions" : 47,
+		"data-original-title" : 200,
+		"data-permission-text" : 10,
+		"data-pjax" : 55,
+		"data-placement" : 105,
+		"data-pre-embedded" : 13,
+		"data-query-source" : 45,
+		"data-reactid" : 57,
+		"data-remote" : 11,
+		"data-resolved-url-large" : 6,
+		"data-search-query" : 18,
+		"data-selected-links" : 14,
+		"data-shortcut" : 6,
+		"data-sigil" : 1,
+		"data-skip-pjax" : 81,
+		"data-tab-filter" : 2,
+		"data-template" : 99,
+		"data-toggle" : 34,
+		"data-twitter-extracted-i15049318393393405" : 1,
+		"data-url" : 16,
+		"data-user-id" : 107,
+		"data-username" : 99,
+		"data-widget-id" : 1,
+		"dir" : 115,
+		"height" : 1,
+		"href" : 2992,
+		"id" : 72,
+		"itemprop" : 67,
+		"onclick" : 34,
+		"rel" : 949,
+		"role" : 48,
+		"style" : 6,
+		"tabindex" : 20,
+		"target" : 294,
+		"title" : 916,
+		"type" : 3
 	},
 	"article" : 
 	{
-		"class" : 1,
-		"id" : 1
+		"class" : 82,
+		"id" : 81,
+		"itemprop" : 1
+	},
+	"aside" : 
+	{
+		"class" : 36,
+		"id" : 36
 	},
 	"b" : 
 	{
-		"class" : 45
+		"class" : 159
 	},
 	"body" : 
 	{
-		"class" : 1,
-		"style" : 1
+		"class" : 20,
+		"data-fouc-class-names" : 3,
+		"data-spy" : 1,
+		"data-target" : 1,
+		"dir" : 3,
+		"id" : 1,
+		"style" : 10,
+		"tabindex" : 1
 	},
 	"button" : 
 	{
-		"aria-hidden" : 1,
-		"aria-label" : 13,
-		"class" : 113,
-		"data-aop" : 4,
-		"data-dismiss" : 3,
-		"data-id" : 107,
-		"data-m" : 107,
-		"data-stripe-id" : 11,
-		"data-tab-id" : 7,
-		"data-target" : 1,
-		"data-toggle" : 1,
-		"disabled" : 1,
-		"id" : 17,
-		"name" : 4,
-		"role" : 43,
-		"tabindex" : 23,
-		"title" : 34,
-		"type" : 30,
-		"value" : 2
+		"aria-controls" : 2,
+		"aria-describedby" : 186,
+		"aria-expanded" : 8,
+		"aria-haspopup" : 67,
+		"aria-hidden" : 4,
+		"aria-label" : 17,
+		"class" : 688,
+		"data-action" : 1,
+		"data-copied-hint" : 1,
+		"data-dismiss" : 10,
+		"data-ga-click" : 1,
+		"data-hotkey" : 1,
+		"data-list-id" : 3,
+		"data-modal" : 186,
+		"data-no-toggle" : 1,
+		"data-original-title" : 5,
+		"data-placement" : 6,
+		"data-sigil" : 4,
+		"data-target" : 17,
+		"data-toggle" : 17,
+		"id" : 18,
+		"name" : 14,
+		"style" : 3,
+		"tabindex" : 9,
+		"title" : 11,
+		"type" : 667,
+		"value" : 13
 	},
-	"dd" : 
+	"code" : 
 	{
-		"class" : 2,
-		"id" : 2
+		"class" : 69,
+		"data-lang" : 9
 	},
 	"div" : 
 	{
-		"aria-hidden" : 25,
-		"aria-label" : 10,
-		"aria-labelledby" : 4,
+		"aria-describedby" : 2,
+		"aria-hidden" : 16,
+		"aria-label" : 62,
+		"aria-labelledby" : 6,
 		"aria-live" : 3,
-		"class" : 814,
-		"data-ad" : 3,
-		"data-adjs" : 3,
-		"data-aop" : 67,
-		"data-bind" : 4,
-		"data-cache-duration" : 2,
-		"data-collaborators" : 15,
-		"data-deferred" : 1,
-		"data-emptygif" : 1,
-		"data-id" : 87,
-		"data-index" : 1,
-		"data-m" : 87,
-		"data-me-url" : 1,
-		"data-message" : 1,
-		"data-module-deferred" : 2,
-		"data-module-id" : 40,
-		"data-more" : 1,
-		"data-my-order" : 15,
-		"data-no-turbolink" : 20,
-		"data-pdp-dependent" : 1,
-		"data-region" : 6,
-		"data-region-param" : 1,
-		"data-section-id" : 17,
-		"data-sign-in-url" : 1,
-		"data-sign-out-url" : 1,
-		"data-signedout-image-url" : 4,
-		"data-sso-dependent" : 2,
-		"data-tab" : 3,
-		"data-tabbed-infopane" : 1,
-		"data-tiaramapper" : 13,
-		"id" : 72,
-		"itemscope" : 2,
-		"itemtype" : 2,
-		"notice-type" : 1,
-		"role" : 29,
-		"style" : 13,
-		"tabindex" : 8
-	},
-	"dl" : 
-	{
-		"class" : 8
-	},
-	"dt" : 
-	{
-		"class" : 1
+		"class" : 5185,
+		"data-amplify-content-id" : 23,
+		"data-amplify-playlist-url" : 23,
+		"data-animtype" : 2,
+		"data-aria-label-part" : 25,
+		"data-at-shortcutkeys" : 3,
+		"data-autoid" : 1,
+		"data-captcha-class" : 1,
+		"data-card-name" : 26,
+		"data-card-url" : 23,
+		"data-card2-name" : 23,
+		"data-card2-type" : 24,
+		"data-collaborators" : 45,
+		"data-conversation-id" : 75,
+		"data-creator-id" : 23,
+		"data-disclosure-type" : 62,
+		"data-dominant-color" : 14,
+		"data-element-context" : 17,
+		"data-feedback-token" : 10,
+		"data-feedback-type" : 62,
+		"data-filterable-for" : 2,
+		"data-filterable-type" : 2,
+		"data-follows-you" : 62,
+		"data-full-card-iframe-url" : 23,
+		"data-ga-click" : 1,
+		"data-has-autoplayable-media" : 23,
+		"data-has-cards" : 37,
+		"data-has-parent-tweet" : 10,
+		"data-image-url" : 14,
+		"data-impression-id" : 10,
+		"data-is-reply-to" : 10,
+		"data-item-id" : 75,
+		"data-item-type" : 13,
+		"data-jsx" : 53,
+		"data-loaded" : 2,
+		"data-max-position" : 3,
+		"data-mentions" : 16,
+		"data-min-position" : 3,
+		"data-my-order" : 45,
+		"data-name" : 65,
+		"data-no-turbolink" : 62,
+		"data-permalink-path" : 62,
+		"data-pjax" : 2,
+		"data-pjax-container" : 3,
+		"data-protected" : 3,
+		"data-publisher-id" : 23,
+		"data-react-checksum" : 1,
+		"data-reactid" : 55,
+		"data-reactroot" : 1,
+		"data-reply-to-users-json" : 62,
+		"data-retweet-id" : 11,
+		"data-retweeter" : 11,
+		"data-screen-name" : 78,
+		"data-section-term" : 3,
+		"data-sigil" : 11,
+		"data-src" : 23,
+		"data-tab-filter" : 2,
+		"data-test-selector" : 3,
+		"data-tweet-id" : 62,
+		"data-tweet-nonce" : 62,
+		"data-tweet-stat-initialized" : 62,
+		"data-url" : 1,
+		"data-user-id" : 91,
+		"data-watched" : 23,
+		"data-you-block" : 62,
+		"data-you-follow" : 62,
+		"dir" : 13,
+		"href" : 13,
+		"id" : 288,
+		"itemscope" : 10,
+		"itemtype" : 10,
+		"lang" : 13,
+		"notice-type" : 4,
+		"role" : 123,
+		"style" : 76,
+		"tabindex" : 25,
+		"title" : 373
 	},
 	"em" : 
 	{
-		"class" : 46
+		"class" : 1
+	},
+	"embed" : 
+	{
+		"allowfullscreen" : 1,
+		"allowscriptaccess" : 1,
+		"bgcolor" : 1,
+		"flashvars" : 1,
+		"height" : 1,
+		"loop" : 1,
+		"menu" : 1,
+		"name" : 1,
+		"pluginspage" : 1,
+		"quality" : 1,
+		"scale" : 1,
+		"src" : 1,
+		"type" : 1,
+		"width" : 1,
+		"wmode" : 1
+	},
+	"fieldset" : 
+	{
+		"class" : 3
+	},
+	"figure" : 
+	{
+		"class" : 9
 	},
 	"footer" : 
 	{
-		"class" : 1,
-		"data-id" : 1,
-		"data-m" : 1,
-		"data-region" : 1,
-		"id" : 1,
-		"role" : 1
+		"class" : 15,
+		"id" : 9,
+		"role" : 9
 	},
 	"form" : 
 	{
-		"accept-charset" : 6,
-		"action" : 9,
-		"class" : 4,
-		"data-action" : 1,
-		"data-bing-action-uri" : 1,
-		"data-form-code" : 1,
-		"data-id" : 2,
-		"data-m" : 2,
-		"data-remote" : 3,
-		"html" : 3,
-		"id" : 3,
-		"itemprop" : 1,
-		"itemscope" : 1,
-		"itemtype" : 1,
-		"method" : 9,
+		"accept-charset" : 19,
+		"action" : 51,
+		"class" : 38,
+		"data-component" : 6,
+		"data-element" : 6,
+		"data-pjax" : 1,
+		"data-pjax-preserve-scroll" : 1,
+		"data-remote" : 11,
+		"data-results-container" : 1,
+		"data-scoped-search-url" : 2,
+		"data-unscoped-search-url" : 2,
+		"html" : 11,
+		"id" : 14,
+		"itemprop" : 4,
+		"itemscope" : 4,
+		"itemtype" : 4,
+		"method" : 48,
 		"name" : 1,
-		"role" : 2,
+		"novalidate" : 1,
+		"role" : 1,
+		"style" : 1,
 		"target" : 1
 	},
 	"h1" : 
 	{
-		"class" : 4
+		"class" : 112,
+		"data-jsx" : 1,
+		"data-reactid" : 1,
+		"style" : 1
 	},
 	"h2" : 
 	{
-		"class" : 26,
-		"id" : 9,
-		"tabindex" : 5
+		"class" : 43,
+		"dir" : 3,
+		"id" : 13
 	},
 	"h3" : 
 	{
-		"class" : 29,
-		"id" : 22
+		"align" : 1,
+		"class" : 129,
+		"data-jsx" : 11,
+		"data-reactid" : 11,
+		"id" : 8
 	},
 	"h4" : 
 	{
-		"class" : 13
+		"class" : 21,
+		"data-jsx" : 1,
+		"data-reactid" : 1
+	},
+	"h5" : 
+	{
+		"class" : 27,
+		"data-jsx" : 11,
+		"data-reactid" : 11
 	},
 	"head" : 
 	{
-		"data-client-settings" : 1,
-		"data-info" : 1,
-		"data-js" : 1,
-		"data-xd-id" : 1,
-		"itemscope" : 1,
-		"itemtype" : 1
+		"itemscope" : 4,
+		"itemtype" : 4
 	},
 	"header" : 
 	{
-		"class" : 2,
-		"data-id" : 1,
-		"data-m" : 1,
-		"data-region" : 1,
-		"id" : 2,
-		"role" : 1
+		"class" : 94,
+		"id" : 1,
+		"role" : 2
 	},
 	"hr" : 
 	{
-		"class" : 6
+		"class" : 100
 	},
 	"i" : 
 	{
-		"alt" : 1,
-		"aria-label" : 1,
-		"class" : 84,
-		"data-dismiss" : 1
+		"alt" : 13,
+		"aria-label" : 4,
+		"class" : 743,
+		"data-dismiss" : 4,
+		"style" : 1
 	},
 	"iframe" : 
 	{
-		"allowfullscreen" : 3,
-		"allowtransparency" : 6,
-		"aria-hidden" : 1,
-		"border" : 2,
-		"class" : 1,
-		"data-widget-id" : 1,
-		"frameborder" : 9,
-		"height" : 5,
-		"hspace" : 2,
-		"id" : 9,
-		"marginheight" : 5,
-		"marginwidth" : 5,
-		"name" : 6,
-		"scrolling" : 9,
-		"src" : 8,
-		"style" : 8,
-		"tabindex" : 2,
-		"title" : 7,
-		"vspace" : 2,
-		"width" : 5
+		"allowfullscreen" : 16,
+		"allowtransparency" : 24,
+		"aria-hidden" : 13,
+		"class" : 48,
+		"data-screen-name" : 3,
+		"data-url" : 11,
+		"data-widget-id" : 4,
+		"frameborder" : 36,
+		"height" : 12,
+		"id" : 41,
+		"name" : 13,
+		"scrolling" : 40,
+		"src" : 40,
+		"style" : 39,
+		"tabindex" : 4,
+		"title" : 26,
+		"width" : 12
 	},
 	"img" : 
 	{
-		"alt" : 473,
-		"border" : 1,
-		"class" : 207,
-		"data-icon" : 1,
-		"data-retina" : 15,
-		"data-src" : 440,
-		"height" : 113,
+		"alt" : 407,
+		"aria-label" : 19,
+		"border" : 6,
+		"class" : 376,
+		"data-aria-label-part" : 16,
+		"data-canonical-src" : 11,
+		"data-jsx" : 1,
+		"data-reactid" : 1,
+		"data-retina" : 45,
+		"draggable" : 19,
+		"height" : 146,
 		"id" : 1,
-		"itemprop" : 1,
-		"src" : 519,
-		"style" : 1,
-		"title" : 96,
-		"width" : 83
+		"itemprop" : 5,
+		"sizes" : 16,
+		"src" : 555,
+		"srcset" : 16,
+		"style" : 48,
+		"title" : 19,
+		"width" : 148
+	},
+	"include-fragment" : 
+	{
+		"src" : 2
 	},
 	"input" : 
 	{
-		"accesskey" : 2,
-		"aria-autocomplete" : 2,
-		"aria-expanded" : 1,
-		"aria-label" : 2,
-		"aria-owns" : 1,
-		"autocapitalize" : 2,
-		"autocomplete" : 5,
-		"autocorrect" : 3,
-		"checked" : 1,
-		"class" : 14,
-		"data-auto-suggest-settings" : 1,
-		"data-autosuggestdelay" : 1,
-		"data-bind" : 1,
-		"data-id" : 3,
-		"data-m" : 3,
-		"data-seemoretext" : 1,
-		"data-toggle" : 1,
-		"id" : 21,
-		"itemprop" : 1,
-		"maxlength" : 2,
-		"name" : 40,
-		"placeholder" : 9,
-		"role" : 1,
-		"size" : 1,
-		"spellcheck" : 2,
+		"aria-autocomplete" : 6,
+		"aria-expanded" : 6,
+		"aria-label" : 8,
+		"aria-owns" : 6,
+		"autocapitalize" : 3,
+		"autocomplete" : 28,
+		"autocorrect" : 1,
+		"autofocus" : 1,
+		"checked" : 21,
+		"class" : 130,
+		"data-hotkey" : 3,
+		"data-jsx" : 2,
+		"data-reactid" : 2,
+		"data-scoped-placeholder" : 2,
+		"data-toggle" : 4,
+		"data-unscoped-placeholder" : 2,
+		"id" : 117,
+		"itemprop" : 4,
+		"name" : 223,
+		"placeholder" : 74,
+		"readonly" : 1,
+		"size" : 9,
+		"spellcheck" : 3,
 		"tabindex" : 1,
-		"title" : 3,
-		"type" : 41,
-		"value" : 23
-	},
-	"ins" : 
-	{
-		"class" : 2,
-		"data-ad-frame-id" : 2,
-		"data-ad-frame-name" : 2,
-		"data-ad-height" : 2,
-		"data-ad-init" : 2,
-		"data-ad-status" : 2,
-		"data-ad-type" : 2,
-		"data-ad-unit" : 2,
-		"data-ad-width" : 2,
-		"id" : 2,
-		"style" : 2
+		"type" : 254,
+		"value" : 172
 	},
 	"label" : 
 	{
-		"class" : 1,
-		"for" : 3,
-		"form" : 2
+		"class" : 39,
+		"for" : 30
 	},
 	"legend" : 
 	{
-		"class" : 2
+		"class" : 3
 	},
 	"li" : 
 	{
-		"aria-checked" : 5,
-		"aria-hidden" : 30,
-		"aria-label" : 5,
-		"class" : 324,
-		"data-abchenabled" : 1,
-		"data-aop" : 21,
-		"data-cp" : 30,
-		"data-date" : 30,
-		"data-id" : 313,
-		"data-m" : 279,
-		"data-module-id" : 1,
-		"data-no-turbolink" : 3,
-		"data-tiaramapper" : 4,
-		"id" : 4,
-		"itemprop" : 1,
-		"itemscope" : 1,
-		"itemtype" : 1,
-		"role" : 22,
-		"tabindex" : 10
+		"class" : 657,
+		"data-element-term" : 9,
+		"data-global-action" : 6,
+		"data-item-id" : 62,
+		"data-item-type" : 62,
+		"data-jsx" : 11,
+		"data-more-item" : 5,
+		"data-nav" : 62,
+		"data-no-turbolink" : 11,
+		"data-reactid" : 11,
+		"data-remote" : 6,
+		"data-score" : 6,
+		"data-suggestion-json" : 62,
+		"data-trend-name" : 20,
+		"data-trend-token" : 20,
+		"data-trends-id" : 20,
+		"data-user-id" : 6,
+		"data-user-screenname" : 6,
+		"id" : 284,
+		"itemprop" : 33,
+		"itemscope" : 33,
+		"itemtype" : 33,
+		"role" : 18,
+		"style" : 3
 	},
 	"link" : 
 	{
-		"data-turbolinks-track" : 2,
-		"href" : 18,
-		"itemprop" : 1,
-		"media" : 2,
-		"rel" : 18,
-		"sizes" : 1,
-		"title" : 2,
-		"type" : 4
+		"as" : 12,
+		"class" : 12,
+		"color" : 5,
+		"crossorigin" : 6,
+		"data-bootloader-hash" : 3,
+		"data-pjax-transient" : 1,
+		"data-turbolinks-track" : 8,
+		"href" : 434,
+		"hreflang" : 144,
+		"id" : 30,
+		"itemprop" : 4,
+		"media" : 44,
+		"rel" : 434,
+		"sizes" : 16,
+		"title" : 48,
+		"type" : 96
 	},
 	"main" : 
 	{
-		"data-id" : 1,
-		"data-m" : 1,
-		"data-region" : 1,
-		"id" : 2,
-		"role" : 1
+		"class" : 12,
+		"id" : 12,
+		"role" : 10,
+		"tabindex" : 1
 	},
 	"meta" : 
 	{
-		"charset" : 4,
-		"content" : 50,
-		"http-equiv" : 1,
-		"itemprop" : 3,
-		"name" : 31,
-		"property" : 15
+		"charset" : 28,
+		"class" : 4,
+		"content" : 394,
+		"data-environment" : 1,
+		"data-locale" : 1,
+		"data-merchant-id" : 1,
+		"data-pjax-transient" : 6,
+		"data-redirect-url" : 1,
+		"http-equiv" : 16,
+		"id" : 9,
+		"itemprop" : 14,
+		"name" : 253,
+		"property" : 113,
+		"value" : 2
 	},
 	"nav" : 
 	{
-		"class" : 1
+		"class" : 35,
+		"data-pjax" : 1,
+		"id" : 1,
+		"itemscope" : 1,
+		"itemtype" : 1,
+		"role" : 28
+	},
+	"noscript" : 
+	{
+		"data-reactid" : 1
+	},
+	"object" : 
+	{
+		"classid" : 1,
+		"height" : 1,
+		"id" : 1,
+		"width" : 1
 	},
 	"ol" : 
 	{
-		"class" : 5,
-		"itemscope" : 1,
-		"itemtype" : 1
-	},
-	"option" : 
-	{
-		"data-mkt" : 53,
-		"data-mkt-url" : 53,
-		"selected" : 1
+		"class" : 13,
+		"id" : 3,
+		"itemscope" : 3,
+		"itemtype" : 3
 	},
 	"p" : 
 	{
-		"class" : 55,
-		"id" : 1,
-		"title" : 6
+		"align" : 2,
+		"aria-hidden" : 26,
+		"class" : 264,
+		"data-aria-label-part" : 88,
+		"data-jsx" : 12,
+		"data-reactid" : 12,
+		"dir" : 3,
+		"itemprop" : 21,
+		"lang" : 62
 	},
-	"script" : 
+	"param" : 
 	{
-		"async" : 13,
-		"charset" : 3,
-		"class" : 3,
-		"crossorigin" : 2,
-		"data-site-id" : 1,
-		"data-turbolinks-track" : 1,
-		"id" : 3,
-		"src" : 28,
-		"type" : 18
+		"name" : 9,
+		"value" : 9
 	},
-	"section" : 
+	"path" : 
 	{
-		"data-aop" : 2,
-		"data-id" : 1,
-		"data-m" : 1,
-		"id" : 2,
-		"role" : 1
+		"d" : 238,
+		"data-jsx" : 2,
+		"data-reactid" : 2,
+		"fill" : 6,
+		"fill-rule" : 202
 	},
-	"select" : 
+	"poll-include-fragment" : 
 	{
-		"aria-label" : 1,
-		"data-id" : 1,
-		"data-m" : 1,
-		"id" : 1,
-		"rel" : 1,
-		"role" : 1
+		"src" : 30
 	},
-	"small" : 
+	"pre" : 
 	{
 		"class" : 1
 	},
+	"relative-time" : 
+	{
+		"datetime" : 31,
+		"title" : 31
+	},
+	"script" : 
+	{
+		"async" : 103,
+		"charset" : 18,
+		"class" : 3,
+		"crossorigin" : 7,
+		"data-bootloader-hash" : 1,
+		"data-site-id" : 5,
+		"data-sumo-site-id" : 9,
+		"data-turbolinks-track" : 5,
+		"defer" : 11,
+		"id" : 47,
+		"integrity" : 3,
+		"nonce" : 18,
+		"nonce=\"NjX3NcFv3EMdyGh/kIveNA=" : 1,
+		"nonce=\"VuhozCsz8aJ6s6Da4DDjtQ=" : 1,
+		"nonce=\"Zx+/dFOxRB7an5A9IKeh7Q=" : 1,
+		"src" : 272,
+		"style" : 1,
+		"type" : 168
+	},
+	"section" : 
+	{
+		"class" : 7,
+		"id" : 7
+	},
+	"small" : 
+	{
+		"class" : 63
+	},
 	"span" : 
 	{
-		"aria-hidden" : 45,
-		"aria-live" : 1,
-		"class" : 861,
-		"data-bind" : 1,
-		"id" : 2,
-		"itemprop" : 2,
-		"role" : 1,
-		"title" : 2
+		"aria-hidden" : 382,
+		"aria-label" : 6,
+		"background-color" : 27,
+		"class" : 4369,
+		"data-aria-label-part" : 261,
+		"data-conversation-id" : 30,
+		"data-count" : 12,
+		"data-disclosure-type" : 30,
+		"data-dominant-color" : 27,
+		"data-expanded-url" : 6,
+		"data-follows-you" : 30,
+		"data-has-cards" : 30,
+		"data-has-parent-tweet" : 10,
+		"data-image-url" : 30,
+		"data-img-alt" : 30,
+		"data-is-compact" : 14,
+		"data-is-reply-to" : 10,
+		"data-item-id" : 30,
+		"data-jsx" : 20,
+		"data-load-status" : 30,
+		"data-long-form" : 62,
+		"data-mentioned-user-id" : 5,
+		"data-mentions" : 15,
+		"data-name" : 30,
+		"data-original-title" : 1,
+		"data-permalink-path" : 30,
+		"data-pre-embedded" : 3,
+		"data-query-source" : 8,
+		"data-reactid" : 20,
+		"data-reply-to-users-json" : 30,
+		"data-screen-name" : 30,
+		"data-status-id" : 30,
+		"data-tagged" : 1,
+		"data-time" : 62,
+		"data-time-ms" : 62,
+		"data-tweet-id" : 30,
+		"data-tweet-nonce" : 30,
+		"data-tweet-stat-count" : 186,
+		"data-tweet-stat-initialized" : 30,
+		"data-user-id" : 40,
+		"data-you-block" : 30,
+		"data-you-follow" : 30,
+		"dir" : 186,
+		"href" : 30,
+		"id" : 189,
+		"itemprop" : 41,
+		"itemscope" : 3,
+		"itemtype" : 3,
+		"rel" : 6,
+		"role" : 124,
+		"style" : 30,
+		"target" : 6,
+		"title" : 62
 	},
 	"strong" : 
 	{
-		"aria-hidden" : 1,
-		"class" : 68,
-		"id" : 3
+		"class" : 74,
+		"data-aria-label-part" : 49,
+		"itemprop" : 1
 	},
 	"style" : 
 	{
-		"type" : 3
+		"class" : 4,
+		"id" : 8,
+		"media" : 1,
+		"type" : 26
+	},
+	"svg" : 
+	{
+		"aria-hidden" : 176,
+		"aria-label" : 51,
+		"class" : 234,
+		"data-jsx" : 2,
+		"data-reactid" : 2,
+		"enable-background" : 2,
+		"fill" : 3,
+		"focusable" : 4,
+		"height" : 231,
+		"role" : 51,
+		"stroke" : 3,
+		"stroke-linecap" : 3,
+		"stroke-linejoin" : 3,
+		"stroke-width" : 3,
+		"style" : 2,
+		"version" : 227,
+		"viewBox" : 236,
+		"width" : 231,
+		"x" : 1,
+		"xmlns" : 4,
+		"y" : 1
+	},
+	"table" : 
+	{
+		"cellpadding" : 3,
+		"cellspacing" : 3,
+		"class" : 1,
+		"data-pjax" : 1,
+		"id" : 3
+	},
+	"td" : 
+	{
+		"class" : 154,
+		"colspan" : 4,
+		"rowspan" : 3
 	},
 	"textarea" : 
 	{
-		"aria-live" : 1,
-		"id" : 1,
-		"maxlength" : 1,
-		"placeholder" : 1
+		"class" : 6,
+		"dir" : 3,
+		"id" : 3,
+		"name" : 3,
+		"readonly" : 3
+	},
+	"time" : 
+	{
+		"class" : 137,
+		"datetime" : 137
+	},
+	"time-ago" : 
+	{
+		"datetime" : 38,
+		"title" : 38
 	},
 	"title" : 
 	{
-		"itemprop" : 1
+		"class" : 1,
+		"data-jsx" : 1,
+		"itemprop" : 4
+	},
+	"tr" : 
+	{
+		"class" : 39
 	},
 	"ul" : 
 	{
-		"aria-label" : 1,
-		"class" : 82,
-		"data-aop" : 36,
-		"data-dhp_cookie_days" : 1,
-		"data-facebook-button-width" : 1,
-		"data-facebook-like-url" : 1,
-		"data-id" : 37,
-		"data-m" : 37,
-		"data-module-id" : 2,
-		"data-no-turbolink" : 1,
-		"data-selected" : 1,
-		"data-sso-dependent" : 1,
-		"data-tiaramapper" : 4,
-		"data-twitter-button-width" : 1,
-		"data-twitter-follow-screen-name" : 1,
-		"data-twitter-show-screen-name" : 1,
-		"id" : 3,
-		"role" : 3,
-		"style" : 2
+		"class" : 132,
+		"data-jsx" : 1,
+		"data-no-turbolink" : 4,
+		"data-reactid" : 1,
+		"id" : 27,
+		"role" : 33,
+		"style" : 9
 	}
 }
