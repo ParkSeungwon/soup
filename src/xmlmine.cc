@@ -8,7 +8,7 @@ static sNsNi t2, a2;
 static map<string, sNsNi> t3, a3;
 static vector<string> vs;
 
-int init() 
+static int init() 
 {
 	try {
 		ifstream f1{"tag2.json"}, f2{"tag3.json"}, f3{"attr2.json"}, f4{"attr3.json"};
