@@ -29,12 +29,11 @@ class Cascade : public Gtk::Expander//, public XMLMine
 public:
 	Cascade();
 	virtual ~Cascade();
-	void add(Cascade& widget);
-	void add(TagCombo tag);
 	
 protected:
 	void on_add_click();
 	void on_del_click(Cascade* pc, Gtk::HBox* ph, Gtk::Button* pb);
+	void on_twin_click(), on_mono_click(), on_text_click();
 	std::vector<Cascade*> p_inner_tags_;
 	std::vector<Gtk::HBox*> p_hboxes_;
 	std::vector<Gtk::Button*> p_buttons_;
@@ -43,6 +42,8 @@ protected:
 	Gtk::Frame frame_;
 	Gtk::Label label_;
 	Gtk::Button add_;
+	Gtk::RadioButton rb_[3];
+	Gtk::TextView text_area_;
 	TagCombo firstcombo_;
 };
 

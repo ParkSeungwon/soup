@@ -1,4 +1,3 @@
-#include<algorithm>
 #include<iostream>
 #include<vector>
 #include<fstream>
@@ -88,12 +87,43 @@ Cascade::Cascade() : firstcombo_{label_, hbox_}, add_{"add"}
 	frame_.add(vbox_);
 	vbox_.add(hbox_);
 	vbox_.pack_end(add_);
-	add_.signal_clicked().connect(bind(&Cascade::on_add_click, this));
+	for(int i=0; i<3; i++) hbox_.pack_start(rb_[i], Gtk::PACK_SHRINK);
+	rb_[1].join_group(rb_[0]);
+	rb_[2].join_group(rb_[0]);
 	hbox_.add(firstcombo_);
 	vbox_.add(label_);
 	for(const auto& p : TagCombo::tagNdesc_) firstcombo_.append(p.first);
 
 	show_all_children();
+
+	add_.signal_clicked().connect(bind(&Cascade::on_add_click, this));
+	rb_[0].signal_clicked().connect(bind(&Cascade::on_twin_click, this));
+	rb_[1].signal_clicked().connect(bind(&Cascade::on_mono_click, this));
+	rb_[2].signal_clicked().connect(bind(&Cascade::on_text_click, this));
+}
+
+void Cascade::on_twin_click()
+{
+//	vbox_.remove(add_);
+	hbox_.remove(text_area_);
+	hbox_.pack_start(firstcombo_);
+	vbox_.pack_end(add_);
+}
+
+void Cascade::on_mono_click()
+{
+	hbox_.remove(text_area_);
+	hbox_.pack_start(firstcombo_);
+	vbox_.remove(add_);
+}
+
+void Cascade::on_text_click() 
+{
+	hbox_.remove(firstcombo_);
+	vbox_.remove(add_);
+	firstcombo_.combo_free(firstcombo_.next);
+	hbox_.pack_start(text_area_);
+	text_area_.show();
 }
 
 Cascade::~Cascade()
@@ -129,10 +159,5 @@ void Cascade::on_del_click(Cascade* pc, Gtk::HBox* ph, Gtk::Button* pb)
 	p_inner_tags_.pop_back();
 	p_hboxes_.pop_back();
 	p_buttons_.pop_back();
-}
-
-void Cascade::add(Cascade& widget)
-{
-	vbox_.add(widget);
 }
 
