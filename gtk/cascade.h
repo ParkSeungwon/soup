@@ -33,13 +33,16 @@ public:
 	void add(TagCombo tag);
 	
 protected:
-	void on_click();
+	void on_add_click();
+	void on_del_click(Cascade* pc, Gtk::HBox* ph, Gtk::Button* pb);
 	std::vector<Cascade*> p_inner_tags_;
+	std::vector<Gtk::HBox*> p_hboxes_;
+	std::vector<Gtk::Button*> p_buttons_;
 	Gtk::HBox hbox_;
 	Gtk::VBox vbox_;
 	Gtk::Frame frame_;
 	Gtk::Label label_;
-	Gtk::Button button_;
+	Gtk::Button add_;
 	TagCombo firstcombo_;
 };
 

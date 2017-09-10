@@ -1,3 +1,4 @@
+#include<algorithm>
 #include<iostream>
 #include<vector>
 #include<fstream>
@@ -73,20 +74,21 @@ void TagCombo::on_changed()
 	next->isAttr = !isAttr;
 	if(next->isAttr) for(auto& a : attr2_[tag]) next->append(a.first);
 	else for(auto& a : attr3_[tag][text]) next->append(a.first);
-	ref_hbox_.pack_start(*next);
+	ref_hbox_.pack_start(*next, Gtk::PACK_SHRINK);
 	next->show();
 }
 
-Cascade::Cascade() : firstcombo_{label_, hbox_}, button_{"add"}
+Cascade::Cascade() : firstcombo_{label_, hbox_}, add_{"add"}
 {
 	set_expanded();
+//	set_spacing(20);
 	Gtk::Expander::add(frame_);
 	frame_.set_shadow_type(Gtk::SHADOW_ETCHED_IN);
-	frame_.set_margin_left(20);
+//	frame_.set_margin_left(20);
 	frame_.add(vbox_);
 	vbox_.add(hbox_);
-	vbox_.pack_end(button_);
-	button_.signal_clicked().connect(bind(&Cascade::on_click, this));
+	vbox_.pack_end(add_);
+	add_.signal_clicked().connect(bind(&Cascade::on_add_click, this));
 	hbox_.add(firstcombo_);
 	vbox_.add(label_);
 	for(const auto& p : TagCombo::tagNdesc_) firstcombo_.append(p.first);
@@ -98,13 +100,35 @@ Cascade::~Cascade()
 {
 	firstcombo_.combo_free(firstcombo_.next);
 	for(auto* p : p_inner_tags_) delete p;
+	for(auto* p : p_hboxes_) delete p;
+	for(auto* p : p_buttons_) delete p;
 }
 
-void Cascade::on_click()
+void Cascade::on_add_click()
 {
-	p_inner_tags_.push_back(new Cascade());
-	vbox_.add(*p_inner_tags_.back());
-	p_inner_tags_.back()->show();
+	auto* pc = new Cascade();
+	auto* pb = new Gtk::Button("-");
+	auto* ph = new Gtk::HBox();
+	p_inner_tags_.push_back(pc);
+	p_hboxes_.push_back(ph);
+	p_buttons_.push_back(pb);
+	ph->pack_start(*pb, Gtk::PACK_SHRINK);
+	ph->pack_start(*pc);
+	vbox_.pack_start(*ph);
+	vbox_.show_all_children();
+
+	pb->signal_clicked().connect(bind(&Cascade::on_del_click, this, pc, ph, pb));
+}
+
+void Cascade::on_del_click(Cascade* pc, Gtk::HBox* ph, Gtk::Button* pb)
+{
+	delete pc; delete ph; delete pb;
+	std::remove(p_inner_tags_.begin(), p_inner_tags_.end(), pc);
+	std::remove(p_hboxes_.begin(), p_hboxes_.end(), ph);
+	std::remove(p_buttons_.begin(), p_buttons_.end(), pb);
+	p_inner_tags_.pop_back();
+	p_hboxes_.pop_back();
+	p_buttons_.pop_back();
 }
 
 void Cascade::add(Cascade& widget)
