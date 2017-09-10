@@ -45,6 +45,10 @@ protected:
 	Gtk::RadioButton rb_[3];
 	Gtk::TextView text_area_;
 	TagCombo firstcombo_;
+
+private:
+	bool first_show_ = true, text_box_show_ = true, add_show_ = true;
+	void first_show(bool show), text_box_show(bool show), add_show(bool show);
 };
 
 

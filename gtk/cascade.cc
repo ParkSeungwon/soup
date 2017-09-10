@@ -104,26 +104,58 @@ Cascade::Cascade() : firstcombo_{label_, hbox_}, add_{"add"}
 
 void Cascade::on_twin_click()
 {
-//	vbox_.remove(add_);
-	hbox_.remove(text_area_);
-	hbox_.pack_start(firstcombo_);
-	vbox_.pack_end(add_);
+	text_box_show(false);
+	first_show(true);
+	add_show(true);
 }
 
 void Cascade::on_mono_click()
 {
-	hbox_.remove(text_area_);
-	hbox_.pack_start(firstcombo_);
-	vbox_.remove(add_);
+	text_box_show(false);
+	first_show(true);
+	add_show(false);
 }
 
 void Cascade::on_text_click() 
 {
-	hbox_.remove(firstcombo_);
-	vbox_.remove(add_);
-	firstcombo_.combo_free(firstcombo_.next);
-	hbox_.pack_start(text_area_);
-	text_area_.show();
+	first_show(false);
+	add_show(false);
+	text_box_show(true);
+}
+
+void Cascade::text_box_show(bool show)
+{
+	if(text_box_show_ && !show) {
+		hbox_.remove(text_area_);
+		text_box_show_ = false;
+	} else if(!text_box_show_ && show) {
+		hbox_.add(text_area_);
+		text_box_show_ = true;
+		text_area_.show();
+	}
+}
+
+void Cascade::first_show(bool show)
+{
+	if(first_show_ && !show) {
+		hbox_.remove(firstcombo_);
+		firstcombo_.combo_free(firstcombo_.next);
+		first_show_ = false;
+	} else if(!first_show_ && show) {
+		hbox_.pack_start(firstcombo_);
+		first_show_ = true;
+	}
+}
+
+void Cascade::add_show(bool show)
+{
+	if(add_show_ && !show) {
+		vbox_.remove(add_);
+		add_show_ = false;
+	} else if(!add_show_ && show) {
+		vbox_.pack_end(add_);
+		add_show_ = true;
+	}
 }
 
 Cascade::~Cascade()
@@ -147,6 +179,8 @@ void Cascade::on_add_click()
 	vbox_.pack_start(*ph);
 	vbox_.show_all_children();
 
+	rb_[1].set_sensitive(false);
+	rb_[2].set_sensitive(false);
 	pb->signal_clicked().connect(bind(&Cascade::on_del_click, this, pc, ph, pb));
 }
 
@@ -159,5 +193,9 @@ void Cascade::on_del_click(Cascade* pc, Gtk::HBox* ph, Gtk::Button* pb)
 	p_inner_tags_.pop_back();
 	p_hboxes_.pop_back();
 	p_buttons_.pop_back();
+	if(p_buttons_.empty()) {
+		rb_[1].set_sensitive(true);
+		rb_[2].set_sensitive(true);
+	}
 }
 
