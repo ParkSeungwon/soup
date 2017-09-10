@@ -13,6 +13,7 @@ protected:
 	Gtk::Label& ref_label_;//a label to describe tag
 	Gtk::HBox& ref_hbox_;
 	TagCombo *next = nullptr, *prev = nullptr;
+	bool isAttr = false;
 	
 private:
 	static std::map<std::string, std::string> tagNdesc_;
@@ -28,14 +29,17 @@ class Cascade : public Gtk::Expander//, public XMLMine
 public:
 	Cascade();
 	virtual ~Cascade();
-	void add(Cascade widget);
+	void add(Cascade& widget);
 	void add(TagCombo tag);
 	
 protected:
+	void on_click();
+	std::vector<Cascade*> p_inner_tags_;
 	Gtk::HBox hbox_;
 	Gtk::VBox vbox_;
 	Gtk::Frame frame_;
 	Gtk::Label label_;
+	Gtk::Button button_;
 	TagCombo firstcombo_;
 };
 
