@@ -45,7 +45,8 @@ map<string, string> TagCombo::bootNdesc_ = move(bNd);
 map<string, string> TagCombo::tagNboot_ = move(tNb);
 map<string, vector<string>> TagCombo::tagNattrs_ = move(m2);
 
-TagCombo::TagCombo(Gtk::Label& label) : Gtk::ComboBoxText(true), ref_label_(label)
+TagCombo::TagCombo(Gtk::Label& label, Gtk::HBox& hbox) 
+	: Gtk::ComboBoxText(true), ref_label_(label), ref_hbox_{hbox}
 {
 	for(const auto& p : tagNdesc_) append(p.first);
 }
@@ -53,9 +54,15 @@ TagCombo::TagCombo(Gtk::Label& label) : Gtk::ComboBoxText(true), ref_label_(labe
 void TagCombo::on_changed()
 {
 	ref_label_.set_text(tagNdesc_[get_active_text()]);
+	if(next) combo_free(next);
+	next = new TagCombo{ref_label_, ref_hbox_};
+	next->prev = this;
+	next->append("aa");
+	ref_hbox_.pack_start(*next);
+	next->show();
 }
 
-Cascade::Cascade() : firstcombo_{label_}
+Cascade::Cascade() : firstcombo_{label_, hbox_}
 {
 	Gtk::Expander::add(frame_);
 	frame_.add(vbox_);
@@ -69,7 +76,19 @@ Cascade::Cascade() : firstcombo_{label_}
 	show_all_children();
 }
 
-void Cascade::add(Gtk::Widget widget)
+Cascade::~Cascade()
+{
+	firstcombo_.combo_free(firstcombo_.next);
+}
+
+void TagCombo::combo_free(TagCombo* p)
+{
+	if(!p) return;
+	combo_free(p->next);
+	delete p;
+}
+
+void Cascade::add(Cascade widget)
 {
 	vbox_.add(widget);
 }
