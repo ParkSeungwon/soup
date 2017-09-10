@@ -33,7 +33,6 @@ protected:
 	void on_twin_click(), on_mono_click(), on_text_click();
 	Gtk::HBox hbox_;
 	Gtk::VBox vbox_;
-	Gtk::Frame frame_;
 	Gtk::Label label_;
 	Gtk::Button add_;
 	Gtk::RadioButton rb_[3];

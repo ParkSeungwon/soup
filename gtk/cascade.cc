@@ -80,9 +80,8 @@ void TagCombo::on_changed()
 Cascade::Cascade() : firstcombo_{label_, hbox_}, add_{"add"}
 {
 	set_expanded();
-	Gtk::Expander::add(frame_);
-	frame_.set_shadow_type(Gtk::SHADOW_ETCHED_IN);
-	frame_.add(vbox_);
+	text_area_.set_size_request(100);
+	Gtk::Expander::add(vbox_);
 	vbox_.add(hbox_);
 	vbox_.pack_end(add_, Gtk::PACK_SHRINK);
 	for(int i=0; i<3; i++) hbox_.pack_start(rb_[i], Gtk::PACK_SHRINK);
@@ -127,17 +126,17 @@ void Cascade::text_box_show(bool show)
 		hbox_.remove(text_area_);
 		text_box_show_ = false;
 	} else if(!text_box_show_ && show) {
-		hbox_.add(text_area_);
+		hbox_.pack_end(text_area_);
 		text_box_show_ = true;
-		text_area_.show();
+		hbox_.show_all_children();
 	}
 }
 
 void Cascade::first_show(bool show)
 {
 	if(first_show_ && !show) {
-		hbox_.remove(firstcombo_);
 		firstcombo_.combo_free(firstcombo_.next);
+		hbox_.remove(firstcombo_);
 		first_show_ = false;
 	} else if(!first_show_ && show) {
 		hbox_.pack_start(firstcombo_, Gtk::PACK_SHRINK);
