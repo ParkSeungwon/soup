@@ -80,17 +80,15 @@ void TagCombo::on_changed()
 Cascade::Cascade() : firstcombo_{label_, hbox_}, add_{"add"}
 {
 	set_expanded();
-//	set_spacing(20);
 	Gtk::Expander::add(frame_);
 	frame_.set_shadow_type(Gtk::SHADOW_ETCHED_IN);
-//	frame_.set_margin_left(20);
 	frame_.add(vbox_);
 	vbox_.add(hbox_);
-	vbox_.pack_end(add_);
+	vbox_.pack_end(add_, Gtk::PACK_SHRINK);
 	for(int i=0; i<3; i++) hbox_.pack_start(rb_[i], Gtk::PACK_SHRINK);
 	rb_[1].join_group(rb_[0]);
 	rb_[2].join_group(rb_[0]);
-	hbox_.add(firstcombo_);
+	hbox_.pack_start(firstcombo_, Gtk::PACK_SHRINK);
 	vbox_.add(label_);
 	for(const auto& p : TagCombo::tagNdesc_) firstcombo_.append(p.first);
 
@@ -142,7 +140,7 @@ void Cascade::first_show(bool show)
 		firstcombo_.combo_free(firstcombo_.next);
 		first_show_ = false;
 	} else if(!first_show_ && show) {
-		hbox_.pack_start(firstcombo_);
+		hbox_.pack_start(firstcombo_, Gtk::PACK_SHRINK);
 		first_show_ = true;
 	}
 }
@@ -153,7 +151,7 @@ void Cascade::add_show(bool show)
 		vbox_.remove(add_);
 		add_show_ = false;
 	} else if(!add_show_ && show) {
-		vbox_.pack_end(add_);
+		vbox_.pack_end(add_, Gtk::PACK_SHRINK);
 		add_show_ = true;
 	}
 }
@@ -161,39 +159,28 @@ void Cascade::add_show(bool show)
 Cascade::~Cascade()
 {
 	firstcombo_.combo_free(firstcombo_.next);
-	for(auto* p : p_inner_tags_) delete p;
-	for(auto* p : p_hboxes_) delete p;
-	for(auto* p : p_buttons_) delete p;
 }
 
 void Cascade::on_add_click()
 {
-	auto* pc = new Cascade();
-	auto* pb = new Gtk::Button("-");
-	auto* ph = new Gtk::HBox();
-	p_inner_tags_.push_back(pc);
-	p_hboxes_.push_back(ph);
-	p_buttons_.push_back(pb);
+	auto* pc = Gtk::manage(new Cascade());
+	auto* pb = Gtk::manage(new Gtk::Button("-"));
+	auto* ph = Gtk::manage(new Gtk::HBox());
 	ph->pack_start(*pb, Gtk::PACK_SHRINK);
-	ph->pack_start(*pc);
-	vbox_.pack_start(*ph);
+	ph->pack_start(*pc, Gtk::PACK_SHRINK);
+	vbox_.pack_start(*ph, Gtk::PACK_SHRINK);
 	vbox_.show_all_children();
 
 	rb_[1].set_sensitive(false);
 	rb_[2].set_sensitive(false);
-	pb->signal_clicked().connect(bind(&Cascade::on_del_click, this, pc, ph, pb));
+	pb->signal_clicked().connect(bind(&Cascade::on_del_click, this, ph));
+	added_item_count_++;
 }
 
-void Cascade::on_del_click(Cascade* pc, Gtk::HBox* ph, Gtk::Button* pb)
+void Cascade::on_del_click(Gtk::HBox* ph)
 {
-	delete pc; delete ph; delete pb;
-	std::remove(p_inner_tags_.begin(), p_inner_tags_.end(), pc);
-	std::remove(p_hboxes_.begin(), p_hboxes_.end(), ph);
-	std::remove(p_buttons_.begin(), p_buttons_.end(), pb);
-	p_inner_tags_.pop_back();
-	p_hboxes_.pop_back();
-	p_buttons_.pop_back();
-	if(p_buttons_.empty()) {
+	delete ph;//all the widgets in the box will be deleted automatically
+	if(!--added_item_count_) {
 		rb_[1].set_sensitive(true);
 		rb_[2].set_sensitive(true);
 	}

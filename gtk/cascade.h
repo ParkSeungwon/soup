@@ -16,11 +16,8 @@ protected:
 	bool isAttr = false;
 	
 private:
-	static std::map<std::string, std::string> tagNdesc_;
+	static std::map<std::string, std::string> tagNdesc_, attrNdesc_, bootNdesc_, tagNboot_;
 	static std::map<std::string, std::vector<std::string>> tagNattrs_;
-	static std::map<std::string, std::string> attrNdesc_;
-	static std::map<std::string, std::string> bootNdesc_;
-	static std::map<std::string, std::string> tagNboot_;
 	void combo_free(TagCombo* p);
 };
 
@@ -32,11 +29,8 @@ public:
 	
 protected:
 	void on_add_click();
-	void on_del_click(Cascade* pc, Gtk::HBox* ph, Gtk::Button* pb);
+	void on_del_click(Gtk::HBox* ph);
 	void on_twin_click(), on_mono_click(), on_text_click();
-	std::vector<Cascade*> p_inner_tags_;
-	std::vector<Gtk::HBox*> p_hboxes_;
-	std::vector<Gtk::Button*> p_buttons_;
 	Gtk::HBox hbox_;
 	Gtk::VBox vbox_;
 	Gtk::Frame frame_;
@@ -49,6 +43,7 @@ protected:
 private:
 	bool first_show_ = true, text_box_show_ = true, add_show_ = true;
 	void first_show(bool show), text_box_show(bool show), add_show(bool show);
+	int added_item_count_ = 0;
 };
 
 
