@@ -2,7 +2,7 @@
 #include<gtkmm.h>
 #include"xmlmine.h"
 
-class TagCombo : public Gtk::ComboBoxText
+class TagCombo : public Gtk::ComboBoxText, public XMLMine
 {
 public:
 	TagCombo(Gtk::Label& label, Gtk::HBox& hbox);

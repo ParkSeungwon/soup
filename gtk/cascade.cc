@@ -46,18 +46,15 @@ map<string, string> TagCombo::tagNboot_ = move(tNb);
 map<string, vector<string>> TagCombo::tagNattrs_ = move(m2);
 
 TagCombo::TagCombo(Gtk::Label& label, Gtk::HBox& hbox) 
-	: Gtk::ComboBoxText(true), ref_label_(label), ref_hbox_{hbox}
-{
-	for(const auto& p : tagNdesc_) append(p.first);
-}
+	: Gtk::ComboBoxText(true), ref_label_(label), ref_hbox_{hbox} { }
 
 void TagCombo::on_changed()
 {
 	ref_label_.set_text(tagNdesc_[get_active_text()]);
-	if(next) combo_free(next);
+	if(next) combo_free(next);//free below chain of TagCombo
 	next = new TagCombo{ref_label_, ref_hbox_};
 	next->prev = this;
-	next->append("aa");
+	for(auto& a : tag2_[get_active_text()]) next->append(a.first);
 	ref_hbox_.pack_start(*next);
 	next->show();
 }
@@ -69,9 +66,7 @@ Cascade::Cascade() : firstcombo_{label_, hbox_}
 	vbox_.add(hbox_);
 	hbox_.add(firstcombo_);
 	hbox_.add(label_);
-//	firstcombo_.append("HeadTail");
-//	firstcombo_.append("Mono");
-//	firstcombo_.append("Text");
+	for(const auto& p : TagCombo::tagNdesc_) firstcombo_.append(p.first);
 
 	show_all_children();
 }
