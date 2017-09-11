@@ -19,8 +19,7 @@ WinMain::WinMain(vector<Sub>&& vsub)
 	read_like();
 	sub = std::move(vsub);
 	for(auto& a : sub) for(auto& b : a.keyword) a.score += b.second * like[b.first];
-	auto it = remove_if(sub.begin(), sub.end(), 
-			[](const Sub& s) { return s.score < 0;});
+	auto it = remove_if(sub.begin(), sub.end(), [](const Sub& s) { return s.score < 0;});
 	sub.erase(it, sub.end());
 
 	set_default_size(500, 1080);
@@ -31,8 +30,7 @@ WinMain::WinMain(vector<Sub>&& vsub)
 	for(const auto& a : sub) {
 		vb.pack_start(bts[n], Gtk::PACK_SHRINK);
 		bts[n].set_label(a.title + ' ' + to_string(a.score));
-		bts[n].signal_clicked().connect(
-				bind(&WinMain::on_click, this, a.contents, a.site, n));
+		bts[n].signal_clicked().connect(bind(&WinMain::on_click, this, a.contents, a.site, n));
 		n++;
 	}
 	show_all_children();

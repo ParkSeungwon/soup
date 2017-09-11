@@ -13,4 +13,7 @@ int main(int ac, char** av)
 	app->run(window);
 }
 
-
+//	notebook.append_page(scrolledWindow1, "Html view");
+//	notebook.append_page(vBox5, "Text view");
+//	notebook.signal_switch_page().connect(bind(&GtkMainForm::switch_page, this, _1, _2));
+//

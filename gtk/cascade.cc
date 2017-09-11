@@ -44,6 +44,7 @@ map<string, string> TagCombo::attrNdesc_ = move(m1);
 map<string, string> TagCombo::bootNdesc_ = move(bNd);
 map<string, string> TagCombo::tagNboot_ = move(tNb);
 map<string, vector<string>> TagCombo::tagNattrs_ = move(m2);
+FParser Cascade::parser_;
 
 TagCombo::TagCombo(Gtk::Label& label, Gtk::HBox& hbox) 
 	: Gtk::ComboBoxText(true), ref_label_(label), ref_hbox_{hbox} { }
@@ -77,6 +78,27 @@ void TagCombo::on_changed()
 	next->show();
 }
 
+void Cascade::Cascade(const std::map<string, string>& m) : Cascade{}
+{
+	if(m.empty()) return;
+	auto it = m.cbegin();
+	if(it->first == "Text") {
+		rb_[2].set_active();
+		text_area_.get_buffer()->set_text(it->second);
+	} else {
+		if(it->first == "HeadTail") rb_[0].set_active();
+		else if(it->first == "Mono") rb_[1].set_active();
+
+		firstcombo_.set_active_text(it->second);
+		TagCombo* p = firstcombo_.next;
+		for(it++; it != m.cend(); it++) {
+			p->set_active_text(it->first);
+			p->next->set_active_text(it->second);
+			p = p->next->next;
+		}
+	}
+}
+
 Cascade::Cascade() : firstcombo_{label_, hbox_}, add_{"add"}
 {
 	set_expanded();
@@ -93,10 +115,11 @@ Cascade::Cascade() : firstcombo_{label_, hbox_}, add_{"add"}
 
 	show_all_children();
 
-	add_.signal_clicked().connect(bind(&Cascade::on_add_click, this));
+	add_.signal_clicked().connect(bind(&Cascade::on_add_click, this, map<string,string>{}));
 	rb_[0].signal_clicked().connect(bind(&Cascade::on_twin_click, this));
 	rb_[1].signal_clicked().connect(bind(&Cascade::on_mono_click, this));
 	rb_[2].signal_clicked().connect(bind(&Cascade::on_text_click, this));
+	read_html("<html></html>");
 }
 
 void Cascade::on_twin_click()
@@ -160,9 +183,9 @@ Cascade::~Cascade()
 	firstcombo_.combo_free(firstcombo_.next);
 }
 
-void Cascade::on_add_click()
+void Cascade::on_add_click(const std::map<std::string, std::string>& m)
 {
-	auto* pc = Gtk::manage(new Cascade());
+	auto* pc = Gtk::manage(new Cascade(m));
 	auto* pb = Gtk::manage(new Gtk::Button("-"));
 	auto* ph = Gtk::manage(new Gtk::HBox());
 	ph->pack_start(*pb, Gtk::PACK_SHRINK);
@@ -185,3 +208,22 @@ void Cascade::on_del_click(Gtk::HBox* ph)
 	}
 }
 
+void Cascade::read_html(string s)
+{
+	parser_.gfree(parser_.root);
+	parser_.read_html(s);
+	to_widget(parser_.root);
+}
+
+void Cascade::to_widget(Vertex<sh_map>* ver)
+{
+	set(*ver->data);
+	vector<Vertex<sh_map>*> v;
+	for(auto* e = ver->edge; e; e = e->edge) {
+		add_.clicked();
+		v.push_back(e->vertex);
+	}
+	int n = 0;
+	auto va = vbox_.get_children();
+	for(auto* a : va) dynamic_cast<Cascade*>(a)->to_widget(v[n++]);
+}

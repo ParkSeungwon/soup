@@ -21,14 +21,22 @@ private:
 	void combo_free(TagCombo* p);
 };
 
+class FParser : public Parser
+{
+	friend class Cascade;
+};
+
 class Cascade : public Gtk::Expander//, public XMLMine
 {
 public:
 	Cascade();
+	Cascade(const std::map<std::string, std::string>& m);
 	virtual ~Cascade();
+	void read_html(std::string s);
+	void to_widget(Vertex<sh_map>* v);
 	
 protected:
-	void on_add_click();
+	void on_add_click(const std::map<std::string, std::string>& m);
 	void on_del_click(Gtk::HBox* ph);
 	void on_twin_click(), on_mono_click(), on_text_click();
 	Gtk::HBox hbox_;
@@ -38,6 +46,7 @@ protected:
 	Gtk::RadioButton rb_[3];
 	Gtk::TextView text_area_;
 	TagCombo firstcombo_;
+	static FParser parser_;
 
 private:
 	bool first_show_ = true, text_box_show_ = true, add_show_ = true;
