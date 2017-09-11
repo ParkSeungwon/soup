@@ -1,25 +1,5 @@
 #pragma once
-#include<gtkmm.h>
-#include"xmlmine.h"
-
-class TagCombo : public Gtk::ComboBoxText, public XMLMine
-{
-public:
-	TagCombo(Gtk::Label& label, Gtk::HBox& hbox);
-	friend class Cascade;
-
-protected:
-	virtual void on_changed();
-	Gtk::Label& ref_label_;//a label to describe tag
-	Gtk::HBox& ref_hbox_;
-	TagCombo *next = nullptr, *prev = nullptr;
-	bool isAttr = false;
-	
-private:
-	static std::map<std::string, std::string> tagNdesc_, attrNdesc_, bootNdesc_, tagNboot_;
-	static std::map<std::string, std::vector<std::string>> tagNattrs_;
-	void combo_free(TagCombo* p);
-};
+#include"tagcombo.h"
 
 class FParser : public Parser
 {
@@ -30,13 +10,12 @@ class Cascade : public Gtk::Expander//, public XMLMine
 {
 public:
 	Cascade();
-	Cascade(const std::map<std::string, std::string>& m);
+	void set(const std::map<std::string, std::string>& m);
 	virtual ~Cascade();
 	void read_html(std::string s);
-	void to_widget(Vertex<sh_map>* v);
 	
 protected:
-	void on_add_click(const std::map<std::string, std::string>& m);
+	void on_add_click(const std::map<std::string, std::string>& m, Cascade*& p);
 	void on_del_click(Gtk::HBox* ph);
 	void on_twin_click(), on_mono_click(), on_text_click();
 	Gtk::HBox hbox_;
@@ -49,6 +28,7 @@ protected:
 	static FParser parser_;
 
 private:
+	void to_widget(Vertex<sh_map>* v);
 	bool first_show_ = true, text_box_show_ = true, add_show_ = true;
 	void first_show(bool show), text_box_show(bool show), add_show(bool show);
 	int added_item_count_ = 0;

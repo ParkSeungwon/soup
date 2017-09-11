@@ -97,8 +97,9 @@ void Parser::insert_edge(sh_map shp, std::istream& is)
 
 void Parser::read_html(istream& is)
 {
-	cout << "parsing..." << endl;
+	cout << "parsing..." << flush;
 	insert_edge(nullptr, is);
+	cout << "done" << endl;
 }
 
 void Parser::read_html(string s)
