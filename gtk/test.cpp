@@ -9,17 +9,8 @@ int main(int ac, char** av)
 	int i = 0;
 	auto app = Gtk::Application::create(i, av, "");
 	Gtk::Window window;
-	Cascade* mono = Gtk::manage(new Cascade());
-	string s = "<html><head><script>function f(){}</script></head><body class='bd-home'><a href='fds'>adgg</a></body><button /><a href='add' class='fd'>fjasjd</a></html>";
-	string t= get_url("http://www.google.com");
-	mono->read_html(s);
-	cout << mono->to_html();
-	Gtk::ScrolledWindow sc;
-	sc.add(*mono);
-	for(string s : Gsv::LanguageManager::create()->get_language_ids())
-		cout << s << endl;
-//	view.get_source_buffer()->set_language(wrap(ln));
-	window.add(sc);
+	HtmlBook ht;
+	window.add(ht);
 	window.show_all_children();
 	app->run(window);
 }
