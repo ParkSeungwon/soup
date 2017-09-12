@@ -9,7 +9,7 @@ int main(int ac, char** av)
 	auto app = Gtk::Application::create(i, av, "");
 	Gtk::Window window;
 	Cascade* mono = Gtk::manage(new Cascade());
-	string s = "<html><body class='bd-home'><a href='fds'>adgg</a></body><button /><a href='add' class='fd'>fjasjd</a></html>";
+	string s = "<html><head><script>function f(){}</script></head><body class='bd-home'><a href='fds'>adgg</a></body><button /><a href='add' class='fd'>fjasjd</a></html>";
 	string t= get_url("http://localhost");
 	mono->read_html(t);
 	Gtk::ScrolledWindow sc;

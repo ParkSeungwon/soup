@@ -14,6 +14,7 @@ string parse_script(istream& is)
 		s += c;
 	}
 	for(int i=0; i<9; i++) s.pop_back();
+	is.seekg(-9, is.cur);//script buf fix
 	return s;
 }
 

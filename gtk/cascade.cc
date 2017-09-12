@@ -152,6 +152,7 @@ void Cascade::read_html(string s)
 	parser_.read_html(s);
 	set(*parser_.root->data);
 	to_widget(parser_.root);
+	parser_.view();
 }
 
 void Cascade::to_widget(Vertex<sh_map>* ver)
