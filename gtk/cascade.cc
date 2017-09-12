@@ -1,3 +1,4 @@
+#include<random>
 #include"cascade.h"
 using namespace std;
 
@@ -26,8 +27,15 @@ void Cascade::set(const std::map<string, string>& m)
 	}
 }
 
+static uniform_int_distribution<> di{0, 65535};
+static random_device rd;
+
 Cascade::Cascade() : firstcombo_{label_, hbox_}, add_{"add"}
 {
+	Gdk::RGBA color;
+	color.set_rgba_u(di(rd), di(rd), di(rd));
+	firstcombo_.override_background_color(Gdk::RGBA("blue"));
+	vbox_.override_background_color(color);
 	set_expanded();
 	text_area_.set_size_request(100);
 	Gtk::Expander::add(vbox_);
@@ -110,14 +118,14 @@ Cascade::~Cascade()
 	firstcombo_.combo_free(firstcombo_.next);
 }
 
-void Cascade::on_add_click(const std::map<std::string, std::string>& m, Cascade*& p)
+void Cascade::on_add_click(const std::map<std::string, std::string>& m, Cascade*& pc)
 {//add inner cascade expander
-	auto* pc = Gtk::manage(new Cascade());
+	pc = Gtk::manage(new Cascade());
 	auto* pb = Gtk::manage(new Gtk::Button("-"));
 	auto* ph = Gtk::manage(new Gtk::HBox());
 	pc->set(m);
-	p = pc;
 	ph->pack_start(*pb, Gtk::PACK_SHRINK);
+	ph->set_margin_left(10);
 	ph->pack_start(*pc, Gtk::PACK_SHRINK);
 	vbox_.pack_start(*ph, Gtk::PACK_SHRINK);
 	vbox_.show_all_children();
@@ -148,7 +156,6 @@ void Cascade::read_html(string s)
 
 void Cascade::to_widget(Vertex<sh_map>* ver)
 {
-//	set(*ver->data);
 	for(auto* e = ver->edge; e; e = e->edge) {
 		Cascade* p;
 		on_add_click(*e->vertex->data, p);

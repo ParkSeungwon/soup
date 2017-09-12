@@ -11,8 +11,10 @@ int main(int ac, char** av)
 	Cascade* mono = Gtk::manage(new Cascade());
 	string s = "<html><body class='bd-home'><a href='fds'>adgg</a></body><button /><a href='add' class='fd'>fjasjd</a></html>";
 	string t= get_url("http://localhost");
-	mono->read_html(s);
-	window.add(*mono);
+	mono->read_html(t);
+	Gtk::ScrolledWindow sc;
+	sc.add(*mono);
+	window.add(sc);
 	window.show_all_children();
 	app->run(window);
 }
