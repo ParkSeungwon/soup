@@ -1,6 +1,7 @@
 #include<iostream>
 #include"util.h"
 #include"cascade.h"
+#include"notebook.h"
 using namespace std;
 
 int main(int ac, char** av)
@@ -12,9 +13,12 @@ int main(int ac, char** av)
 	string s = "<html><head><script>function f(){}</script></head><body class='bd-home'><a href='fds'>adgg</a></body><button /><a href='add' class='fd'>fjasjd</a></html>";
 	string t= get_url("http://www.google.com");
 	mono->read_html(s);
-	cout << mono->write_html();
+	cout << mono->to_html();
 	Gtk::ScrolledWindow sc;
 	sc.add(*mono);
+	for(string s : Gsv::LanguageManager::create()->get_language_ids())
+		cout << s << endl;
+//	view.get_source_buffer()->set_language(wrap(ln));
 	window.add(sc);
 	window.show_all_children();
 	app->run(window);

@@ -137,7 +137,7 @@ void Cascade::on_add_click(const std::map<std::string, std::string>& m, Cascade*
 }
 
 std::map<string, string> Cascade::get()
-{
+{//firstcombo_ chain -> map
 	std::map<string, string> m;
 	string tag = firstcombo_.get_active_text();
 	if(rb_[2].get_active()) m["Text"] = text_area_.get_buffer()->get_text();
@@ -161,7 +161,7 @@ void Cascade::on_del_click(Gtk::HBox* ph, Cascade* pc)
 }
 
 void Cascade::read_html(string s)
-{
+{//html string -> widgers
 	parser_.gfree(parser_.root);
 	parser_.read_html(s);
 	set(*parser_.root->data);
@@ -170,7 +170,7 @@ void Cascade::read_html(string s)
 }
 
 void Cascade::to_widget(Vertex<sh_map>* ver)
-{
+{//recursive routine of read_html
 	for(auto* e = ver->edge; e; e = e->edge) {
 		Cascade* p;
 		on_add_click(*e->vertex->data, p);
@@ -179,7 +179,7 @@ void Cascade::to_widget(Vertex<sh_map>* ver)
 }
 
 void Cascade::construct_graph(sh_map shp)
-{
+{//recursive routine of to_html
 	for(auto* p : added_item_) {
 		auto sh = make_shared<sNs>(p->get());
 		parser_.Graph::insert_vertex(sh);
@@ -188,8 +188,8 @@ void Cascade::construct_graph(sh_map shp)
 	}
 }
 
-string Cascade::write_html()
-{
+string Cascade::to_html()
+{//widgets -> html string
 	parser_.gfree(parser_.root);
 	parser_.root = nullptr;//!!!!
 	auto sh = make_shared<sNs>(get());
