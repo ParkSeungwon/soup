@@ -1,6 +1,7 @@
 #include<random>
 #include"cascade.h"
 using namespace std;
+using sNs = std::map<string, string>;
 
 FParser Cascade::parser_;
 void Cascade::set(const std::map<string, string>& m)
@@ -27,11 +28,10 @@ void Cascade::set(const std::map<string, string>& m)
 	}
 }
 
-static uniform_int_distribution<> di{0, 65535};
-static random_device rd;
-
 Cascade::Cascade() : firstcombo_{label_, hbox_}, add_{"add"}
 {
+	static uniform_int_distribution<> di{0, 65535};
+	static random_device rd;
 	Gdk::RGBA color;
 	color.set_rgba_u(di(rd), di(rd), di(rd));
 	firstcombo_.override_background_color(Gdk::RGBA("blue"));
@@ -93,11 +93,10 @@ void Cascade::text_box_show(bool show)
 void Cascade::first_show(bool show)
 {
 	if(first_show_ && !show) {
-		firstcombo_.combo_free(firstcombo_.next);
-		hbox_.remove(firstcombo_);
+		for(TagCombo* p = &firstcombo_; p; p = p->next) hbox_.remove(*p);
 		first_show_ = false;
 	} else if(!first_show_ && show) {
-		hbox_.pack_start(firstcombo_, Gtk::PACK_SHRINK);
+		for(TagCombo* p = &firstcombo_; p; p = p->next) hbox_.pack_start(*p);
 		first_show_ = true;
 	}
 }
@@ -132,15 +131,30 @@ void Cascade::on_add_click(const std::map<std::string, std::string>& m, Cascade*
 
 	rb_[1].set_sensitive(false);
 	rb_[2].set_sensitive(false);
-	pb->signal_clicked().connect(bind(&Cascade::on_del_click, this, ph));
-	added_item_count_++;
+	pb->signal_clicked().connect(bind(&Cascade::on_del_click, this, ph, pc));
+	added_item_.push_back(pc);
 	show_all_children();
 }
 
-void Cascade::on_del_click(Gtk::HBox* ph)
+std::map<string, string> Cascade::get()
+{
+	std::map<string, string> m;
+	string tag = firstcombo_.get_active_text();
+	if(rb_[2].get_active()) m["Text"] = text_area_.get_buffer()->get_text();
+	else { 
+		if(rb_[0].get_active()) m["HeadTail"] = tag;
+		else m["Mono"] = tag;
+		for(auto* p = firstcombo_.next; p->next; p = p->next->next) 
+			m[p->get_active_text()] = p->next->get_active_text();
+	}
+	return m;
+}
+
+void Cascade::on_del_click(Gtk::HBox* ph, Cascade* pc)
 {
 	delete ph;//all the widgets in the box will be deleted automatically
-	if(!--added_item_count_) {
+	added_item_.remove(pc);
+	if(added_item_.empty()) {
 		rb_[1].set_sensitive(true);
 		rb_[2].set_sensitive(true);
 	}
@@ -163,3 +177,25 @@ void Cascade::to_widget(Vertex<sh_map>* ver)
 		p->to_widget(e->vertex);
 	}
 }
+
+void Cascade::construct_graph(sh_map shp)
+{
+	for(auto* p : added_item_) {
+		auto sh = make_shared<sNs>(p->get());
+		parser_.Graph::insert_vertex(sh);
+		parser_.Graph::insert_edge(shp, sh);
+		for(auto* pp : p->added_item_) pp->construct_graph(sh);
+	}
+}
+
+string Cascade::write_html()
+{
+	parser_.gfree(parser_.root);
+	parser_.root = nullptr;//!!!!
+	auto sh = make_shared<sNs>(get());
+	parser_.insert_vertex(sh);
+	construct_graph(sh);
+	return parser_.to_str();
+}
+
+	
