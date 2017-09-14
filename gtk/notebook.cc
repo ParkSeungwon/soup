@@ -2,7 +2,7 @@
 #include"notebook.h"
 using namespace std;
 
-HtmlBook::HtmlBook()
+HtmlBook::HtmlBook(string url)
 {
 	view.set_show_line_numbers();
 	view.set_auto_indent();
@@ -14,8 +14,7 @@ HtmlBook::HtmlBook()
 	view.get_source_buffer()->set_language(Gsv::LanguageManager::get_default()->get_language("html"));
 //	view.get_source_buffer()->set_highlight_syntax();
 //	string t = "<html><head><script>function f(){}</script></head><body class='bd-home'><a href='fds'>adgg</a></body><button /><a href='add' class='fd'>fjasjd</a></html>";
-	string t = get_url("http://localhost");
-	cas.read_html(t);
+	cas.read_html(get_url(url));
 	webview = WEBKIT_WEB_VIEW(webkit_web_view_new());
 	widget_now = Glib::wrap(GTK_WIDGET(webview));
 	string txt = cas.to_html();

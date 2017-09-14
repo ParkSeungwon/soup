@@ -9,7 +9,8 @@ int main(int ac, char** av)
 	int i = 0;
 	auto app = Gtk::Application::create(i, av, "");
 	Gtk::Window window;
-	HtmlBook ht;
+	string url = ac < 2 ? "http://localhost" : av[1];
+	HtmlBook ht(url);
 	window.add(ht);
 	window.show_all_children();
 	app->run(window);

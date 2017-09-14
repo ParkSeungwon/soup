@@ -6,7 +6,7 @@
 class HtmlBook : public Gtk::Notebook
 {
 public:
-	HtmlBook();
+	HtmlBook(std::string url);
 
 protected:
 	Gsv::View view;
