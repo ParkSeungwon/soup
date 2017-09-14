@@ -140,6 +140,7 @@ std::map<string, string> Cascade::get()
 {//firstcombo_ chain -> map
 	std::map<string, string> m;
 	string tag = firstcombo_.get_active_text();
+	bool k = (tag == "link");
 	if(rb_[2].get_active()) m["Text"] = text_area_.get_buffer()->get_text();
 	else { 
 		if(rb_[0].get_active()) m["HeadTail"] = tag;

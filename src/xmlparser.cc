@@ -78,7 +78,8 @@ map<string, string> Parser::parse_bracket(std::istream& is)
 			t[m[1]] = m[2];
 			s = m.suffix();
 		}
-	} else t["Text"] = s;
+	} else if(regex_match(s, regex{"\\s*"})) return parse_bracket(is);//Text contetn empty
+	else t["Text"] = s;
 	return t;
 }
 
