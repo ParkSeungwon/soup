@@ -1,6 +1,7 @@
 #pragma once
 #include<list>
 #include"tagcombo.h"
+using sNs = std::map<std::string, std::string>;
 
 class FParser : public Parser
 {
@@ -32,7 +33,7 @@ protected:
 
 private:
 	void to_widget(Vertex<sh_map>* v);
-	void construct_graph(sh_map shp);
+	void construct_graph(Cascade* p, std::shared_ptr<sNs> shp);
 	bool first_show_ = true, text_box_show_ = true, add_show_ = true;
 	void first_show(bool show), text_box_show(bool show), add_show(bool show);
 	std::list<Cascade*> added_item_;//inner cascades, list can easily remove elem

@@ -1,7 +1,6 @@
 #include<random>
 #include"cascade.h"
 using namespace std;
-using sNs = std::map<string, string>;
 
 FParser Cascade::parser_;
 void Cascade::set(const std::map<string, string>& m)
@@ -181,15 +180,13 @@ void Cascade::to_widget(Vertex<sh_map>* ver)
 	}
 }
 
-void Cascade::construct_graph(sh_map shp)
+void Cascade::construct_graph(Cascade* pc, shared_ptr<sNs> shp)
 {//recursive routine of to_html
-	cout << "inside construct " << endl;
-	for(auto* p : added_item_) {
-		for(auto a : p->get()) cout << a.first << " : " << a.second << endl;//no script
+	for(auto* p : pc->added_item_) {
 		auto sh = make_shared<sNs>(p->get());
 		parser_.Graph::insert_vertex(sh);
 		parser_.Graph::insert_edge(shp, sh);
-		for(auto* pp : p->added_item_) pp->construct_graph(sh);
+		construct_graph(p, sh);
 	}
 }
 
@@ -199,7 +196,7 @@ string Cascade::to_html()
 	parser_.root = nullptr;//!!!!
 	auto sh = make_shared<sNs>(get());
 	parser_.insert_vertex(sh);
-	construct_graph(sh);
+	construct_graph(this, sh);
 //	for(auto* v = parser_.data(); v; v = v->vertex) for(auto a : *v->data)
 //		cout << a.first << " : " << a.second << endl;//script not here
 	return parser_.to_str();
