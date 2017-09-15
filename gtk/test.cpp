@@ -13,6 +13,7 @@ int main(int ac, char** av)
 	HtmlBook ht(url);
 	window.add(ht);
 	window.show_all_children();
+	window.set_size_request(800, 800);
 	app->run(window);
 }
 

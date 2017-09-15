@@ -133,11 +133,13 @@ void Cascade::on_add_click(const std::map<std::string, std::string>& m, Cascade*
 	rb_[2].set_sensitive(false);
 	pb->signal_clicked().connect(bind(&Cascade::on_del_click, this, ph, pc));
 	added_item_.push_back(pc);
+	cout << "inside added" << endl;
+	for(auto a : added_item_) for(auto b : a->get()) cout << b.first << b.second << endl;//script is here
 	show_all_children();
 }
 
 std::map<string, string> Cascade::get()
-{//firstcombo_ chain -> map
+{//firstcombo_ chain -> map, buggy cannot get script
 	std::map<string, string> m;
 	string tag = firstcombo_.get_active_text();
 	bool k = (tag == "link");
@@ -145,7 +147,7 @@ std::map<string, string> Cascade::get()
 	else { 
 		if(rb_[0].get_active()) m["HeadTail"] = tag;
 		else m["Mono"] = tag;
-		for(auto* p = firstcombo_.next; p->next; p = p->next->next) 
+		for(auto* p = firstcombo_.next; p->next; p = p->next->next)
 			m[p->get_active_text()] = p->next->get_active_text();
 	}
 	return m;
@@ -181,7 +183,9 @@ void Cascade::to_widget(Vertex<sh_map>* ver)
 
 void Cascade::construct_graph(sh_map shp)
 {//recursive routine of to_html
+	cout << "inside construct " << endl;
 	for(auto* p : added_item_) {
+		for(auto a : p->get()) cout << a.first << " : " << a.second << endl;//no script
 		auto sh = make_shared<sNs>(p->get());
 		parser_.Graph::insert_vertex(sh);
 		parser_.Graph::insert_edge(shp, sh);
@@ -196,6 +200,8 @@ string Cascade::to_html()
 	auto sh = make_shared<sNs>(get());
 	parser_.insert_vertex(sh);
 	construct_graph(sh);
+//	for(auto* v = parser_.data(); v; v = v->vertex) for(auto a : *v->data)
+//		cout << a.first << " : " << a.second << endl;//script not here
 	return parser_.to_str();
 }
 
