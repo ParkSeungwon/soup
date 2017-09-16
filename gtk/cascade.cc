@@ -205,8 +205,8 @@ string Cascade::to_html()
 from BeautifulSoup import BeautifulSoup as bs
 import sys
 print bs(sys.argv[1]).prettify()
-' )";
-	return psstm(command + "'" + s + "'");
+' ')";
+	return psstm(command + s + "'");
 }
 
 	

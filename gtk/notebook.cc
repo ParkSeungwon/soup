@@ -4,6 +4,7 @@ using namespace std;
 
 HtmlBook::HtmlBook(string url)
 {
+	url_ = url;
 	view.set_show_line_numbers();
 	view.set_auto_indent();
 	view.set_highlight_current_line();
@@ -27,10 +28,18 @@ HtmlBook::HtmlBook(string url)
 	append_page(scwin[0], "gui editor");
 	append_page(scwin[1], "text editor");
 	append_page(scwin[2], "web page");
+	signal_switch_page().connect(bind(&HtmlBook::on_switch, this, placeholders::_2));
 }
 
-//void HtmlBook::on_switch_page(Widget* page, guint page_number)
-//{
-//	cout << "swtching to " << page_number << endl;
-//	show_all_children();
-//}
+void HtmlBook::on_switch(int page_number)
+{//on_switch_page virtual default method overloading did't work, 
+//it was called everytime a widget is added..?
+	switch(page_number) {
+		case 0: cas.read_html(view.get_source_buffer()->get_text()); break;
+		case 1: view.get_source_buffer()->set_text(cas.to_html()); break;
+		case 2:
+			string s = view.get_source_buffer()->get_text();
+			webkit_web_view_load_html(webview, s.data(), url_.data());
+	}
+	cout << "swtching to " << page_number << endl;
+}
