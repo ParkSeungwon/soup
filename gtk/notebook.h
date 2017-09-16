@@ -9,7 +9,7 @@ public:
 	HtmlBook(std::string url);
 
 protected:
-	virtual void on_switch_page(Widget* page, int page_number);
+	virtual void on_switch_page(Widget* page, guint page_number);
 	Gsv::View view;
 	Cascade cas;
 	WebKitWebView* webview;
@@ -18,7 +18,7 @@ protected:
 
 private:
 	int page_ = 0;
-	std::string content_;
+	std::string content_, url_;
 };
 
 
