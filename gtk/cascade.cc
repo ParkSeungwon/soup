@@ -165,10 +165,13 @@ void Cascade::read_html(string s)
 {//html string -> widgers
 	parser_.gfree(parser_.root);
 	parser_.root = nullptr;
+	auto v = vbox_.get_children();
+	for(int i=1; i<v.size()-1; i++) vbox_.remove(*v[i]);
+	added_item_.clear();
+
 	parser_.read_html(s);
 	set(*parser_.root->data);
 	to_widget(parser_.root);
-	parser_.view();
 }
 
 void Cascade::to_widget(Vertex<sh_map>* ver)

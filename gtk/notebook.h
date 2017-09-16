@@ -9,16 +9,12 @@ public:
 	HtmlBook(std::string url);
 
 protected:
-	virtual void on_switch_page(Widget* page, guint page_number);
+//	virtual void on_switch_page(Widget* page, guint page_number);
 	Gsv::View view;
 	Cascade cas;
 	WebKitWebView* webview;
 	Gtk::Widget* widget_now;
 	Gtk::ScrolledWindow scwin[3];
-
-private:
-	int page_ = 0;
-	std::string content_, url_;
 };
 
 
