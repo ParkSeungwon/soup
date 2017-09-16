@@ -8,6 +8,7 @@ int main(int ac, char** av)
 {
 	int i = 0;
 	auto app = Gtk::Application::create(i, av, "");
+	Gsv::init();//should include gtksourceviewmm.h
 	Gtk::Window window;
 	string url = ac < 2 ? "http://localhost" : av[1];
 	HtmlBook ht(url);

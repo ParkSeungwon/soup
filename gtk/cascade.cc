@@ -1,4 +1,5 @@
 #include<random>
+#include"util.h"
 #include"cascade.h"
 using namespace std;
 
@@ -132,8 +133,6 @@ void Cascade::on_add_click(const std::map<std::string, std::string>& m, Cascade*
 	rb_[2].set_sensitive(false);
 	pb->signal_clicked().connect(bind(&Cascade::on_del_click, this, ph, pc));
 	added_item_.push_back(pc);
-	cout << "inside added" << endl;
-	for(auto a : added_item_) for(auto b : a->get()) cout << b.first << b.second << endl;//script is here
 	show_all_children();
 }
 
@@ -165,6 +164,7 @@ void Cascade::on_del_click(Gtk::HBox* ph, Cascade* pc)
 void Cascade::read_html(string s)
 {//html string -> widgers
 	parser_.gfree(parser_.root);
+	parser_.root = nullptr;
 	parser_.read_html(s);
 	set(*parser_.root->data);
 	to_widget(parser_.root);
@@ -197,9 +197,13 @@ string Cascade::to_html()
 	auto sh = make_shared<sNs>(get());
 	parser_.insert_vertex(sh);
 	construct_graph(this, sh);
-//	for(auto* v = parser_.data(); v; v = v->vertex) for(auto a : *v->data)
-//		cout << a.first << " : " << a.second << endl;//script not here
-	return parser_.to_str();
+	string s = parser_.to_str();
+	string command = R"(python -c '
+from BeautifulSoup import BeautifulSoup as bs
+import sys
+print bs(sys.argv[1]).prettify()
+' )";
+	return psstm(command + "'" + s + "'");
 }
 
 	
