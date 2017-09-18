@@ -13,6 +13,7 @@ int main(int ac, char** av)
 	string url = ac < 2 ? "http://localhost" : av[1];
 	HtmlBook ht(url);
 	window.add(ht);
+	window.set_title("Inteligent HTML Editor");
 	window.show_all_children();
 	window.set_size_request(800, 800);
 	app->run(window);

@@ -70,8 +70,18 @@ void TagCombo::on_changed()
 	next = new TagCombo{ref_label_, ref_hbox_};
 	next->prev = this;
 	next->isAttr = !isAttr;
-	if(next->isAttr) for(auto& a : attr2_[tag]) next->append(a.first);
-	else for(auto& a : attr3_[tag][text]) next->append(a.first);
+
+	multimap<int, string, greater<int>> tmp;
+	int k = 0;
+	if(next->isAttr) {//append 30 most frequent attribute that comes after the 'tag'
+		for(auto& a : attr2_[tag]) tmp.insert({a.second, a.first});
+		for(auto it = tmp.begin(); k < 30 && it != tmp.end(); it++, k++)
+			next->append(it->second);
+	} else {//append 30 most frequent property that comes after 'tag', 'attr'
+		for(auto& a : attr3_[tag][text]) tmp.insert({a.second, a.first});
+		for(auto it = tmp.begin(); k < 30 && it != tmp.end(); it++, k++)
+			next->append(it->second);
+	}
 	ref_hbox_.pack_start(*next, Gtk::PACK_SHRINK);
 	next->show();
 }

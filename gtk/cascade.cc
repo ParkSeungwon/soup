@@ -46,7 +46,7 @@ Cascade::Cascade() : firstcombo_{label_, hbox_}, add_{"add"}
 	rb_[2].join_group(rb_[0]);
 	hbox_.pack_start(firstcombo_, Gtk::PACK_SHRINK);
 	vbox_.add(label_);
-	for(const auto& p : TagCombo::tagNdesc_) firstcombo_.append(p.first);
+//	for(const auto& p : TagCombo::tagNdesc_) firstcombo_.append(p.first);
 	show_all_children();
 
 	Cascade* pc;
@@ -122,6 +122,8 @@ void Cascade::on_add_click(const std::map<std::string, std::string>& m, Cascade*
 	pc = Gtk::manage(new Cascade());
 	auto* pb = Gtk::manage(new Gtk::Button("-"));
 	auto* ph = Gtk::manage(new Gtk::HBox());
+	for(auto& a : TagCombo::tag2_[firstcombo_.get_active_text()])
+		pc->firstcombo_.append(a.first);
 	pc->set(m);
 	ph->pack_start(*pb, Gtk::PACK_SHRINK);
 	ph->set_margin_left(10);
