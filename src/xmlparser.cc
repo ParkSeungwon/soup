@@ -5,7 +5,7 @@
 #include"xmlparser.h"
 using namespace std;
 
-string parse_script(istream& is) 
+string Parser::parse_script(istream& is) 
 {//cannot apply bracket count, cause jscript have '<' or '>' in contents 
 	string s;
 	char c;
@@ -14,7 +14,7 @@ string parse_script(istream& is)
 		s += c;
 	}
 	for(int i=0; i<9; i++) s.pop_back();
-	is.seekg(-9, is.cur);//script buf fix
+	if(only_for_widget)	is.seekg(-9, is.cur);//script buf fix
 	return s;
 }
 
@@ -140,6 +140,7 @@ void Parser::find_all(regex a, regex b, sh_map parent)
 	if(!p) return;
 	for(Edge<sh_map>* e = p->edge; e; e = e->edge) {
 		for(const auto& sNs : *e->vertex->data) {
+			cout << sNs.first << " : " << sNs.second << endl;
 			if(regex_match(sNs.first, a) && regex_match(sNs.second, b)) {
 				vec.push_back(e->vertex->data);
 				break;

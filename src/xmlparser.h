@@ -19,11 +19,14 @@ public:
 	void read_html(std::string s);
 	sh_map find_parent(sh_map child) const;
 	std::vector<sh_map> regex_find(std::string a, std::string b, sh_map parent = nullptr);
+	bool only_for_widget = false;//this is for bug stitching in cascade class
 
 private:
 	std::vector<sh_map> vec;
 	bool is_script = false;
 
+
+	std::string parse_script(std::istream& is);
 	void find_all(std::regex first, std::regex second, sh_map parent);
 	void insert_edge(sh_map shp, std::istream& is);
 	std::map<std::string, std::string> parse_bracket(std::istream& is);

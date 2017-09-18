@@ -1,27 +1,32 @@
 {
 	"a" : 
 	{
-		"b" : 39,
+		"b" : 40,
 		"code" : 1,
-		"div" : 211,
+		"div" : 584,
+		"h1" : 40,
 		"h3" : 45,
 		"h4" : 28,
-		"i" : 271,
-		"img" : 242,
+		"i" : 1268,
+		"img" : 529,
 		"meta" : 3,
 		"p" : 88,
 		"s" : 25,
-		"small" : 6,
-		"span" : 780,
+		"small" : 8,
+		"span" : 2160,
 		"strong" : 3,
 		"svg" : 167,
 		"time" : 137,
 		"tt" : 1
 	},
+	"abbr" : 
+	{
+		"span" : 102
+	},
 	"article" : 
 	{
 		"br" : 1,
-		"div" : 81,
+		"div" : 125,
 		"h2" : 11,
 		"h3" : 3,
 		"header" : 81,
@@ -49,19 +54,24 @@
 	"body" : 
 	{
 		"a" : 5,
-		"div" : 59,
+		"div" : 419,
 		"footer" : 3,
 		"header" : 3,
 		"main" : 3,
 		"nav" : 4,
-		"script" : 44
+		"script" : 773,
+		"span" : 22
 	},
 	"button" : 
 	{
 		"div" : 372,
-		"i" : 7,
-		"span" : 465,
+		"i" : 485,
+		"span" : 984,
 		"svg" : 6
+	},
+	"c-wiz" : 
+	{
+		"div" : 1
 	},
 	"code" : 
 	{
@@ -70,57 +80,60 @@
 	"div" : 
 	{
 		"" : 3,
-		"a" : 962,
+		"a" : 5335,
 		"article" : 1,
 		"aside" : 36,
-		"b" : 161,
+		"b" : 187,
 		"br" : 31,
-		"button" : 514,
-		"div" : 3939,
+		"button" : 1593,
+		"c-wiz" : 1,
+		"div" : 33913,
 		"em" : 1,
-		"fieldset" : 3,
+		"fieldset" : 4,
 		"figure" : 9,
-		"footer" : 12,
-		"form" : 49,
-		"h1" : 32,
-		"h2" : 56,
-		"h3" : 184,
+		"footer" : 29,
+		"form" : 522,
+		"h1" : 846,
+		"h2" : 364,
+		"h3" : 211,
 		"h4" : 45,
 		"h5" : 35,
-		"header" : 3,
-		"hr" : 66,
-		"i" : 54,
-		"iframe" : 38,
-		"img" : 231,
+		"header" : 20,
+		"hr" : 70,
+		"i" : 141,
+		"iframe" : 67,
+		"img" : 1164,
 		"include-fragment" : 2,
-		"input" : 76,
-		"label" : 36,
+		"input" : 1102,
+		"label" : 326,
 		"li" : 30,
 		"main" : 2,
 		"meta" : 8,
-		"nav" : 24,
+		"nav" : 46,
 		"noscript" : 1,
 		"object" : 1,
-		"ol" : 16,
-		"p" : 577,
+		"ol" : 42,
+		"p" : 1102,
 		"poll-include-fragment" : 30,
 		"pre" : 1,
 		"relative-time" : 30,
-		"script" : 20,
-		"section" : 7,
+		"script" : 21,
+		"section" : 921,
 		"small" : 63,
-		"span" : 1706,
+		"span" : 3581,
 		"strong" : 1,
-		"style" : 16,
+		"style" : 177,
 		"svg" : 18,
-		"table" : 4,
-		"textarea" : 6,
-		"ul" : 170
+		"table" : 747,
+		"textarea" : 8,
+		"ul" : 519
 	},
 	"fieldset" : 
 	{
-		"div" : 3,
-		"legend" : 3
+		"div" : 6,
+		"input" : 2,
+		"legend" : 5,
+		"script" : 1
 	},
 	"figure" : 
 	{
@@ -129,22 +142,28 @@
 	"footer" : 
 	{
 		"a" : 1,
-		"div" : 22,
+		"div" : 61,
 		"p" : 2,
 		"ul" : 5
 	},
 	"form" : 
 	{
 		"button" : 4,
-		"div" : 74,
-		"input" : 143,
+		"div" : 1447,
+		"fieldset" : 1,
+		"h2" : 9,
+		"input" : 2933,
 		"label" : 9,
-		"script" : 6,
-		"span" : 3
+		"noscript" : 55,
+		"p" : 22,
+		"script" : 8,
+		"span" : 25,
+		"table" : 153
 	},
 	"h1" : 
 	{
-		"a" : 91,
+		"a" : 244,
+		"div" : 40,
 		"span" : 2,
 		"strong" : 1,
 		"svg" : 1
@@ -161,7 +180,7 @@
 		"br" : 10,
 		"div" : 45,
 		"small" : 10,
-		"span" : 30,
+		"span" : 39,
 		"strong" : 4,
 		"svg" : 1
 	},
@@ -176,60 +195,69 @@
 	},
 	"head" : 
 	{
+		"base" : 1,
 		"body" : 6,
-		"link" : 141,
-		"meta" : 236,
-		"noscript" : 3,
-		"script" : 99,
+		"link" : 2120,
+		"meta" : 1689,
+		"noscript" : 4,
+		"script" : 852,
 		"style" : 2,
-		"title" : 21
+		"title" : 509
 	},
 	"header" : 
 	{
 		"a" : 2,
-		"div" : 86,
+		"div" : 103,
 		"h1" : 88,
 		"nav" : 1,
 		"ul" : 1
 	},
 	"html" : 
 	{
-		"body" : 32,
-		"head" : 57
+		"body" : 1206,
+		"div" : 1,
+		"head" : 1925,
+		"html" : 90,
+		"link" : 7,
+		"meta" : 6,
+		"script" : 10,
+		"style" : 5,
+		"title" : 2
 	},
 	"i" : 
 	{
-		"u" : 1
+		"u" : 643
 	},
 	"label" : 
 	{
-		"a" : 2,
-		"b" : 6,
-		"input" : 26,
-		"p" : 3,
-		"span" : 10,
-		"textarea" : 3
+		"a" : 3,
+		"b" : 8,
+		"div" : 26,
+		"input" : 377,
+		"p" : 4,
+		"span" : 53,
+		"textarea" : 4
 	},
 	"li" : 
 	{
-		"a" : 825,
-		"b" : 3,
+		"a" : 3486,
+		"b" : 107,
 		"button" : 124,
 		"code" : 26,
-		"div" : 240,
-		"h2" : 3,
+		"div" : 244,
+		"h2" : 4,
 		"h3" : 8,
 		"iframe" : 10,
 		"meta" : 3,
-		"p" : 15,
-		"span" : 15,
+		"p" : 16,
+		"span" : 110,
 		"strong" : 11,
 		"svg" : 1,
 		"ul" : 25
 	},
 	"main" : 
 	{
-		"article" : 81,
+		"article" : 103,
 		"div" : 6,
 		"footer" : 1,
 		"header" : 7,
@@ -242,7 +270,7 @@
 		"div" : 24,
 		"h1" : 6,
 		"span" : 3,
-		"ul" : 13
+		"ul" : 35
 	},
 	"object" : 
 	{
@@ -251,14 +279,14 @@
 	},
 	"ol" : 
 	{
-		"li" : 83
+		"li" : 161
 	},
 	"p" : 
 	{
-		"a" : 357,
+		"a" : 551,
 		"b" : 6,
 		"br" : 30,
-		"button" : 12,
+		"button" : 13,
 		"code" : 54,
 		"em" : 2,
 		"iframe" : 3,
@@ -273,21 +301,28 @@
 	},
 	"script" : 
 	{
-		"a" : 3,
-		"body" : 18,
-		"div" : 121,
+		"a" : 4,
+		"body" : 722,
+		"div" : 1204,
 		"iframe" : 18,
-		"input" : 9,
-		"link" : 296,
-		"meta" : 175,
-		"noscript" : 4,
-		"script" : 246,
-		"style" : 43,
-		"title" : 9
+		"input" : 12,
+		"link" : 4813,
+		"meta" : 860,
+		"noscript" : 318,
+		"script" : 12724,
+		"style" : 270,
+		"title" : 235
 	},
 	"section" : 
 	{
-		"main" : 7
+		"div" : 508,
+		"footer" : 22,
+		"form" : 423,
+		"main" : 29
+	},
+	"select" : 
+	{
+		"option" : 1078
 	},
 	"small" : 
 	{
@@ -295,15 +330,18 @@
 	},
 	"span" : 
 	{
-		"a" : 597,
-		"b" : 148,
-		"button" : 40,
-		"div" : 32,
-		"i" : 324,
+		"a" : 1291,
+		"abbr" : 102,
+		"b" : 151,
+		"button" : 84,
+		"div" : 66,
+		"i" : 656,
 		"img" : 14,
 		"relative-time" : 1,
 		"s" : 13,
-		"span" : 1244,
+		"section" : 22,
+		"select" : 22,
+		"span" : 1357,
 		"strong" : 73,
 		"svg" : 3,
 		"time-ago" : 38
@@ -319,37 +357,41 @@
 	},
 	"table" : 
 	{
-		"tbody" : 4,
-		"tfoot" : 3,
-		"thead" : 3
+		"tbody" : 900,
+		"tfoot" : 4,
+		"thead" : 4
 	},
 	"tbody" : 
 	{
-		"tr" : 69
+		"tr" : 1918
 	},
 	"td" : 
 	{
-		"a" : 3,
+		"a" : 5017,
+		"button" : 426,
+		"div" : 410,
 		"img" : 38,
+		"input" : 459,
+		"label" : 456,
 		"span" : 114,
 		"svg" : 39
 	},
 	"tfoot" : 
 	{
-		"tr" : 3
+		"tr" : 4
 	},
 	"thead" : 
 	{
-		"tr" : 3
+		"tr" : 4
 	},
 	"tr" : 
 	{
-		"td" : 244,
-		"th" : 9
+		"td" : 7803,
+		"th" : 12
 	},
 	"ul" : 
 	{
-		"div" : 3,
-		"li" : 1020
+		"div" : 88,
+		"li" : 3944
 	}
 }

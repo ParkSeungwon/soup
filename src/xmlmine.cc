@@ -66,28 +66,32 @@ void XMLMine::mine()
 		if(v->data->begin()->first == "Text") continue;
 		string tag = v->data->begin()->second;
 		sh_map parent = find_parent(v->data);
-		tag2_[parent->begin()->second][tag]++;
+		if(parent) tag2_[parent->begin()->second][tag]++;
 		for(auto it = ++v->data->begin(); it != v->data->end(); it++) {
 			attr2_[tag][it->first]++;
 			attr3_[tag][it->first][it->second]++;
 		}
 		for(char& c : tag) c = tolower(c);
-		if(tag == "body" || tag == "head") continue;
-		tag3_[find_parent(parent)->begin()->second][parent->begin()->second][tag]++;
+		if(parent && find_parent(parent)) 
+			tag3_[find_parent(parent)->begin()->second][parent->begin()->second][tag]++;
 	}
 }
 
-void XMLMine::mine(string site, int depth)
+void XMLMine::mine(vector<string> site_to_visit, int depth)
 {
 	if(!depth) return;
 	Graph::gfree(Graph::root); Graph::root = nullptr;
-	Parser::read_html(get_url(site));
-	if(!did_visit(site)) {
-		visited_sites_.push_back(site);
-		mine();
-		save();
+	vector<string> next;
+	for(auto site : site_to_visit) {
+		Parser::read_html(get_url(site));
+		if(!did_visit(site)) {
+			visited_sites_.push_back(site);
+			mine();
+			save();
+		}
+		for(auto& a : regex_find("HeadTail", "a")) next.push_back((*a)["href"]);
+		mine(next, depth - 1);
 	}
-	for(auto& a : regex_find("HeadTail", "a")) mine((*a)["href"], depth-1);
 }
 
 bool XMLMine::did_visit(string site)

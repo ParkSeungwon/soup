@@ -6,7 +6,7 @@ using sNsNi = std::map<std::string, std::map<std::string, int>>;
 class XMLMine : public Parser
 {
 public:
-	void mine(std::string site, int depth=3);
+	void mine(std::vector<std::string> site, int depth=3);
 	
 protected:
 	static sNsNi tag2_, attr2_;//tag->tag, tag->attr

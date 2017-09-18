@@ -7,6 +7,7 @@ FParser Cascade::parser_;
 void Cascade::set(const std::map<string, string>& m)
 {//add widgets with data in map
 	if(m.empty()) return;
+	parser_.only_for_widget = true;
 	auto it = m.cbegin();
 	if(it->first == "Text") {
 		rb_[2].set_active();
