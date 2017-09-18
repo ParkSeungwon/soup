@@ -7,7 +7,6 @@ FParser Cascade::parser_;
 void Cascade::set(const std::map<string, string>& m)
 {//add widgets with data in map
 	if(m.empty()) return;
-	parser_.only_for_widget = true;
 	auto it = m.cbegin();
 	if(it->first == "Text") {
 		rb_[2].set_active();
@@ -33,6 +32,7 @@ Cascade::Cascade() : firstcombo_{label_, hbox_}, add_{"add"}
 {
 	static uniform_int_distribution<> di{0, 65535};
 	static random_device rd;
+	parser_.only_for_widget = true;
 	Gdk::RGBA color;
 	color.set_rgba_u(di(rd), di(rd), di(rd));
 	firstcombo_.override_background_color(Gdk::RGBA("blue"));

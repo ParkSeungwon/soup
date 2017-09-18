@@ -3,17 +3,17 @@
 	{
 		"b" : 40,
 		"code" : 1,
-		"div" : 584,
-		"h1" : 40,
+		"div" : 1668,
+		"h1" : 106,
 		"h3" : 45,
 		"h4" : 28,
-		"i" : 1268,
-		"img" : 529,
+		"i" : 2579,
+		"img" : 1027,
 		"meta" : 3,
 		"p" : 88,
 		"s" : 25,
 		"small" : 8,
-		"span" : 2160,
+		"span" : 3871,
 		"strong" : 3,
 		"svg" : 167,
 		"time" : 137,
@@ -21,12 +21,12 @@
 	},
 	"abbr" : 
 	{
-		"span" : 102
+		"span" : 438
 	},
 	"article" : 
 	{
 		"br" : 1,
-		"div" : 125,
+		"div" : 227,
 		"h2" : 11,
 		"h3" : 3,
 		"header" : 81,
@@ -54,19 +54,19 @@
 	"body" : 
 	{
 		"a" : 5,
-		"div" : 419,
+		"div" : 823,
 		"footer" : 3,
 		"header" : 3,
 		"main" : 3,
 		"nav" : 4,
-		"script" : 773,
-		"span" : 22
+		"script" : 1810,
+		"span" : 73
 	},
 	"button" : 
 	{
 		"div" : 372,
-		"i" : 485,
-		"span" : 984,
+		"i" : 1145,
+		"span" : 1695,
 		"svg" : 6
 	},
 	"c-wiz" : 
@@ -80,53 +80,53 @@
 	"div" : 
 	{
 		"" : 3,
-		"a" : 5335,
+		"a" : 14970,
 		"article" : 1,
 		"aside" : 36,
-		"b" : 187,
+		"b" : 299,
 		"br" : 31,
-		"button" : 1593,
+		"button" : 3047,
 		"c-wiz" : 1,
-		"div" : 33913,
+		"div" : 78325,
 		"em" : 1,
 		"fieldset" : 4,
 		"figure" : 9,
-		"footer" : 29,
-		"form" : 522,
-		"h1" : 846,
-		"h2" : 364,
+		"footer" : 85,
+		"form" : 1153,
+		"h1" : 1962,
+		"h2" : 646,
 		"h3" : 211,
 		"h4" : 45,
 		"h5" : 35,
-		"header" : 20,
+		"header" : 76,
 		"hr" : 70,
-		"i" : 141,
-		"iframe" : 67,
-		"img" : 1164,
+		"i" : 319,
+		"iframe" : 120,
+		"img" : 2968,
 		"include-fragment" : 2,
-		"input" : 1102,
-		"label" : 326,
+		"input" : 2785,
+		"label" : 767,
 		"li" : 30,
 		"main" : 2,
 		"meta" : 8,
-		"nav" : 46,
+		"nav" : 97,
 		"noscript" : 1,
 		"object" : 1,
-		"ol" : 42,
-		"p" : 1102,
+		"ol" : 154,
+		"p" : 1862,
 		"poll-include-fragment" : 30,
 		"pre" : 1,
 		"relative-time" : 30,
 		"script" : 21,
-		"section" : 921,
+		"section" : 2333,
 		"small" : 63,
-		"span" : 3581,
+		"span" : 6461,
 		"strong" : 1,
-		"style" : 177,
+		"style" : 441,
 		"svg" : 18,
-		"table" : 747,
+		"table" : 1679,
 		"textarea" : 8,
-		"ul" : 519
+		"ul" : 1174
 	},
 	"fieldset" : 
 	{
@@ -142,28 +142,28 @@
 	"footer" : 
 	{
 		"a" : 1,
-		"div" : 61,
+		"div" : 168,
 		"p" : 2,
 		"ul" : 5
 	},
 	"form" : 
 	{
 		"button" : 4,
-		"div" : 1447,
+		"div" : 3452,
 		"fieldset" : 1,
-		"h2" : 9,
-		"input" : 2933,
+		"h2" : 48,
+		"input" : 5927,
 		"label" : 9,
-		"noscript" : 55,
-		"p" : 22,
+		"noscript" : 121,
+		"p" : 71,
 		"script" : 8,
-		"span" : 25,
-		"table" : 153
+		"span" : 74,
+		"table" : 294
 	},
 	"h1" : 
 	{
-		"a" : 244,
-		"div" : 40,
+		"a" : 385,
+		"div" : 106,
 		"span" : 2,
 		"strong" : 1,
 		"svg" : 1
@@ -197,27 +197,27 @@
 	{
 		"base" : 1,
 		"body" : 6,
-		"link" : 2120,
-		"meta" : 1689,
+		"link" : 4760,
+		"meta" : 3654,
 		"noscript" : 4,
-		"script" : 852,
+		"script" : 1945,
 		"style" : 2,
-		"title" : 509
+		"title" : 1171
 	},
 	"header" : 
 	{
 		"a" : 2,
-		"div" : 103,
+		"div" : 159,
 		"h1" : 88,
 		"nav" : 1,
 		"ul" : 1
 	},
 	"html" : 
 	{
-		"body" : 1206,
+		"body" : 3156,
 		"div" : 1,
-		"head" : 1925,
-		"html" : 90,
+		"head" : 4805,
+		"html" : 322,
 		"link" : 7,
 		"meta" : 6,
 		"script" : 10,
@@ -226,38 +226,38 @@
 	},
 	"i" : 
 	{
-		"u" : 643
+		"u" : 1476
 	},
 	"label" : 
 	{
 		"a" : 3,
 		"b" : 8,
-		"div" : 26,
-		"input" : 377,
+		"div" : 138,
+		"input" : 730,
 		"p" : 4,
-		"span" : 53,
+		"span" : 119,
 		"textarea" : 4
 	},
 	"li" : 
 	{
-		"a" : 3486,
-		"b" : 107,
+		"a" : 8063,
+		"b" : 555,
 		"button" : 124,
 		"code" : 26,
-		"div" : 244,
+		"div" : 257,
 		"h2" : 4,
 		"h3" : 8,
 		"iframe" : 10,
 		"meta" : 3,
 		"p" : 16,
-		"span" : 110,
+		"span" : 281,
 		"strong" : 11,
 		"svg" : 1,
 		"ul" : 25
 	},
 	"main" : 
 	{
-		"article" : 103,
+		"article" : 154,
 		"div" : 6,
 		"footer" : 1,
 		"header" : 7,
@@ -270,7 +270,7 @@
 		"div" : 24,
 		"h1" : 6,
 		"span" : 3,
-		"ul" : 35
+		"ul" : 86
 	},
 	"object" : 
 	{
@@ -279,11 +279,11 @@
 	},
 	"ol" : 
 	{
-		"li" : 161
+		"li" : 497
 	},
 	"p" : 
 	{
-		"a" : 551,
+		"a" : 896,
 		"b" : 6,
 		"br" : 30,
 		"button" : 13,
@@ -302,27 +302,27 @@
 	"script" : 
 	{
 		"a" : 4,
-		"body" : 722,
-		"div" : 1204,
-		"iframe" : 18,
+		"body" : 1701,
+		"div" : 2794,
+		"iframe" : 27,
 		"input" : 12,
-		"link" : 4813,
-		"meta" : 860,
-		"noscript" : 318,
-		"script" : 12724,
-		"style" : 270,
-		"title" : 235
+		"link" : 12367,
+		"meta" : 2518,
+		"noscript" : 912,
+		"script" : 31588,
+		"style" : 589,
+		"title" : 554
 	},
 	"section" : 
 	{
-		"div" : 508,
-		"footer" : 22,
-		"form" : 423,
-		"main" : 29
+		"div" : 1382,
+		"footer" : 73,
+		"form" : 1017,
+		"main" : 80
 	},
 	"select" : 
 	{
-		"option" : 1078
+		"option" : 3577
 	},
 	"small" : 
 	{
@@ -330,18 +330,19 @@
 	},
 	"span" : 
 	{
-		"a" : 1291,
-		"abbr" : 102,
+		"a" : 2308,
+		"abbr" : 438,
 		"b" : 151,
-		"button" : 84,
-		"div" : 66,
-		"i" : 656,
+		"button" : 182,
+		"div" : 178,
+		"i" : 1050,
 		"img" : 14,
+		"label" : 9,
 		"relative-time" : 1,
 		"s" : 13,
-		"section" : 22,
-		"select" : 22,
-		"span" : 1357,
+		"section" : 73,
+		"select" : 73,
+		"span" : 1590,
 		"strong" : 73,
 		"svg" : 3,
 		"time-ago" : 38
@@ -357,22 +358,22 @@
 	},
 	"table" : 
 	{
-		"tbody" : 900,
+		"tbody" : 1973,
 		"tfoot" : 4,
 		"thead" : 4
 	},
 	"tbody" : 
 	{
-		"tr" : 1918
+		"tr" : 3949
 	},
 	"td" : 
 	{
-		"a" : 5017,
-		"button" : 426,
-		"div" : 410,
+		"a" : 9841,
+		"button" : 1024,
+		"div" : 1140,
 		"img" : 38,
-		"input" : 459,
-		"label" : 456,
+		"input" : 882,
+		"label" : 875,
 		"span" : 114,
 		"svg" : 39
 	},
@@ -386,12 +387,12 @@
 	},
 	"tr" : 
 	{
-		"td" : 7803,
+		"td" : 15502,
 		"th" : 12
 	},
 	"ul" : 
 	{
-		"div" : 88,
-		"li" : 3944
+		"div" : 368,
+		"li" : 8900
 	}
 }
