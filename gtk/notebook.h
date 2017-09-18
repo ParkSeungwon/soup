@@ -18,6 +18,7 @@ protected:
 
 private:
 	std::string url_;
+	int page_;
 };
 
 

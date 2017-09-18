@@ -34,12 +34,16 @@ HtmlBook::HtmlBook(string url)
 void HtmlBook::on_switch(int page_number)
 {//on_switch_page virtual default method overloading did't work, 
 //it was called everytime a widget is added..?
+	
 	switch(page_number) {
-		case 0: cas.read_html(view.get_source_buffer()->get_text()); break;
-		case 1: view.get_source_buffer()->set_text(cas.to_html()); break;
-		case 2:
+	case 0: if(page_ == 1) cas.read_html(view.get_source_buffer()->get_text()); break;
+	case 1: if(page_ == 0) view.get_source_buffer()->set_text(cas.to_html()); break;
+	case 2:
+		if(page_ == 1) {
 			string s = view.get_source_buffer()->get_text();
 			webkit_web_view_load_html(webview, s.data(), url_.data());
+		} else webkit_web_view_load_html(webview, cas.to_html().data(), url_.data());
 	}
 	cout << "swtching to " << page_number << endl;
+	page_ = page_number;
 }

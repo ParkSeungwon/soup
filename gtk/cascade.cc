@@ -148,7 +148,7 @@ std::map<string, string> Cascade::get()
 	else { 
 		if(rb_[0].get_active()) m["HeadTail"] = tag;
 		else m["Mono"] = tag;
-		for(auto* p = firstcombo_.next; p->next; p = p->next->next)
+		for(auto* p = firstcombo_.next; p && p->next; p = p->next->next)
 			m[p->get_active_text()] = p->next->get_active_text();
 	}
 	return m;
